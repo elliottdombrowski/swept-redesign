@@ -1,4 +1,4 @@
-@import '../../variables';
+@import "../../variables";
 
 .navbar-wrapper {
   .deco {
@@ -20,7 +20,7 @@
     justify-content: space-between;
     align-items: center;
     background: $blue-gradient;
-    padding: .3rem 3rem;
+    padding: 0.3rem 3rem;
 
     nav {
       a {
@@ -31,7 +31,7 @@
         }
       }
     }
-    
+
     .nav-left {
       a {
         position: relative;
@@ -41,7 +41,7 @@
         letter-spacing: 2px;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           right: 0;
@@ -69,7 +69,7 @@
       border-radius: 20px;
       font-family: $link-font;
       font-size: 24px;
-      
+
       label {
         div {
           position: absolute;
@@ -101,16 +101,35 @@
           right: 25px;
           z-index: 10;
         }
-        
+
         input {
           width: 0;
           height: 0;
         }
       }
     }
-    
+
     .nav-right {
       display: flex;
+      align-items: center;
+      font-size: 24px;
+      
+      .login-btn {
+        background: $primary-darkorange;
+        padding: 5px 10px;
+        border-radius: 10px;
+        margin-left: calc(2rem - 10px);
+        transition: $btn-hover;
+        cursor: pointer;
+
+        &:hover {
+          background: $primary-dark-hover;
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
     }
   }
 }

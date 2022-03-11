@@ -97,7 +97,7 @@ const Navbar = () => {
             <SignUpButton />
           )}
         </nav>
-        {/* <div
+        <div
           className='hamburger'
           id="hamburger"
           onClick={() => mobileMenu()}
@@ -105,7 +105,7 @@ const Navbar = () => {
           <span className='bar' id='bar1'></span>
           <span className='bar' id='bar2'></span>
           <span className='bar' id='bar3'></span>
-        </div> */}
+        </div>
       </header>
       <div className='deco'>
         <div className='deco-inner'></div>
