@@ -11,7 +11,6 @@ import Snow from '../src/pages/Snow/Snow';
 import Profile from './pages/Profile/Profile';
 import LoginSignup from './pages/LoginSignup/LoginSignup';
 import NotFound from './pages/NotFound/NotFound';
-import './App.css';
 
 const httpLink = createHttpLink({
   uri: '/graphql',

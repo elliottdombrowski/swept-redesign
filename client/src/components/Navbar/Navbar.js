@@ -4,8 +4,6 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import SignUpButton from '../SignUpButton/SignUpButton';
 import Auth from '../../utils/auth';
-import './navbar.css';
-import './query.css';
 
 const profile = <FontAwesomeIcon icon={faUserCircle} className='fa-lg' />
 

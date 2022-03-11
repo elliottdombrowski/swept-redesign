@@ -6,8 +6,6 @@ import { GET_SNOW } from '../../utils/queries';
 import { SAVE_SNOW } from '../../utils/mutations'
 import { useQuery, useMutation } from '@apollo/client';
 
-import './query.css';
-
 // Import mapbox - must add exclamation point to exclude from transpilation and disable esline rule 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 // set the access token
