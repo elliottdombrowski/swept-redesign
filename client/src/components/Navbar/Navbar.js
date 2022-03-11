@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import SignUpButton from '../SignUpButton/SignUpButton';
 import Auth from '../../utils/auth';
 
+import './styles.scss';
+import './query.scss';
+
 const profile = <FontAwesomeIcon icon={faUserCircle} className='fa-lg' />
 
 const Navbar = () => {

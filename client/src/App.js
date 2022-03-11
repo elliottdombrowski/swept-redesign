@@ -12,6 +12,8 @@ import Profile from './pages/Profile/Profile';
 import LoginSignup from './pages/LoginSignup/LoginSignup';
 import NotFound from './pages/NotFound/NotFound';
 
+import './app.scss';
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
