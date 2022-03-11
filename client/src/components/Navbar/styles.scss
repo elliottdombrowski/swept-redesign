@@ -31,6 +31,54 @@
         letter-spacing: 2px;
       }
     }
+
+    .nav-center {
+      position: relative;
+      padding: 10px 0;
+      width: 260px;
+      background: red;
+      border-radius: 20px;
+      font-family: $link-font;
+      font-size: 24px;
+      
+      label {
+        div {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          background: blue;
+          border-radius: 20px;
+          transition: $btn-hover;
+        }
+
+        .switch-overlay-left {
+          left: 0;
+          right: 45%;
+        }
+
+        .switch-overlay-right {
+          right: 0;
+          left: 55%;
+        }
+
+        a:nth-child(2) {
+          position: absolute;
+          left: 25px;
+          z-index: 10;
+        }
+
+        a:nth-child(3) {
+          position: absolute;
+          right: 24px;
+          z-index: 10;
+        }
+        
+        input {
+          width: 0;
+          height: 0;
+        }
+      }
+    }
     
     .nav-right {
       display: flex;

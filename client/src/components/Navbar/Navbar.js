@@ -18,7 +18,7 @@ const Navbar = () => {
     document.getElementById('hamburger').classList.toggle('active');
     document.getElementById('navbar-right').classList.toggle('active');
   };
-  
+
   //CLOSE NAV MENU ON SCROLL
   window.onscroll = () => {
     document.getElementById('hamburger').classList.remove('active');
@@ -44,8 +44,8 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        {/* NAV RIGHT */}
-        <nav className='nav-right' id='navbar-right'>
+        {/* NAV CENTER  */}
+        <nav className='nav-center'>
           <label className='switch' id='link-switcher'>
             <input type='checkbox' />
             <Link
@@ -67,7 +67,10 @@ const Navbar = () => {
             </Link>
             <div className={moveSlider ? 'switch-overlay-right' : 'switch-overlay-left'} id='switcher' />
           </label>
+        </nav>
 
+        {/* NAV RIGHT */}
+        <nav className='nav-right' id='navbar-right'>
           {mobile.matches ? (
             <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links profile-icon'>
               <div className='login-btn'>
