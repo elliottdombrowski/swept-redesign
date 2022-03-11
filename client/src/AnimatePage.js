@@ -23,3 +23,5 @@ const AnimatePage = ({ children }) => {
     </>
   );
 };
+
+export default AnimatePage;

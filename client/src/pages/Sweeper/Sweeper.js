@@ -7,6 +7,8 @@ import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
+import AnimatePage from '../../AnimatePage';
+
 // Import mapbox - must add exclamation point to exclude from transpilation and disable esline rule 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 // set the access token
@@ -169,10 +171,10 @@ const Sweeper = () => {
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
-    container: mapContainer.current,
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [lng, lat],
-    zoom: zoom
+      container: mapContainer.current,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [lng, lat],
+      zoom: zoom
     });
   });
 
@@ -180,9 +182,9 @@ const Sweeper = () => {
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     map.current.on('move', () => {
-    setLng(map.current.getCenter().lng.toFixed(4));
-    setLat(map.current.getCenter().lat.toFixed(4));
-    setZoom(map.current.getZoom().toFixed(2));
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
     });
   });
 
@@ -195,66 +197,68 @@ const Sweeper = () => {
 
 
   return (
-    <main className='sweeper-wrapper'>
-      <header className='sweeper-header'>
-        <label className='sweeper-header-label'>Find your StreetSweeper Schedule!</label>
-      </header>
+    <AnimatePage>
+      <main className='sweeper-wrapper'>
+        <header className='sweeper-header'>
+          <label className='sweeper-header-label'>Find your StreetSweeper Schedule!</label>
+        </header>
 
-      <section className='sweeper-form-wrapper'>
-        <div className='zip-form-wrapper'>
-          <form
-            onSubmit={(event) => wardNumberSubmit(event)}
-            className='zipform-wrapper'
-          >
-            <input
-              ref={wardNumber}
-              name='wardNumber'
-              placeholder='Enter your Ward Number or Zipcode!'
-              className='zipform-input'
-            />
-            <button
-              type='submit'
-              className='zipform-input zipform-btn'
+        <section className='sweeper-form-wrapper'>
+          <div className='zip-form-wrapper'>
+            <form
+              onSubmit={(event) => wardNumberSubmit(event)}
+              className='zipform-wrapper'
             >
-              Find your schedule!
-            </button>
-            <p className='error-msg'>{err}</p>
-          </form>
-        </div>
-      </section>
-      {loading ? (
-        <Spinner
-          color='blue.500'
-          emptyColor='gray.200'
-          size='xl'
-          thickness='5px'
-          speed='0.6s'
-          className='loading-spinner'
-        />
-      ) : (
-        <section className='sweeper-data-output-wrapper'>
-           <span className={!wardInfo.length ? 'form-warning' : ''}>{!wardInfo.length ? 'No results yet! Street Sweepers operate from April 1 - November 30.' : ''}</span>
-          {
-            wardInfo.map((info, index) => {
-              return (
-                <div className='sweeper-data-output' key={index}>
-                  <span className='sweeper-date'>{info.month_name} {info.dates}</span>
-                  <p className='sweeper-ward'>Ward {info.ward}</p>
-                  <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
-                    {saveIcon}
-                    Save
-                  </button>
-                </div>
-              )
-            })
-          }
+              <input
+                ref={wardNumber}
+                name='wardNumber'
+                placeholder='Enter your Ward Number or Zipcode!'
+                className='zipform-input'
+              />
+              <button
+                type='submit'
+                className='zipform-input zipform-btn'
+              >
+                Find your schedule!
+              </button>
+              <p className='error-msg'>{err}</p>
+            </form>
+          </div>
         </section>
-      )}
-      {/* Mapbox */}
-      <div className='outer-map-container'>
-        <div ref={mapContainer} className="map-container" />
-      </div>
-    </main >
+        {loading ? (
+          <Spinner
+            color='blue.500'
+            emptyColor='gray.200'
+            size='xl'
+            thickness='5px'
+            speed='0.6s'
+            className='loading-spinner'
+          />
+        ) : (
+          <section className='sweeper-data-output-wrapper'>
+            <span className={!wardInfo.length ? 'form-warning' : ''}>{!wardInfo.length ? 'No results yet! Street Sweepers operate from April 1 - November 30.' : ''}</span>
+            {
+              wardInfo.map((info, index) => {
+                return (
+                  <div className='sweeper-data-output' key={index}>
+                    <span className='sweeper-date'>{info.month_name} {info.dates}</span>
+                    <p className='sweeper-ward'>Ward {info.ward}</p>
+                    <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
+                      {saveIcon}
+                      Save
+                    </button>
+                  </div>
+                )
+              })
+            }
+          </section>
+        )}
+        {/* Mapbox */}
+        <div className='outer-map-container'>
+          <div ref={mapContainer} className="map-container" />
+        </div>
+      </main >
+    </AnimatePage>
   );
 };
 
