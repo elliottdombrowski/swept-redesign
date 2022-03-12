@@ -9,6 +9,9 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 import AnimatePage from '../../AnimatePage';
 
+import './styles.scss';
+import './query.scss';
+
 // Import mapbox - must add exclamation point to exclude from transpilation and disable esline rule 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 // set the access token
@@ -199,9 +202,7 @@ const Sweeper = () => {
   return (
     <AnimatePage>
       <main className='sweeper-wrapper'>
-        <header className='sweeper-header'>
-          <label className='sweeper-header-label'>Find your StreetSweeper Schedule!</label>
-        </header>
+        <label className='sweeper-header-label'>Find your Street Sweeper Schedule!</label>
 
         <section className='sweeper-form-wrapper'>
           <div className='zip-form-wrapper'>
