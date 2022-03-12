@@ -1,6 +1,8 @@
 @import "../../variables";
 
 .navbar-wrapper {
+  font-weight: 600;
+  letter-spacing: .5px;
   .deco {
     background: $blue-gradient;
     height: 20px;
@@ -120,6 +122,7 @@
         border-radius: 10px;
         margin-left: calc(2rem - 10px);
         transition: $btn-hover;
+        letter-spacing: initial;
         cursor: pointer;
 
         &:hover {
