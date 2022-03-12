@@ -8,11 +8,27 @@
       }
 
       .nav-right {
-        display: none;
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        background: $black;
+        transition: $btn-hover;
+        z-index: 10;
+
+        &.active {
+          right: 0;
+        }
+
+        a:nth-child(1) {
+          padding-top: 101px;
+        }
       }
 
       .hamburger {
         display: block;
+        z-index: 20;
 
         &.active {
           .bar:nth-child(2) {
