@@ -1,7 +1,14 @@
 @import '../../variables';
 
 .login-signup-wrapper {
-  width: 40vw;
-  margin: 0 auto;
-  background: red;
+  height: 90vh;
+  
+  .login-signup-inner {
+    width: 40vw;
+    margin: 8rem auto 0;
+    padding: 2rem;
+    border: 1px solid $text;
+    border-radius: 10px;
+    background: $blue-gradient;
+  }
 }
