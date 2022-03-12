@@ -5,6 +5,8 @@ import { ADD_USER } from '../../utils/mutations';
 import { validateEmail } from '../../utils/helpers';
 import Auth from '../../utils/auth';
 
+import AnimatePage from '../../AnimatePage';
+
 import '../LoginForm/styles.scss';
 import '../LoginForm/query.scss';
 
@@ -42,55 +44,60 @@ const LoginForm = () => {
   };
 
   return (
-    <form className='login-form' onSubmit={handleFormSubmit}>
-      <label>
-       SIGN UP
-      </label>
-      <p className='error-msg'>{err}</p>
-      <Input
-        variant='Outline'
-        size='xl'
-        type='text'
-        name='username'
-        onChange={handleInputChange}
-        value={signupData.username}
-        required
-        placeholder='Your Name'
-        className='login-input'
-      />
+    <AnimatePage>
+      <form className='login-form' onSubmit={handleFormSubmit}>
+        <div className='label-wrapper'>
+          <label>
+            SIGN UP
+          </label>
+        </div>
 
-      <Input
-        variant='Outline'
-        size='xl'
-        type='text'
-        name='email'
-        onChange={handleInputChange}
-        value={signupData.email}
-        required
-        placeholder='Your Email'
-        className='login-input'
-      />
+        <p className='error-msg'>{err}</p>
+        <Input
+          variant='Outline'
+          size='xl'
+          type='text'
+          name='username'
+          onChange={handleInputChange}
+          value={signupData.username}
+          required
+          placeholder='Your Name'
+          className='login-input'
+        />
 
-      <Input
-        variant='Outline'
-        size='xl'
-        type='text'
-        name='password'
-        onChange={handleInputChange}
-        value={signupData.password}
-        required
-        placeholder='Your Password'
-        className='login-input'
-      />
+        <Input
+          variant='Outline'
+          size='xl'
+          type='text'
+          name='email'
+          onChange={handleInputChange}
+          value={signupData.email}
+          required
+          placeholder='Your Email'
+          className='login-input'
+        />
 
-      <button
-        disabled={!(signupData.username && signupData.email && signupData.password)}
-        type='submit'
-        className='login-input login-submit-btn'
-      >
-        Sign Up
-      </button>
-    </form>
+        <Input
+          variant='Outline'
+          size='xl'
+          type='text'
+          name='password'
+          onChange={handleInputChange}
+          value={signupData.password}
+          required
+          placeholder='Your Password'
+          className='login-input'
+        />
+
+        <button
+          disabled={!(signupData.username && signupData.email && signupData.password)}
+          type='submit'
+          className='login-input login-submit-btn'
+        >
+          Sign Up
+        </button>
+      </form>
+    </AnimatePage>
   );
 }
 

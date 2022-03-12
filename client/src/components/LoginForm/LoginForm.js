@@ -4,6 +4,8 @@ import { LOGIN_USER } from '../../utils/mutations';
 import { validateEmail } from '../../utils/helpers';
 import Auth from '../../utils/auth';
 
+import AnimatePage from '../../AnimatePage';
+
 import './styles.scss';
 import './query.scss';
 
@@ -46,43 +48,48 @@ const LoginForm = () => {
   };
 
   return (
-    <form className='login-form' onSubmit={handleFormSubmit}>
-      <label>
-        LOG IN
-      </label>
-      <p className='error-msg'>{err}</p>
-      <input
-        variant='Outline'
-        size='xl'
-        type='text'
-        name='email'
-        onChange={handleInputChange}
-        value={loginData.email}
-        required
-        placeholder='Your Email'
-        className='login-input'
-      />
+    <AnimatePage>
+      <form className='login-form' onSubmit={handleFormSubmit}>
+        <div className='label-wrapper'>
+          <label>
+            LOG IN
+          </label>
+        </div>
 
-      <input
-        variant='Outline'
-        size='xl'
-        type='text'
-        name='password'
-        onChange={handleInputChange}
-        value={loginData.password}
-        required
-        placeholder='Your Password'
-        className='login-input'
-      />
+        <p className='error-msg'>{err}</p>
+        <input
+          variant='Outline'
+          size='xl'
+          type='text'
+          name='email'
+          onChange={handleInputChange}
+          value={loginData.email}
+          required
+          placeholder='Your Email'
+          className='login-input'
+        />
 
-      <button
-        disabled={!(loginData.email && loginData.password)}
-        type='submit'
-        className='login-input login-submit-btn'
-      >
-        Log In
-      </button>
-    </form>
+        <input
+          variant='Outline'
+          size='xl'
+          type='text'
+          name='password'
+          onChange={handleInputChange}
+          value={loginData.password}
+          required
+          placeholder='Your Password'
+          className='login-input'
+        />
+
+        <button
+          disabled={!(loginData.email && loginData.password)}
+          type='submit'
+          className='login-input login-submit-btn'
+        >
+          Log In
+        </button>
+      </form>
+    </AnimatePage>
   );
 }
 

@@ -1,23 +1,37 @@
-@import '../../variables';
+@import "../../variables";
 
 .login-form {
   display: flex;
   flex-direction: column;
   width: 100%;
 
-  label {
-    position: relative;
-    font-family: $logo-font;
-    font-style: italic;
-    font-size: 24px;
-    font-weight: 500;
-    width: 90px;
+  .label-wrapper {
+    label {
+      position: relative;
+      font-family: $logo-font;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: initial;
+      width: 90px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: $text;
+        transform: skew(-45deg);
+      }
+    }
   }
 
   input {
     border-radius: 10px;
     padding: 10px;
-    
+
     &:not(:nth-child(2)) {
       margin-top: 1rem;
     }
@@ -32,14 +46,9 @@
     letter-spacing: initial;
     font-weight: 600;
     cursor: pointer;
-  
+
     &:hover {
       background: $primary-dark-hover;
     }
   }
-
-  // .login-submit-btn {
-  //   margin: 1rem 0;
-  //   
-  // }
 }
