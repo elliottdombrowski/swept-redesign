@@ -5,12 +5,25 @@
   flex-direction: column;
   width: 100%;
 
+  label {
+    position: relative;
+    font-family: $logo-font;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 500;
+    width: 90px;
+  }
+
   input {
     border-radius: 10px;
-    padding: 5px 10px;
-
-    &:nth-child(3) {
+    padding: 10px;
+    
+    &:not(:nth-child(2)) {
       margin-top: 1rem;
     }
+  }
+
+  .login-submit-btn {
+    margin: 1rem 0;
   }
 }

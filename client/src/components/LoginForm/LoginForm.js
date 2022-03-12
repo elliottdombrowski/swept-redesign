@@ -47,6 +47,9 @@ const LoginForm = () => {
 
   return (
     <form className='login-form' onSubmit={handleFormSubmit}>
+      <label>
+        LOG IN
+      </label>
       <p className='error-msg'>{err}</p>
       <input
         variant='Outline'

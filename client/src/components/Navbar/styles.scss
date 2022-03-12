@@ -115,20 +115,23 @@
       display: flex;
       align-items: center;
       font-size: 24px;
-      
+   
       .login-btn {
-        background: $primary-darkorange;
-        padding: 5px 10px;
-        border-radius: 10px;
         margin-left: calc(2rem - 10px);
-        transition: $btn-hover;
-        letter-spacing: initial;
-        cursor: pointer;
-
-        &:hover {
-          background: $primary-dark-hover;
-        }
       }
+//       .login-btn {
+//         background: $primary-darkorange;
+//         padding: 5px 10px;
+//         border-radius: 10px;
+//         margin-left: calc(2rem - 10px);
+//         transition: $btn-hover;
+//         letter-spacing: initial;
+//         cursor: pointer;
+// 
+//         &:hover {
+//           background: $primary-dark-hover;
+//         }
+      // }
     }
 
     .hamburger {
