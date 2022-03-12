@@ -71,17 +71,9 @@ const Navbar = () => {
 
         {/* NAV RIGHT */}
         <nav className='nav-right' id='navbar-right'>
-          {mobile.matches ? (
-            <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links profile-icon'>
-              <div className='login-btn'>
-                {profile} PROFILE
-              </div>
-            </Link>
-          ) : (
-            <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links nav-profile'>
-              PROFILE
-            </Link>
-          )}
+          <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links nav-profile'>
+            PROFILE
+          </Link>
 
           {Auth.loggedIn() ? (
             <div className='login-btn mobile-login'>

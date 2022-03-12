@@ -1,0 +1,35 @@
+@import '../../variables';
+
+@media all and (max-width: 768px) {
+  .navbar-wrapper {
+    .navbar-header {
+      .nav-center {
+        padding: 5px 10px;
+      }
+
+      .nav-right {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+
+        &.active {
+          .bar:nth-child(2) {
+            width: 25px;
+            opacity: 0;
+          }
+
+          .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+          }
+
+          .bar:nth-child(3) {
+            width: 25px;
+            transform: translateY(-8px) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}

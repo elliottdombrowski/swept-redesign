@@ -123,6 +123,25 @@
 
     .hamburger {
       display: none;
+      cursor: pointer;
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 0;
+        transition: $btn-hover;
+        background: $text;
+
+        &:nth-child(2) {
+          margin-left: auto;
+          width: 20px;
+        }
+        &:nth-child(3) {
+          margin-left: auto;
+          width: 15px;
+        }
+      }
     }
   }
 }
