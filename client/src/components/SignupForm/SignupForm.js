@@ -5,6 +5,9 @@ import { ADD_USER } from '../../utils/mutations';
 import { validateEmail } from '../../utils/helpers';
 import Auth from '../../utils/auth';
 
+import '../LoginForm/styles.scss';
+import '../LoginForm/query.scss';
+
 const LoginForm = () => {
   const [signupData, setSignupData] = useState({ username: '', email: '', password: '' });
   const [err, setErr] = useState('');

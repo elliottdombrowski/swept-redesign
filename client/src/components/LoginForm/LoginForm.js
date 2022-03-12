@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Input } from '@chakra-ui/react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import { validateEmail } from '../../utils/helpers';
 import Auth from '../../utils/auth';
+
+import './styles.scss';
+import './query.scss';
 
 const LoginForm = () => {
   const [loginData, setLoginData] = useState({ email: '', password: '' });
@@ -46,7 +48,7 @@ const LoginForm = () => {
   return (
     <form className='login-form' onSubmit={handleFormSubmit}>
       <p className='error-msg'>{err}</p>
-      <Input
+      <input
         variant='Outline'
         size='xl'
         type='text'
@@ -58,7 +60,7 @@ const LoginForm = () => {
         className='login-input'
       />
 
-      <Input
+      <input
         variant='Outline'
         size='xl'
         type='text'
