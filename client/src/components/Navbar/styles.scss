@@ -1,8 +1,10 @@
 @import "../../variables";
 
 .navbar-wrapper {
+  position: relative;
   font-weight: 600;
   letter-spacing: .5px;
+  z-index: 2;
 
   .deco {
     background: $blue-gradient;
@@ -48,7 +50,7 @@
           position: absolute;
           left: 0;
           right: 0;
-          bottom: 3px;
+          bottom: 11px;
           height: 4px;
           width: 0%;
           background: $text;
@@ -72,6 +74,7 @@
       border-radius: 20px;
       font-family: $link-font;
       font-size: 24px;
+      z-index: 5;
 
       label {
         div {

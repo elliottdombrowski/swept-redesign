@@ -8,20 +8,23 @@
       }
 
       .nav-right {
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         top: 0;
         bottom: 0;
-        right: -100%;
-        background: $black;
+        right: 0;
+        width: 0px;
+        overflow: hidden;
+        background: $background;
         transition: $btn-hover;
-        z-index: 10;
+        z-index: -1;
 
         &.active {
-          right: 0;
+          width: 200px;
         }
 
         a:nth-child(1) {
+          opacity: 1;
           padding-top: 101px;
         }
       }
