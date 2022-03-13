@@ -5,6 +5,9 @@ import { QUERY_ME, QUERY_USER_SWEEPERS, QUERY_USER_SNOW } from '../../utils/quer
 import SavedSweepers from "./SavedSweepers"
 import SavedSnow from "./SavedSnow"
 
+import './styles.scss';
+import './query.scss';
+
 const Profile = () => {
   const { username: userParam } = useParams();
 
