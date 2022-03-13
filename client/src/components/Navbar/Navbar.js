@@ -73,6 +73,10 @@ const Navbar = () => {
         {/* NAV RIGHT */}
         <nav className='nav-right' id='navbar-right'>
           <div className='mobile-wrapper'>
+            <div className='mobile-img-wrapper'>
+              <img src={require('../../assets/chiflag.jpeg')} />
+            </div>
+
             <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links nav-profile'>
               <i>
                 {profile}

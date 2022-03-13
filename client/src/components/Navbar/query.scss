@@ -35,9 +35,22 @@
         }
 
         .mobile-wrapper {
+          display: flex;
+          flex-direction: column;
+          width: 90%;
+          margin: 0 auto;
+
+          .mobile-img-wrapper {
+            padding: 100px 0 1rem;
+            img {
+              border-radius: 10px;
+            }
+          }
+
           a {
             display: flex;
-            margin-bottom: 1rem;
+            margin: 0 0 1rem 4px;
+            
             i {
               display: block;
             }
