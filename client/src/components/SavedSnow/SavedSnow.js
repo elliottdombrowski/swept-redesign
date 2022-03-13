@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER_SNOW, MUTATION_DELETE_SNOW } from '../../utils/queries';
 
+import '../SavedSweepers/styles.scss';
+import '../SavedSweepers/query.scss';
+
 const SavedSnow = () => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
   const [updatedSnow, setUpdatedSnow] = useState();

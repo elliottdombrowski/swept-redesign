@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER_SWEEPERS, MUTATION_DELETE_SWEEPER } from '../../utils/queries';
 
+import './styles.scss';
+import './query.scss';
+
 const SavedSweepers = () => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
   const [updatedSweepers, setUpdatedSweepers] = useState();

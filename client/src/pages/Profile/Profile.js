@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME, QUERY_USER_SWEEPERS, QUERY_USER_SNOW } from '../../utils/queries';
-import SavedSweepers from "./SavedSweepers"
-import SavedSnow from "./SavedSnow"
+import SavedSweepers from '../../components/SavedSweepers/SavedSweepers';
+import SavedSnow from '../../components/SavedSnow/SavedSnow';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
