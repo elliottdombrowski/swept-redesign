@@ -52,6 +52,8 @@
       .slider-wrapper {
         position: relative;
         height: 40px;
+        width: 300px;
+        margin: 0 auto;
         background: $darkblue;
         border-radius: 20px;
 
@@ -75,15 +77,22 @@
             left: 55%;
           }
 
-          a:nth-child(2) {
+          h2 {
+            font-family: $link-font;
+            font-weight: 600;
+            font-size: 24px;
+            bottom: 0;
+          }
+
+          h2:nth-child(2) {
             position: absolute;
-            left: 10px;
+            left: 33px;
             z-index: 10;
           }
 
-          a:nth-child(3) {
+          h2:nth-child(3) {
             position: absolute;
-            right: 20px;
+            right: 35px;
             z-index: 10;
           }
 

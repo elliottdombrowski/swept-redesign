@@ -30,26 +30,25 @@ const Profile = () => {
 
         <section className='saved-wrapper'>
           <div className='slider-wrapper'>
-
             <label className='switch' id='link-switcher'>
               <input type='checkbox' />
-              <Link
+              <h2
                 // to='/sweeper'
                 className='slider slider-one nav-item nav-links'
                 id='sweeper-link'
                 onClick={() => setMoveSlider(false)}
               >
                 SWEEPER
-              </Link>
+              </h2>
 
-              <Link
+              <h2
                 // to='/snow'
                 className='slider slider-two nav-item nav-links'
                 id='snow-link'
                 onClick={() => setMoveSlider(true)}
               >
                 SNOW
-              </Link>
+              </h2>
               <div className={moveSlider ? 'switch-overlay-right' : 'switch-overlay-left'} id='switcher' />
             </label>
           </div>
