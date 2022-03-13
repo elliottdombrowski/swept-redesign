@@ -39,12 +39,14 @@
           min-width: 180px;
           display: flex;
           flex-direction: column;
-          width: 90%;
+          // width: 90%;
           margin: 0 auto;
 
           .mobile-img-wrapper {
             display: block;
+            width: 90%;
             padding: 100px 0 1rem;
+            margin: 0 auto;
             img {
               border-radius: 10px;
             }
@@ -52,8 +54,16 @@
 
           a {
             display: flex;
-            margin: 0 0 1rem 4px;
+            padding: 5px calc(5% + 4px);
+            background: $background-two;
 
+            &:hover {
+              border-radius: 10px;
+              margin: 0 5px;
+              background: $primary-darkorange;
+              opacity: 1;
+            }
+            
             i {
               display: block;
             }
