@@ -17,6 +17,7 @@
     .profile-user-info {
       display: flex;
       flex-direction: column;
+      width: 50%;
 
       .profile-header {
         font-family: $logo-font;
@@ -42,6 +43,55 @@
       .profile-email {
         font-family: $link-font;
         font-weight: 600;
+      }
+    }
+
+    .saved-wrapper {
+      width: 50%;
+      
+      .slider-wrapper {
+        position: relative;
+        height: 40px;
+        background: $darkblue;
+        border-radius: 20px;
+
+        label {
+          div {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background: $primary-darkorange;
+            border-radius: 20px;
+            transition: $btn-hover;
+          }
+
+          .switch-overlay-left {
+            left: 0;
+            right: 45%;
+          }
+
+          .switch-overlay-right {
+            right: 0;
+            left: 55%;
+          }
+
+          a:nth-child(2) {
+            position: absolute;
+            left: 10px;
+            z-index: 10;
+          }
+
+          a:nth-child(3) {
+            position: absolute;
+            right: 20px;
+            z-index: 10;
+          }
+
+          input {
+            width: 0;
+            height: 0;
+          }
+        }
       }
     }
   }
