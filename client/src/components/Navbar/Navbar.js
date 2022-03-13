@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle, faCog } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import SignUpButton from '../SignUpButton/SignUpButton';
 import Auth from '../../utils/auth';
@@ -8,7 +8,8 @@ import Auth from '../../utils/auth';
 import './styles.scss';
 import './query.scss';
 
-const profile = <FontAwesomeIcon icon={faUserCircle} className='fa-lg' />
+const profile = <FontAwesomeIcon icon={faUserCircle} className='fa-md' />
+const settings = <FontAwesomeIcon icon={faCog} className='fa-md' />
 
 const Navbar = () => {
   const [moveSlider, setMoveSlider] = useState(false);
@@ -28,8 +29,8 @@ const Navbar = () => {
   window.onclick = (event) => {
     if (event.target !== document.getElementById('hamburger') && event.target !== document.getElementById('bar1') && event.target !== document.getElementById('bar2') && event.target !== document.getElementById('bar3')) {
       // setTimeout(() => {
-        document.getElementById('hamburger').classList.remove('active');
-        document.getElementById('navbar-right').classList.remove('active');
+      document.getElementById('hamburger').classList.remove('active');
+      document.getElementById('navbar-right').classList.remove('active');
       // }, 300);
     }
   }
@@ -71,9 +72,28 @@ const Navbar = () => {
 
         {/* NAV RIGHT */}
         <nav className='nav-right' id='navbar-right'>
-          <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links nav-profile'>
-            PROFILE
-          </Link>
+          <div className='mobile-wrapper'>
+            <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links nav-profile'>
+              <i>
+                {profile}
+              </i>
+              PROFILE
+            </Link>
+
+            <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links nav-settings'>
+              <i>
+                {settings}
+              </i>
+              SETTINGS
+            </Link>
+
+            <Link to={Auth.loggedIn() ? ('/me') : ('/login')} className='nav-item nav-links nav-extra'>
+              <i>
+                {profile}
+              </i>
+              PROFILE
+            </Link>
+          </div>
 
           {Auth.loggedIn() ? (
             <div className='login-btn mobile-login'>

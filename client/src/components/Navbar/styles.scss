@@ -7,9 +7,11 @@
   z-index: 2;
 
   .deco {
+    position: relative;
     background: $blue-gradient;
     height: 20px;
     width: 100%;
+    z-index: -2;
 
     .deco-inner {
       width: 100%;
@@ -25,7 +27,8 @@
     justify-content: space-between;
     align-items: center;
     background: $blue-gradient;
-    padding: 0.3rem 3rem;
+    height: 80px;
+    padding: 0 3rem;
 
     nav {
       a {
@@ -119,7 +122,19 @@
       display: flex;
       align-items: center;
       font-size: 24px;
-   
+
+      a {
+        i {
+          display: none;
+          margin-right: 8px;
+        }
+      }
+
+      .nav-settings,
+      .nav-extra {
+        display: none;
+      }
+
       .login-btn {
         margin-left: calc(2rem - 10px);
       }

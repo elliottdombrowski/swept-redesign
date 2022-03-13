@@ -10,6 +10,8 @@
       .nav-right {
         position: fixed;
         flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 3rem;
         top: 0;
         bottom: 0;
         right: 0;
@@ -26,6 +28,20 @@
         a:nth-child(1) {
           opacity: 1;
           padding-top: 101px;
+        }
+
+        .mobile-login {
+          margin: 0;
+        }
+
+        .mobile-wrapper {
+          a {
+            display: flex;
+            margin-bottom: 1rem;
+            i {
+              display: block;
+            }
+          }
         }
       }
 
