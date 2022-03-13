@@ -64,7 +64,9 @@ const Profile = () => {
             </label>
           </div>
 
-          {moveSlider ? <SavedSnow /> : <SavedSweepers />}
+          <section className='saved-component-wrapper'>
+            {moveSlider ? <SavedSnow /> : <SavedSweepers />}
+          </section>
         </section>
       </section>
     </main>
