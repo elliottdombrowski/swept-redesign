@@ -33,7 +33,7 @@ const SavedSnow = () => {
       <section className='recent-search-wrapper'>
         <div className='recent-search-header'>
           <h1 className='recent-searches'>Saved Snow Searches</h1>
-          <h1 className='recent-searches recent-searches-date'>| Dec 1st - April 1st |</h1>
+          {/* <h1 className='recent-searches recent-searches-date'>| Dec 1st - April 1st |</h1> */}
           {
             userSnow.map((singleSnow) => {
               return (
