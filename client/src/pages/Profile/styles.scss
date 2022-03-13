@@ -1,6 +1,48 @@
-@import '../../variables';
+@import "../../variables";
 
 .profile-wrapper {
-  width: 50%;
+  width: 80%;
+  height: calc(100vh - 100px);
+  padding-top: 5rem;
   margin: 0 auto;
+
+  .profile-inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 10px;
+    background: $blue-gradient;
+
+    .profile-user-info {
+      display: flex;
+      flex-direction: column;
+
+      .profile-header {
+        font-family: $logo-font;
+        font-size: 24px;
+        font-style: italic;
+
+        span {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 5px;
+            height: 3px;
+            background: $text;
+            transform: skew(-45deg);
+            transition: $btn-hover;
+          }
+        }
+      }
+      .profile-email {
+        font-family: $link-font;
+        font-weight: 600;
+      }
+    }
+  }
 }

@@ -20,14 +20,17 @@ const Profile = () => {
 
   return (
     <main className='profile-wrapper'>
-      <div className='profile-info-wrapper'>
-        <div className='profile-welcome-header'>
-          <h1 className='profile-header'>Welcome, </h1> <span className='profile-username'>{user.username}!</span>
+      <section className='profile-inner-wrapper'>
+        <div className='profile-user-info'>
+          <h1 className='profile-header'>Welcome, <span>{user.username}!</span></h1>
+          <p className='profile-email'>{user.email}</p>
         </div>
-        <p className='profile-email'>{user.email}</p>
-      </div>
-      <SavedSweepers />
-      <SavedSnow />
+
+        <section className='saved-wrapper'>
+          <SavedSweepers />
+          <SavedSnow />
+        </section>
+      </section>
     </main>
   );
 };
