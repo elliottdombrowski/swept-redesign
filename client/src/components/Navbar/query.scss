@@ -32,15 +32,18 @@
 
         .mobile-login {
           margin: 0;
+          min-width: 115px;
         }
 
         .mobile-wrapper {
+          min-width: 180px;
           display: flex;
           flex-direction: column;
           width: 90%;
           margin: 0 auto;
 
           .mobile-img-wrapper {
+            display: block;
             padding: 100px 0 1rem;
             img {
               border-radius: 10px;
@@ -50,7 +53,7 @@
           a {
             display: flex;
             margin: 0 0 1rem 4px;
-            
+
             i {
               display: block;
             }
