@@ -53,8 +53,8 @@ const Profile = () => {
               <div className={moveSlider ? 'switch-overlay-right' : 'switch-overlay-left'} id='switcher' />
             </label>
           </div>
-          {/* <SavedSweepers />
-          <SavedSnow /> */}
+
+          {moveSlider ? <SavedSnow /> : <SavedSweepers />}
         </section>
       </section>
     </main>
