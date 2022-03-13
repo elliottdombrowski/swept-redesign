@@ -6,8 +6,13 @@ import { QUERY_ME, QUERY_USER_SWEEPERS, QUERY_USER_SNOW } from '../../utils/quer
 import SavedSweepers from "./SavedSweepers"
 import SavedSnow from "./SavedSnow"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+
 import './styles.scss';
 import './query.scss';
+
+const saved = <FontAwesomeIcon icon={faBookmark} className='profile-bookmark fa-sm' />
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -38,6 +43,9 @@ const Profile = () => {
                 id='sweeper-link'
                 onClick={() => setMoveSlider(false)}
               >
+                <i>
+                  {saved}
+                </i>
                 SWEEPER
               </h2>
 
@@ -47,6 +55,9 @@ const Profile = () => {
                 id='snow-link'
                 onClick={() => setMoveSlider(true)}
               >
+                <i>
+                  {saved}
+                </i>
                 SNOW
               </h2>
               <div className={moveSlider ? 'switch-overlay-right' : 'switch-overlay-left'} id='switcher' />
