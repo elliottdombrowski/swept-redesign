@@ -63,6 +63,7 @@
     text-transform: uppercase;
     font-style: italic;
     letter-spacing: .5px;
+    padding-bottom: .5rem;
 
     h1 {
       position: relative;
@@ -86,9 +87,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: $darkblue;
+    padding: 5px 10px;
+    border-radius: 10px;
 
     &:not(:last-child) {
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
+      padding-bottom: .5rem;
+      // border-bottom: 1px solid $text;
+
+      &::after {
+        
+      }
     }
 
     .save-btn {
