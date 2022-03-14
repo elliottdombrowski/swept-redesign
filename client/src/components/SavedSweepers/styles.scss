@@ -1,9 +1,31 @@
 @import '../../variables';
 
 .recent-search-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  .confirm-delete-modal {
+    position: absolute;
+    background: red;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0px;
+    overflow: hidden;
+    text-align: center;
+
+    &.active {
+      height: 50px;
+    }
+
+    .confirm-btn-wrapper {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
   
   .recent-search-header {
     font-family: $link-font;
@@ -29,5 +51,9 @@
         transition: $btn-hover;
       }
     }
+  }
+
+  .sweeper-data-output {
+
   }
 }

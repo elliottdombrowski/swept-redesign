@@ -18,17 +18,24 @@ const SavedSweepers = () => {
   const userSweepers = data?.getUserSweepers || [];
   const [deleteSweeper, { data: deletedSweeperData, loading: deletedSweeperLoading }] = useMutation(MUTATION_DELETE_SWEEPER)
 
-  const handleDeleteSweeper = (id) => {
-    deleteSweeper({ variables: { id } })
-    window.location.reload('/sweeper')
-  }
-
   useEffect(() => {
     if (deletedSweeperData) {
       console.log('sweeper deleted')
     }
   }, [deletedSweeperData])
 
+  const openConfirmationModal = () => {
+    document.getElementById('delete-modal').classList.add('active');
+  };
+
+  const closeConfirmationModal = () => {
+    document.getElementById('delete-modal').classList.remove('active');
+  };
+
+  const handleDeleteSweeper = (id) => {
+    deleteSweeper({ variables: { id } })
+    window.location.reload('/sweeper')
+  };
 
   return (
     <section className='recent-search-wrapper'>
@@ -41,8 +48,23 @@ const SavedSweepers = () => {
           return (
             <div className='sweeper-data-output' key={singleSweeper._id}>
               <h2 className='sweeper-ward'>Ward {singleSweeper.ward}</h2>
-              <h4 className='sweeper-ward'> on dates: <br /> {singleSweeper.month_name} <br /> {singleSweeper.dates}</h4>
-              <button className='login-btn save-btn' onClick={() => handleDeleteSweeper(singleSweeper._id)}>Delete</button>
+              <h4 className='sweeper-ward'>{singleSweeper.month_name} <br /> {singleSweeper.dates}</h4>
+              <button className='login-btn save-btn' onClick={openConfirmationModal}>Delete</button>
+              <div className='confirm-delete-modal' id='delete-modal'>
+                <h1>are you sure you want to delete?</h1>
+                <span className='confirm-btn-wrapper'>
+                  <button
+                    onClick={closeConfirmationModal}
+                  >
+                    no
+                  </button>
+                  <button
+                    onClick={() => handleDeleteSweeper(singleSweeper._id)}
+                  >
+                    yes
+                  </button>
+                </span>
+              </div>
             </div>
           )
         })
