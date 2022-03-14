@@ -8,6 +8,9 @@
 
   .confirm-delete-modal {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: $darkblue;
     bottom: 0;
     left: 0;
@@ -16,6 +19,7 @@
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
+    font-size: 20px;
     transition: $btn-hover;
     z-index: 10;
     
@@ -28,7 +32,27 @@
     .confirm-btn-wrapper {
       display: flex;
       justify-content: space-around;
+      padding-top: 1rem;
       width: 100%;
+
+      button {
+        padding: 8px 22px;
+        transition: $btn-hover;
+
+        &:nth-child(1):hover {
+          opacity: 0.8;
+        } 
+
+        &:nth-child(2) {
+          background: $primary-darkorange;
+          border-radius: 10px;
+  
+          &:hover {
+            background: $primary-dark-hover;
+          }
+        }
+      }
+
     }
   }
   
@@ -59,6 +83,26 @@
   }
 
   .sweeper-data-output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .save-btn {
+      background: $primary-darkorange;
+      padding: 5px 10px;
+      height: fit-content;
+      border-radius: 10px;
+      font-family: $link-font;
+      font-size: 20px;
+      transition: $btn-hover;
+
+      &:hover {
+        background: $primary-dark-hover;
+      }
+    }
   }
 }

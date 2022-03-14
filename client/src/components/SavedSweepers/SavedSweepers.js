@@ -47,21 +47,24 @@ const SavedSweepers = () => {
         userSweepers.map((singleSweeper) => {
           return (
             <div className='sweeper-data-output' key={singleSweeper._id}>
-              <h2 className='sweeper-ward'>Ward {singleSweeper.ward}</h2>
-              <h4 className='sweeper-ward'>{singleSweeper.month_name} <br /> {singleSweeper.dates}</h4>
-              <button className='login-btn save-btn' onClick={openSweeperConfirmationModal}>Delete</button>
+              <span className='saved-info'>
+                <h2 className='sweeper-ward'>Ward {singleSweeper.ward}</h2>
+                <h4 className='sweeper-ward'>{singleSweeper.month_name} {singleSweeper.dates}</h4>
+              </span>
+
+              <button className='save-btn' onClick={openSweeperConfirmationModal}>Delete</button>
               <div className='confirm-delete-modal' id='delete-modal'>
-                <h1>are you sure you want to delete?</h1>
+                <h1>Are you sure you want to delete this search?</h1>
                 <span className='confirm-btn-wrapper'>
                   <button
                     onClick={closeSweeperConfirmationModal}
                   >
-                    no
+                    CANCEL
                   </button>
                   <button
                     onClick={() => handleDeleteSweeper(singleSweeper._id)}
                   >
-                    yes
+                    DELETE
                   </button>
                 </span>
               </div>
