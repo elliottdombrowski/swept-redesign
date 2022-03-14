@@ -17,17 +17,24 @@ const SavedSnow = () => {
   const [deleteSnow, { data: deletedSnowData, loading: deletedSnowLoading }] = useMutation(MUTATION_DELETE_SNOW)
   const userSnow = data?.getUserSnow || [];
 
-  const handleDeleteSnow = (id) => {
-    deleteSnow({ variables: { id } })
-    window.location.reload('/snow');
-  }
-
   useEffect(() => {
     if (deletedSnowData) {
       console.log('deleted save');
     }
-  }, [deletedSnowData])
+  }, [deletedSnowData]);
 
+  const openSnowConfirmationModal = () => {
+    document.getElementById('delete-modal').classList.add('active');
+  };
+  
+  const closeSnowConfirmationModal = () => {
+    document.getElementById('delete-modal').classList.remove('active');
+  };
+  
+  const handleDeleteSnow = (id) => {
+    deleteSnow({ variables: { id } })
+    window.location.reload('/snow');
+  };
   return (
     <>
       <section className='recent-search-wrapper'>
@@ -41,7 +48,22 @@ const SavedSnow = () => {
                   <span className='sweeper-date'>Parking Restricted On: <br /> {singleSnow.on_street}</span>
                   <span className='sweeper-ward'>From: <br /> {singleSnow.from_stree}</span>
                   <span className='sweeper-ward'>To: <br /> {singleSnow.to_street}</span>
-                  <button className='login-btn save-btn' onClick={() => handleDeleteSnow(singleSnow._id)}>Delete</button>
+                  <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
+                  <div className='confirm-delete-modal' id='delete-modal'>
+                    <h1>are you sure you want to delete?</h1>
+                    <span className='confirm-btn-wrapper'>
+                      <button
+                        onClick={closeSnowConfirmationModal}
+                      >
+                        no
+                      </button>
+                      <button
+                        onClick={() => handleDeleteSnow(singleSnow._id)}
+                      >
+                        yes
+                      </button>
+                    </span>
+                  </div>
                 </div>
               )
             })

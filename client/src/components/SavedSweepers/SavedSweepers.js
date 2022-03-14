@@ -22,13 +22,13 @@ const SavedSweepers = () => {
     if (deletedSweeperData) {
       console.log('sweeper deleted')
     }
-  }, [deletedSweeperData])
+  }, [deletedSweeperData]);
 
-  const openConfirmationModal = () => {
+  const openSweeperConfirmationModal = () => {
     document.getElementById('delete-modal').classList.add('active');
   };
 
-  const closeConfirmationModal = () => {
+  const closeSweeperConfirmationModal = () => {
     document.getElementById('delete-modal').classList.remove('active');
   };
 
@@ -49,12 +49,12 @@ const SavedSweepers = () => {
             <div className='sweeper-data-output' key={singleSweeper._id}>
               <h2 className='sweeper-ward'>Ward {singleSweeper.ward}</h2>
               <h4 className='sweeper-ward'>{singleSweeper.month_name} <br /> {singleSweeper.dates}</h4>
-              <button className='login-btn save-btn' onClick={openConfirmationModal}>Delete</button>
+              <button className='login-btn save-btn' onClick={openSweeperConfirmationModal}>Delete</button>
               <div className='confirm-delete-modal' id='delete-modal'>
                 <h1>are you sure you want to delete?</h1>
                 <span className='confirm-btn-wrapper'>
                   <button
-                    onClick={closeConfirmationModal}
+                    onClick={closeSweeperConfirmationModal}
                   >
                     no
                   </button>
