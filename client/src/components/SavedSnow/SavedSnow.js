@@ -59,17 +59,17 @@ const SavedSnow = () => {
 
                 <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
                 <div className='confirm-delete-modal' id='delete-modal'>
-                  <h1>are you sure you want to delete?</h1>
+                  <h1>are you sure you want to delete this search?</h1>
                   <span className='confirm-btn-wrapper'>
                     <button
                       onClick={closeSnowConfirmationModal}
                     >
-                      no
+                      CANCEL
                     </button>
                     <button
                       onClick={() => handleDeleteSnow(singleSnow._id)}
                     >
-                      yes
+                      DELETE
                     </button>
                   </span>
                 </div>

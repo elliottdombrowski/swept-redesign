@@ -48,7 +48,7 @@ const SavedSweepers = () => {
           return (
             <div className='sweeper-data-output' key={singleSweeper._id}>
               <span className='saved-info'>
-                <h2 className='sweeper-ward'>Ward {singleSweeper.ward}</h2>
+                <h2 className='sweeper-ward'>Ward {singleSweeper.ward} is being swept on:</h2>
                 <h4 className='sweeper-ward'>{singleSweeper.month_name} {singleSweeper.dates}</h4>
               </span>
 
