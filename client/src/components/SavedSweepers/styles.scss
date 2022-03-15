@@ -65,7 +65,7 @@
     letter-spacing: .5px;
     padding-bottom: .5rem;
 
-    h1 {
+    .recent-searches {
       position: relative;
       width: fit-content;
 
@@ -94,6 +94,11 @@
     &:not(:last-child) {
       margin-bottom: .5rem;
       padding-bottom: .5rem;
+    }
+
+    .snow-output-wrapper {
+      display: flex;
+      flex-direction: column;
     }
 
     .save-btn {

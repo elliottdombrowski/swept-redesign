@@ -26,11 +26,11 @@ const SavedSnow = () => {
   const openSnowConfirmationModal = () => {
     document.getElementById('delete-modal').classList.add('active');
   };
-  
+
   const closeSnowConfirmationModal = () => {
     document.getElementById('delete-modal').classList.remove('active');
   };
-  
+
   const handleDeleteSnow = (id) => {
     deleteSnow({ variables: { id } })
     window.location.reload('/snow');
@@ -41,34 +41,42 @@ const SavedSnow = () => {
         <div className='recent-search-header'>
           <h1 className='recent-searches'>Saved Snow Searches</h1>
           {/* <h1 className='recent-searches recent-searches-date'>| Dec 1st - April 1st |</h1> */}
-          {
-            userSnow.map((singleSnow) => {
-              return (
-                <div className='sweeper-data-output' key={singleSnow._id}>
-                  <span className='sweeper-date'>Parking Restricted On: <br /> {singleSnow.on_street}</span>
-                  <span className='sweeper-ward'>From: <br /> {singleSnow.from_stree}</span>
-                  <span className='sweeper-ward'>To: <br /> {singleSnow.to_street}</span>
-                  <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
-                  <div className='confirm-delete-modal' id='delete-modal'>
-                    <h1>are you sure you want to delete?</h1>
-                    <span className='confirm-btn-wrapper'>
-                      <button
-                        onClick={closeSnowConfirmationModal}
-                      >
-                        no
-                      </button>
-                      <button
-                        onClick={() => handleDeleteSnow(singleSnow._id)}
-                      >
-                        yes
-                      </button>
-                    </span>
-                  </div>
-                </div>
-              )
-            })
-          }
         </div>
+        {
+          userSnow.map((singleSnow) => {
+            return (
+              <div className='sweeper-data-output' key={singleSnow._id}>
+                <div className='snow-output-wrapper'>
+                  <span className='snow-restriction-wrapper'>
+                    <h1 className='snow-street'>Parking Restricted On {singleSnow.on_street}</h1>
+                  </span>
+
+                  <span className='snow-results-wrapper'>
+                    <h2 className='snow-from-street'>From {singleSnow.from_stree}</h2>
+                    <h2 className='snow-to-street'>To {singleSnow.to_street}</h2>
+                  </span>
+                </div>
+
+                <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
+                <div className='confirm-delete-modal' id='delete-modal'>
+                  <h1>are you sure you want to delete?</h1>
+                  <span className='confirm-btn-wrapper'>
+                    <button
+                      onClick={closeSnowConfirmationModal}
+                    >
+                      no
+                    </button>
+                    <button
+                      onClick={() => handleDeleteSnow(singleSnow._id)}
+                    >
+                      yes
+                    </button>
+                  </span>
+                </div>
+              </div>
+            )
+          })
+        }
       </section>
     </>
 
