@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     background: $darkblue;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     height: 0%;
@@ -94,11 +94,6 @@
     &:not(:last-child) {
       margin-bottom: .5rem;
       padding-bottom: .5rem;
-      // border-bottom: 1px solid $text;
-
-      &::after {
-        
-      }
     }
 
     .save-btn {
