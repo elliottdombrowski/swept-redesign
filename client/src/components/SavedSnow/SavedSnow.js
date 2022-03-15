@@ -47,14 +47,14 @@ const SavedSnow = () => {
             return (
               <div className='sweeper-data-output' key={singleSnow._id}>
                 <div className='snow-output-wrapper'>
-                  <span className='snow-restriction-wrapper'>
-                    <h1 className='snow-street'>Parking Restricted On {singleSnow.on_street}</h1>
-                  </span>
+                  <div className='snow-restriction-wrapper'>
+                    <h1 className='snow-street'>Parking Restricted On <span>{singleSnow.on_street}</span></h1>
+                  </div>
 
-                  <span className='snow-results-wrapper'>
-                    <h2 className='snow-from-street'>From {singleSnow.from_stree}</h2>
-                    <h2 className='snow-to-street'>To {singleSnow.to_street}</h2>
-                  </span>
+                  <div className='snow-results-wrapper'>
+                    <h2 className='snow-from-street'>From <span>{singleSnow.from_stree}</span></h2>
+                    <h2 className='snow-to-street'>To <span>{singleSnow.to_street}</span></h2>
+                  </div>
                 </div>
 
                 <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
