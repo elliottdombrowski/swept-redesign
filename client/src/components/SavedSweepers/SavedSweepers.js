@@ -3,8 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER_SWEEPERS, MUTATION_DELETE_SWEEPER } from '../../utils/queries';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 import './styles.scss';
 import './query.scss';
+
+const deleteSave = <FontAwesomeIcon icon={faTrash} className="delete-save" />
 
 const SavedSweepers = () => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
@@ -52,7 +57,7 @@ const SavedSweepers = () => {
                 <h2 className='sweeper-ward'>{singleSweeper.month_name.toLowerCase()} {singleSweeper.dates.split(',').join(', ')}</h2>
               </span>
 
-              <button className='save-btn' onClick={openSweeperConfirmationModal}>Delete</button>
+              <button className='save-btn' onClick={openSweeperConfirmationModal}>{deleteSave}</button>
               <div className='confirm-delete-modal' id='delete-modal'>
                 <h1>Are you sure you want to delete this search?</h1>
                 <span className='confirm-btn-wrapper'>
