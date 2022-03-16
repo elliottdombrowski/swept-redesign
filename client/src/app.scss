@@ -15,4 +15,14 @@
   h1, h2, h3, h4, h5, h6, p, button, label, a {
     color: $text;
   }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 10px;
+    background: $darkerblue;
+  }
 }
