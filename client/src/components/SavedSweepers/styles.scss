@@ -96,10 +96,6 @@
       padding-bottom: 0.5rem;
     }
 
-    .delete-save {
-      margin-top: 5px;
-    }
-
     //FORMATTING FOR SWEEPER SAVE PAGE
     .saved-info {
       h2 {
@@ -155,8 +151,18 @@
       font-size: 20px;
       transition: $btn-hover;
 
+      .delete-save {
+        margin-top: 5px;
+        transition: $btn-hover;
+      }
+
       &:hover {
+        transform: scale(1.1);
         background: $primary-dark-hover;
+
+        .delete-save {
+          opacity: 0.8;
+        }
       }
     }
   }
