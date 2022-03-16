@@ -48,12 +48,12 @@ const SavedSnow = () => {
               <div className='sweeper-data-output' key={singleSnow._id}>
                 <div className='snow-output-wrapper'>
                   <div className='snow-restriction-wrapper'>
-                    <h1 className='snow-street'>Parking Restricted On <span>{singleSnow.on_street}</span></h1>
+                    <h1 className='snow-street'>Parking restricted on: <span>{singleSnow.on_street.toLowerCase()}</span></h1>
                   </div>
 
                   <div className='snow-results-wrapper'>
-                    <h2 className='snow-from-street'>From <span>{singleSnow.from_stree}</span></h2>
-                    <h2 className='snow-to-street'>To <span>{singleSnow.to_street}</span></h2>
+                    <h2 className='snow-from-street'>From: <span>{singleSnow.from_stree.toLowerCase()}</span></h2>
+                    <h2 className='snow-to-street'>To: <span>{singleSnow.to_street.toLowerCase()}</span></h2>
                   </div>
                 </div>
 

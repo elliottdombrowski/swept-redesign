@@ -116,8 +116,17 @@
 
       // FORMATTING FOR SNOW SAVE PAGE
       div {
+        h1 {
+          font-size: 20px;
+        }
+
+        h2 {
+          font-size: 18px;
+        }
+
         span {
           position: relative;
+          text-transform: capitalize;
 
           &::after {
             content: "";
@@ -129,14 +138,6 @@
             background: $text;
             transform: skew(-45deg);
           }
-        }
-
-        &:nth-child(1) {
-          font-size: 20px;
-        }
-
-        &:nth-child(2) {
-          font-size: 18px;
         }
       }
     }
