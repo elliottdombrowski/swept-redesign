@@ -38,7 +38,6 @@ const Profile = () => {
             <label className='switch' id='link-switcher'>
               <input type='checkbox' />
               <h2
-                // to='/sweeper'
                 className='slider slider-one nav-item nav-links'
                 id='sweeper-link'
                 onClick={() => setMoveSlider(false)}
@@ -50,7 +49,6 @@ const Profile = () => {
               </h2>
 
               <h2
-                // to='/snow'
                 className='slider slider-two nav-item nav-links'
                 id='snow-link'
                 onClick={() => setMoveSlider(true)}

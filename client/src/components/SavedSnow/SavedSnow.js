@@ -42,41 +42,44 @@ const SavedSnow = () => {
           <h1 className='recent-searches'>Saved Snow Searches</h1>
           {/* <h1 className='recent-searches recent-searches-date'>| Dec 1st - April 1st |</h1> */}
         </div>
-        {
-          userSnow.map((singleSnow) => {
-            return (
-              <div className='sweeper-data-output' key={singleSnow._id}>
-                <div className='snow-output-wrapper'>
-                  <div className='snow-restriction-wrapper'>
-                    <h1 className='snow-street'>Parking restricted on: <span>{singleSnow.on_street.toLowerCase()}</span></h1>
+
+        <span className='search-list-wrapper'>
+          {
+            userSnow.map((singleSnow) => {
+              return (
+                <div className='sweeper-data-output' key={singleSnow._id}>
+                  <div className='snow-output-wrapper'>
+                    <div className='snow-restriction-wrapper'>
+                      <h1 className='snow-street'>Parking restricted on: <span>{singleSnow.on_street.toLowerCase()}</span></h1>
+                    </div>
+
+                    <div className='snow-results-wrapper'>
+                      <h2 className='snow-from-street'>From: <span>{singleSnow.from_stree.toLowerCase()}</span></h2>
+                      <h2 className='snow-to-street'>To: <span>{singleSnow.to_street.toLowerCase()}</span></h2>
+                    </div>
                   </div>
 
-                  <div className='snow-results-wrapper'>
-                    <h2 className='snow-from-street'>From: <span>{singleSnow.from_stree.toLowerCase()}</span></h2>
-                    <h2 className='snow-to-street'>To: <span>{singleSnow.to_street.toLowerCase()}</span></h2>
+                  <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
+                  <div className='confirm-delete-modal' id='delete-modal'>
+                    <h1>are you sure you want to delete this search?</h1>
+                    <span className='confirm-btn-wrapper'>
+                      <button
+                        onClick={closeSnowConfirmationModal}
+                      >
+                        CANCEL
+                      </button>
+                      <button
+                        onClick={() => handleDeleteSnow(singleSnow._id)}
+                      >
+                        DELETE
+                      </button>
+                    </span>
                   </div>
                 </div>
-
-                <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
-                <div className='confirm-delete-modal' id='delete-modal'>
-                  <h1>are you sure you want to delete this search?</h1>
-                  <span className='confirm-btn-wrapper'>
-                    <button
-                      onClick={closeSnowConfirmationModal}
-                    >
-                      CANCEL
-                    </button>
-                    <button
-                      onClick={() => handleDeleteSnow(singleSnow._id)}
-                    >
-                      DELETE
-                    </button>
-                  </span>
-                </div>
-              </div>
-            )
-          })
-        }
+              )
+            })
+          }
+        </span>
       </section>
     </>
 

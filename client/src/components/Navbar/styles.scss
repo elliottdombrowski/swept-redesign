@@ -35,6 +35,7 @@
         transition: $btn-hover;
 
         &:hover {
+          transform: scale(1.1);
           opacity: 0.8;
         }
       }
@@ -101,14 +102,18 @@
 
         a:nth-child(2) {
           position: absolute;
-          left: 10px;
+          left: 20px;
           z-index: 10;
         }
 
         a:nth-child(3) {
           position: absolute;
-          right: 20px;
+          right: 24px;
           z-index: 10;
+        }
+
+        a:hover {
+          transform: scale(1.1);
         }
 
         input {
@@ -139,8 +144,20 @@
         display: none;
       }
 
+      .nav-profile {
+        display: inline-block;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
       .login-btn {
         margin-left: calc(2rem - 10px);
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
 
