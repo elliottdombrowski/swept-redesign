@@ -29,14 +29,18 @@ const SavedSweepers = () => {
     }
   }, [deletedSweeperData]);
 
+  //OPEN SWEEPER DELETE SAVE CONFIRMATION MODAL
   const openSweeperConfirmationModal = () => {
     document.getElementById('delete-modal').classList.add('active');
   };
-
+  
+  //CLOSE SWEEPER DELETE SAVE CONFIRMATION MODAL
   const closeSweeperConfirmationModal = () => {
     document.getElementById('delete-modal').classList.remove('active');
   };
 
+  //DELETE SAVE BY ID
+  //TODO- REFACTOR TO AVOID FORCE RELOAD
   const handleDeleteSweeper = (id) => {
     deleteSweeper({ variables: { id } })
     window.location.reload('/sweeper')
