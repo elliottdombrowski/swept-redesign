@@ -90,6 +90,7 @@
     background: $darkblue-layer;
     padding: 5px 10px;
     border-radius: 10px;
+    font-family: $link-font;
 
     &:not(:last-child) {
       margin-bottom: .5rem;
@@ -99,12 +100,24 @@
     .snow-output-wrapper {
       display: flex;
       flex-direction: column;
-      font-family: $link-font;
       
+      //FORMATTING FOR SWEEPER SAVE PAGE
+      .saved-info {
+        h2 {
+          &:nth-child(1) {
+            font-size: 20px;
+          }
+  
+          &:nth-child(2) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      // FORMATTING FOR SNOW SAVE PAGE 
       div {
         span {
           position: relative;
-          // text-decoration: underline;
 
           &::after {
             content: "";

@@ -49,7 +49,7 @@ const SavedSweepers = () => {
             <div className='sweeper-data-output' key={singleSweeper._id}>
               <span className='saved-info'>
                 <h2 className='sweeper-ward'>Ward {singleSweeper.ward} is being swept on:</h2>
-                <h4 className='sweeper-ward'>{singleSweeper.month_name} {singleSweeper.dates}</h4>
+                <h2 className='sweeper-ward'>{singleSweeper.month_name} {singleSweeper.dates.split(',').join(', ')}</h2>
               </span>
 
               <button className='save-btn' onClick={openSweeperConfirmationModal}>Delete</button>
