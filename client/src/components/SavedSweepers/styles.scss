@@ -1,4 +1,4 @@
-@import '../../variables';
+@import "../../variables";
 
 .recent-search-wrapper {
   position: relative;
@@ -22,7 +22,7 @@
     font-size: 20px;
     transition: $btn-hover;
     z-index: 10;
-    
+
     &.active {
       border: 1px solid $text;
       padding: 10px;
@@ -41,29 +41,28 @@
 
         &:nth-child(1):hover {
           opacity: 0.8;
-        } 
+        }
 
         &:nth-child(2) {
           background: $primary-darkorange;
           border-radius: 10px;
-  
+
           &:hover {
             background: $primary-dark-hover;
           }
         }
       }
-
     }
   }
-  
+
   .recent-search-header {
     font-family: $link-font;
     font-weight: 600;
     font-size: 24px;
     text-transform: uppercase;
     font-style: italic;
-    letter-spacing: .5px;
-    padding-bottom: .5rem;
+    letter-spacing: 0.5px;
+    padding-bottom: 0.5rem;
 
     .recent-searches {
       position: relative;
@@ -93,28 +92,29 @@
     font-family: $link-font;
 
     &:not(:last-child) {
-      margin-bottom: .5rem;
-      padding-bottom: .5rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    //FORMATTING FOR SWEEPER SAVE PAGE
+    .saved-info {
+      h2 {
+        &:nth-child(1) {
+          font-size: 20px;
+        }
+
+        &:nth-child(2) {
+          text-transform: capitalize;
+          font-size: 18px;
+        }
+      }
     }
 
     .snow-output-wrapper {
       display: flex;
       flex-direction: column;
-      
-      //FORMATTING FOR SWEEPER SAVE PAGE
-      .saved-info {
-        h2 {
-          &:nth-child(1) {
-            font-size: 20px;
-          }
-  
-          &:nth-child(2) {
-            font-size: 18px;
-          }
-        }
-      }
 
-      // FORMATTING FOR SNOW SAVE PAGE 
+      // FORMATTING FOR SNOW SAVE PAGE
       div {
         span {
           position: relative;
