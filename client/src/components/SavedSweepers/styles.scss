@@ -6,6 +6,11 @@
   flex-direction: column;
   width: 100%;
 
+  .search-list-wrapper {
+    height: 250px;
+    overflow-y: scroll;
+  }
+
   .confirm-delete-modal {
     position: absolute;
     display: flex;
@@ -44,6 +49,7 @@
         transition: $btn-hover;
 
         &:nth-child(1):hover {
+          transform: scale(1.1);
           opacity: 0.8;
         }
 
