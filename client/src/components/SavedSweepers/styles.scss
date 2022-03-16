@@ -103,7 +103,19 @@
       
       div {
         span {
-          text-decoration: underline;
+          position: relative;
+          // text-decoration: underline;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 7px;
+            height: 1px;
+            background: $text;
+            transform: skew(-45deg);
+          }
         }
 
         &:nth-child(1) {
