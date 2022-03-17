@@ -11,10 +11,13 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.scss';
 import './query.scss';
+import { isConstValueNode } from 'graphql';
 
 const saved = <FontAwesomeIcon icon={faBookmark} className='profile-bookmark fa-sm' />
 
 const Profile = () => {
+  const [userId, setUserId] = useState(localStorage.getItem('uuid'));
+
   const { username: userParam } = useParams();
   const [moveSlider, setMoveSlider] = useState(false);
 
@@ -22,8 +25,19 @@ const Profile = () => {
     variables: { username: userParam },
   });
 
-  const user = data?.me || [];
+  const { loading: displaySavedSweeperLoading, data: displaySavedSweeperData } = useQuery(QUERY_USER_SWEEPERS, {
+    variables: { user: userId },
+    fetchPolicy: 'network-only'
+  });
 
+  const { loading: displaySavedSnowLoading, data: displaySavedSnowData } = useQuery(QUERY_USER_SNOW, {
+    variables: { user: userId },
+    fetchPolicy: 'network-only'
+  });
+
+  const user = data?.me || [];
+  const userSweeperSearches = displaySavedSweeperData?.getUserSweepers || [];
+  const userSnowSearches = displaySavedSnowData?.getUserSnow || [];
 
   return (
     <main className='profile-wrapper'>
@@ -31,6 +45,9 @@ const Profile = () => {
         <div className='profile-user-info'>
           <h1 className='profile-header'>Welcome, <span>{user.username}!</span></h1>
           <p className='profile-email'>{user.email}</p>
+          <br />
+          <p className='profile-email'>Saved Sweeper Searches: {userSweeperSearches.length}</p>
+          <p className='profile-email'>Saved Snow Searches: {userSnowSearches.length}</p>
         </div>
 
         <section className='saved-wrapper'>

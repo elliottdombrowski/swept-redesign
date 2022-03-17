@@ -13,6 +13,7 @@ const deleteSave = <FontAwesomeIcon icon={faTrash} className="delete-save" />
 
 const SavedSweepers = () => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
+  
   const [updatedSweepers, setUpdatedSweepers] = useState();
 
   const { loading, data } = useQuery(QUERY_USER_SWEEPERS, {
