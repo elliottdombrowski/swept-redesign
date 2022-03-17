@@ -67,6 +67,23 @@
     }
 
     &:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+
+      .sweeper-data-output {
+        display: flex;
+        justify-content: space-between;
+
+        .sweeper-info-wrapper {
+          display: flex;
+
+          .sweeper-search-date {
+            margin-left: 8px;
+            text-transform: capitalize;
+            color: $text;
+          }
+        }
+      }
     }
   }
 }

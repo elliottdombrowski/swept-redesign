@@ -242,8 +242,10 @@ const Sweeper = () => {
               wardInfo.map((info, index) => {
                 return (
                   <div className='sweeper-data-output' key={index}>
-                    <span className='sweeper-date'>{info.month_name} {info.dates}</span>
-                    <p className='sweeper-ward'>Ward {info.ward}</p>
+                    <div className='sweeper-info-wrapper'>
+                      <p className='sweeper-ward'>Ward {info.ward}: </p>
+                      <span className='sweeper-search-date'>{info.month_name.toLowerCase()} {info.dates.split(',').join(', ')}</span>
+                    </div>
                     <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
                       {saveIcon}
                       Save
