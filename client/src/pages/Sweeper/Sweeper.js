@@ -225,6 +225,11 @@ const Sweeper = () => {
               <p className='error-msg'>{err}</p>
             </form>
           </div>
+
+          {/* Mapbox */}
+          <div className='outer-map-container'>
+            <div ref={mapContainer} className="map-container" />
+          </div>
         </section>
         {loading ? (
           <Spinner
@@ -258,10 +263,6 @@ const Sweeper = () => {
             }
           </section>
         )}
-        {/* Mapbox */}
-        <div className='outer-map-container'>
-          <div ref={mapContainer} className="map-container" />
-        </div>
       </main >
     </AnimatePage>
   );

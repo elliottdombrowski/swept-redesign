@@ -160,6 +160,11 @@ const Snow = () => {
               <p className='error-msg'>{err}</p>
             </form>
           </div>
+
+          {/* Mapbox */}
+          <div className='outer-map-container'>
+            <div ref={mapContainer} className="map-container" />
+          </div>
         </section>
         {loading ? (
           <Spinner
@@ -190,7 +195,7 @@ const Snow = () => {
                       <i>
                         {saveIcon}
                       </i>
-                      SAVE  
+                      SAVE
                     </button>
                   </div>
                 )

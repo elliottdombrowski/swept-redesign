@@ -112,5 +112,20 @@
         }
       }
     }
+
+    .outer-map-container {
+      position: relative;
+      width: 90%;
+
+      .map-container {
+        position: absolute;
+        height: 300px;
+        width: 100%;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        box-shadow: 0 0 10px #00293c;
+        z-index: 100;
+      }
+    }
   }
 }
