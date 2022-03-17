@@ -247,8 +247,10 @@ const Sweeper = () => {
                       <span className='sweeper-search-date'>{info.month_name.toLowerCase()} {info.dates.split(',').join(', ')}</span>
                     </div>
                     <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
-                      {saveIcon}
-                      Save
+                      <i>
+                        {saveIcon}
+                      </i>
+                      SAVE
                     </button>
                   </div>
                 )

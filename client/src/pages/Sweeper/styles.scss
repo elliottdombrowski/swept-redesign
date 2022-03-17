@@ -73,6 +73,18 @@
       .sweeper-data-output {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 5px);
+        background: $darkblue-layer;
+        padding: 5px 10px;
+        border-radius: 10px;
+        font-family: $link-font;
+        font-size: 18px;
+    
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
 
         .sweeper-info-wrapper {
           display: flex;
@@ -81,6 +93,15 @@
             margin-left: 8px;
             text-transform: capitalize;
             color: $text;
+          }
+        }
+
+        button {
+          font-weight: 600;
+          font-size: 16px;
+
+          i {
+            margin-right: 8px;
           }
         }
       }
