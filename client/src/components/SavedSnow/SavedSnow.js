@@ -3,8 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER_SNOW, MUTATION_DELETE_SNOW } from '../../utils/queries';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 import '../SavedSweepers/styles.scss';
 import '../SavedSweepers/query.scss';
+
+const deleteSave = <FontAwesomeIcon icon={faTrash} className="delete-save" />
 
 const SavedSnow = () => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
@@ -59,7 +64,7 @@ const SavedSnow = () => {
                     </div>
                   </div>
 
-                  <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>Delete</button>
+                  <button className='login-btn save-btn' onClick={openSnowConfirmationModal}>{deleteSave}</button>
                   <div className='confirm-delete-modal' id='delete-modal'>
                     <h1>are you sure you want to delete this search?</h1>
                     <span className='confirm-btn-wrapper'>

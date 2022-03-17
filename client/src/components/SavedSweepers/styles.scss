@@ -71,7 +71,7 @@
     font-weight: 600;
     font-size: 24px;
     text-transform: uppercase;
-    font-style: italic;
+    // font-style: italic;
     letter-spacing: 0.5px;
     padding-bottom: 0.5rem;
 
@@ -79,17 +79,17 @@
       position: relative;
       width: fit-content;
 
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 5px;
-        height: 3px;
-        background: $text;
-        transform: skew(-45deg);
-        transition: $btn-hover;
-      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 5px;
+      //   height: 3px;
+      //   background: $text;
+      //   transform: skew(-45deg);
+      //   transition: $btn-hover;
+      // }
     }
   }
 
