@@ -220,7 +220,7 @@ const Sweeper = () => {
                 type='submit'
                 className='zipform-input zipform-btn'
               >
-                Find your schedule!
+                FIND YOUR SCHEDULE!
               </button>
               <p className='error-msg'>{err}</p>
             </form>
