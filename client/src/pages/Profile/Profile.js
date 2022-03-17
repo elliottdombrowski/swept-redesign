@@ -49,8 +49,21 @@ const Profile = () => {
           </div>
 
           <div className='profile-save-info profile-user-info'>
-            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches: <span>{userSweeperSearches.length}</span></p>
-            <p className='profile-saved-snow profile-save'>Saved Snow Searches: <span>{userSnowSearches.length}</span></p>
+            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches: 
+              <span
+                onClick={() => setMoveSlider(false)}
+              >
+                {userSweeperSearches.length}
+              </span>
+            </p>
+
+            <p className='profile-saved-snow profile-save'>Saved Snow Searches: 
+              <span
+                onClick={() => setMoveSlider(true)}
+              >
+                {userSnowSearches.length}
+              </span>
+            </p>
           </div>
         </div>
 
