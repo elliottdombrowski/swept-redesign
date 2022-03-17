@@ -44,13 +44,44 @@
             }
           }
         }
+
         .profile-email {
+          padding-top: .5rem;
           font-family: $link-font;
           font-weight: 600;
+          font-size: 18px;
         }
       }
 
       .profile-save-info {
+        padding-top: 2rem;
+        font-family: $link-font;
+        font-size: 18px;
+
+        p {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          &:nth-child(2) {
+            margin-top: 14px;
+          }
+          span {
+            position: absolute;
+            right: 4rem;
+            background: $primary-darkorange;
+            margin-left: 5px;
+            padding: 2px 12px;
+            border-radius: 10px;
+            font-size: 20px;
+            transition: $btn-hover;
+            cursor: pointer;
+            
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
       }
     }
 
