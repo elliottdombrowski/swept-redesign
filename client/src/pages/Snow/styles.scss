@@ -1,0 +1,36 @@
+@import "../../variables";
+
+.sweeper-wrapper {
+  .sweeper-data-output-wrapper {
+    .snow-data-output {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 5px);
+      background: $darkblue-layer;
+      padding: 5px 10px;
+      border-radius: 10px;
+      font-family: $link-font;
+      font-size: 18px;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      button {
+        display: flex;
+        transition: $btn-hover;
+
+        &:hover {
+          background: $primary-dark-hover;
+          transform: scale(1.1);
+        }
+        
+        i {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,13 @@ import { GET_SNOW } from '../../utils/queries';
 import { SAVE_SNOW } from '../../utils/mutations'
 import { useQuery, useMutation } from '@apollo/client';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+
 import AnimatePage from '../../AnimatePage';
+
+import './styles.scss';
+import './query.scss';
 
 // Import mapbox - must add exclamation point to exclude from transpilation and disable esline rule 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
@@ -14,6 +20,8 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 mapboxgl.accessToken = 'pk.eyJ1IjoianVzdGlua2VtcDEwIiwiYSI6ImNreWt2ejV4MjJ6eHYydnBtcmVnZmNzejYifQ.LwzcX603o5VIt1PDFd-9CA';
 
 const Snow = () => {
+  const saveIcon = <FontAwesomeIcon icon={faBookmark} className='save-icon' />
+
   const snowNumber = useRef('');
   const [snow, setSnow] = useState('');
   const [err, setErr] = useState('');
@@ -129,9 +137,7 @@ const Snow = () => {
   return (
     <AnimatePage>
       <main className='sweeper-wrapper'>
-        <header className='sweeper-header'>
-          <label className='sweeper-header-label'>Find your Snow Parking Restrictions!</label>
-        </header>
+        <label className='sweeper-header-label'>Find your Snow Parking Restrictions!</label>
 
         <section className='sweeper-form-wrapper'>
           <div className='zip-form-wrapper'>
@@ -170,25 +176,28 @@ const Snow = () => {
             {
               snowInfo.map((info, index) => {
                 return (
-                  <div className='sweeper-data-output' key={index}>
-                    <span className='sweeper-date'>Parking Restricted on: {info.on_street}</span>
-                    {/* INTENTIONAL TYPO- TO MATCH TYPO IN API  */}
-                    <span className='sweeper-ward'>From: {info.from_stree}</span>
-                    <span className='sweeper-ward'>To: {info.to_street}</span>
-                    {/* <h3>From: {info.from_stree}</h3>
+                  <div className='snow-data-output' key={index}>
+                    <div className='snow-data-wrapper'>
+                      <h1 className='sweeper-date'>Parking Restricted on: {info.on_street}</h1>
+                      {/* INTENTIONAL TYPO- TO MATCH TYPO IN API  */}
+                      <h2 className='sweeper-ward'>From: {info.from_stree}</h2>
+                      <h2 className='sweeper-ward'>To: {info.to_street}</h2>
+                      {/* <h3>From: {info.from_stree}</h3>
                   <h3>To: {info.to_street}</h3> */}
-                    <span className='sweeper-ward'>Restricted with {info.restrict_t}ES of snow.</span>
-                    <button className='login-btn save-btn' onClick={() => saveBtn(info)}>Save</button>
+                      <h2 className='sweeper-ward'>Restricted with {info.restrict_t.toLowerCase()}es of snow.</h2>
+                    </div>
+                    <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
+                      <i>
+                        {saveIcon}
+                      </i>
+                      SAVE  
+                    </button>
                   </div>
                 )
               })
             }
           </section>
         )}
-        {/* Mapbox */}
-        <div className='outer-map-container'>
-          <div ref={mapContainer} className="map-container" />
-        </div>
       </main >
     </AnimatePage>
   );
