@@ -1,17 +1,37 @@
-@import '../../variables';
+@import "../../variables";
 
 .sweeper-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
   padding-top: 5rem;
   height: calc(100vh - 101px);
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
-  
+
   .sweeper-header-label {
+    position: absolute;
     font-family: $logo-font;
     font-size: 36px;
     font-style: italic;
     font-weight: 600;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     color: $black !important;
+  }
+
+  section {
+    padding-top: 5rem;
+    width: 50%;
+
+    &:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      
+      .zip-form-wrapper {
+      }
+    }
+
+    &:nth-child(3) {
+    }
   }
 }
