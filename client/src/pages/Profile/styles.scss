@@ -14,41 +14,49 @@
     border-radius: 10px;
     background: $blue-gradient;
 
-    .profile-user-info {
+    .profile-left-wrapper {
       display: flex;
       flex-direction: column;
       width: 50%;
 
-      .profile-header {
-        font-family: $logo-font;
-        font-size: 24px;
-        font-style: italic;
+      .profile-user-info {
+        display: flex;
+        flex-direction: column;
 
-        span {
-          position: relative;
+        .profile-header {
+          font-family: $logo-font;
+          font-size: 24px;
+          font-style: italic;
 
-          &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 5px;
-            height: 3px;
-            background: $text;
-            transform: skew(-45deg);
-            transition: $btn-hover;
+          span {
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 5px;
+              height: 3px;
+              background: $text;
+              transform: skew(-45deg);
+              transition: $btn-hover;
+            }
           }
         }
+        .profile-email {
+          font-family: $link-font;
+          font-weight: 600;
+        }
       }
-      .profile-email {
-        font-family: $link-font;
-        font-weight: 600;
+
+      .profile-save-info {
       }
     }
 
     .saved-wrapper {
       width: 50%;
-      
+
       .slider-wrapper {
         position: relative;
         height: 40px;
@@ -56,7 +64,7 @@
         margin: 0 auto;
         background: $darkblue;
         border-radius: 20px;
-        
+
         label {
           cursor: pointer;
           div {
@@ -94,7 +102,6 @@
               opacity: 0.9;
             }
           }
-
 
           h2:nth-child(2) {
             position: absolute;

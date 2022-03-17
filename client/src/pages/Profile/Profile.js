@@ -42,12 +42,16 @@ const Profile = () => {
   return (
     <main className='profile-wrapper'>
       <section className='profile-inner-wrapper'>
-        <div className='profile-user-info'>
-          <h1 className='profile-header'>Welcome, <span>{user.username}!</span></h1>
-          <p className='profile-email'>{user.email}</p>
-          <br />
-          <p className='profile-email'>Saved Sweeper Searches: {userSweeperSearches.length}</p>
-          <p className='profile-email'>Saved Snow Searches: {userSnowSearches.length}</p>
+        <div className='profile-left-wrapper'>
+          <div className='profile-user-info'>
+            <h1 className='profile-header'>Welcome, <span>{user.username}!</span></h1>
+            <p className='profile-email'>{user.email}</p>
+          </div>
+
+          <div className='profile-save-info profile-user-info'>
+            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches: <span>{userSweeperSearches.length}</span></p>
+            <p className='profile-saved-snow profile-save'>Saved Snow Searches: <span>{userSnowSearches.length}</span></p>
+          </div>
         </div>
 
         <section className='saved-wrapper'>
