@@ -42,11 +42,15 @@ const Snow = () => {
     event.preventDefault();
 
     //TODO- REFACTOR TO CHECK RETURNED LENGTH, IF NO RESULTS, THROW ERROR
+
+    //IF STREET NAME CAN BE PARSED TO INT, OR NO VALUE, THROW ERROR
     if (parseInt(snowNumber.current.value) || !snowNumber.current.value) {
+      document.getElementById('error-msg').classList.add('active');
       setErr('Please enter a valid City of Chicago Street Name!');
       return false;
     }
-
+    
+    document.getElementById('error-msg').classList.remove('active');
     setSnow(snowNumber.current.value);
     setErr('');
     return true;
@@ -158,7 +162,7 @@ const Snow = () => {
               >
                 FIND YOUR SCHEDULE!
               </button>
-              <p className='error-msg'>{err}</p>
+              <p className='error-msg' id='error-msg'>{err}</p>
             </form>
           </div>
 

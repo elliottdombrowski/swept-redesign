@@ -3,7 +3,17 @@
 .sweeper-wrapper {
   .sweeper-form-wrapper {
     p {
-      margin-bottom: 1rem;
+      display: none;
+
+      &.active {
+        display: block;
+        width: 100%;
+        background: $blue-gradient;
+        border-radius: 10px;
+        padding: 8px 10px;
+        margin-bottom: 1rem;
+        font-family: $link-font;
+      }
     }
 
     .outer-map-container {
@@ -28,7 +38,7 @@
       justify-content: space-between;
       align-items: center;
       width: calc(100% - 5px);
-      background: $darkblue-layer;
+      background: $blue-gradient;
       padding: 5px 10px;
       border-radius: 10px;
       font-family: $link-font;
