@@ -58,9 +58,16 @@
           }
 
           p {
-            width: 100%;
-            color: $black !important;
-            font-family: $link-font;
+            display: none;
+
+            &.active {
+              display: block;
+              width: 100%;
+              background: $blue-gradient;
+              border-radius: 10px;
+              padding: 8px 10px;
+              font-family: $link-font;
+            }
           }
         }
       }

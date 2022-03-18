@@ -39,19 +39,26 @@ const Sweeper = () => {
   //WARD FORM SUBMIT
   const wardNumberSubmit = async (event, i) => {
     event.preventDefault();
+    //THROW ERROR IF SEARCH DOESN'T MATCH WARD NUMBER
     if (wardNumber.current.value.length == 2 && wardNumber.current.value > 50) {
+      document.getElementById('error-msg').classList.add('active');
       setErr('Please enter a valid Chicago Zipcode or Ward Number (1-50)');
       return false;
     }
+    //THROW ERROR IF SEARCH DOESN'T MATCH ZIPCODE
     if (wardNumber.current.value.length == 3 || wardNumber.current.value.length == 4 || wardNumber.current.value.length > 5) {
+      document.getElementById('error-msg').classList.add('active');
       setErr('Please enter a valid Chicago Zipcode or Ward Number (1-50)');
       return false;
     }
+    //THROW ERROR IF NO SEARCH VALUE
     if (!parseInt(wardNumber.current.value)) {
+      document.getElementById('error-msg').classList.add('active');
       setErr('Please enter a valid Chicago Zipcode or Ward Number (1-50)');
       return false;
     }
 
+    document.getElementById('error-msg').classList.remove('active');
     setWard(wardNumber.current.value);
     setErr('');
     return true;
@@ -222,7 +229,7 @@ const Sweeper = () => {
               >
                 FIND YOUR SCHEDULE!
               </button>
-              <p className='error-msg'>{err}</p>
+              <p className='error-msg' id='error-msg'>{err}</p>
             </form>
           </div>
 
