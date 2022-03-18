@@ -41,7 +41,8 @@ const Snow = () => {
   const snowNumberSubmit = async (event) => {
     event.preventDefault();
 
-    if (parseInt(snowNumber.current.value)) {
+    //TODO- REFACTOR TO CHECK RETURNED LENGTH, IF NO RESULTS, THROW ERROR
+    if (parseInt(snowNumber.current.value) || !snowNumber.current.value) {
       setErr('Please enter a valid City of Chicago Street Name!');
       return false;
     }
@@ -155,7 +156,7 @@ const Snow = () => {
                 type='submit'
                 className='zipform-input zipform-btn'
               >
-                Find your schedule!
+                FIND YOUR SCHEDULE!
               </button>
               <p className='error-msg'>{err}</p>
             </form>
