@@ -95,7 +95,18 @@
           padding: 20px;
           border-radius: 10px;
           font-family: $link-font;
-          font-size: 18px;
+          text-align: center;
+
+          span {
+            h1 {
+              font-size: 22px;
+              letter-spacing: .3px;
+            }
+            
+            h2 {
+              font-size: 18px;
+            }
+          }
         }
 
         .sweeper-data-output {

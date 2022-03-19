@@ -178,7 +178,14 @@ const Snow = () => {
             />
           ) : (
             <section className='sweeper-data-output-wrapper'>
-              <span className={!snowInfo.length ? 'form-warning' : ''}>{!snowInfo.length ? 'No results yet!' : ''}</span>
+              <div className={!snowInfo.length ? 'form-warning' : ''}>
+                  {!snowInfo.length ? 
+                    (
+                      <span><h1>No results yet!</h1><h2>Snow Plows operate December 1st - March 31st, or as needed.</h2></span>
+                    )
+                    : ''
+                  }
+                </div>
               {
                 snowInfo.map((info, index) => {
                   return (
