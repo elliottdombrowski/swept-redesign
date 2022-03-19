@@ -2,9 +2,6 @@
 
 .sweeper-wrapper {
   position: relative;
-  // display: flex;
-  // flex-direction: row;
-  // flex-wrap: wrap;
   padding-top: 5rem;
   height: calc(100vh - 101px);
   width: 80%;
@@ -12,7 +9,7 @@
 
   .sweeper-header-label {
     position: absolute;
-    background: $blue-gradient;
+    background: $darkblue;
     padding: 10px;
     border-radius: 10px;
     left: 0;
@@ -22,7 +19,6 @@
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.5px;
-    // color: $black !important;
   }
 
   .grid-wrapper {
@@ -34,11 +30,15 @@
     column-gap: 2rem;
 
     section {
-      padding-top: 5rem;
+      margin-top: 5rem;
       width: 100%;
 
       &.sweeper-form-wrapper {
         grid-area: form;
+        background: $darkblue;
+        padding: 20px;
+        margin-bottom: 1rem;
+        border-radius: 10px;  
 
         .zip-form-wrapper {
           form {
@@ -55,7 +55,7 @@
 
             button {
               width: 100%;
-              margin: 1rem 0;
+              margin-top: 1rem;
               padding: 10px 0;
               background: $primary-darkorange;
               border-radius: 10px;
@@ -66,7 +66,7 @@
 
               &:hover {
                 background: $primary-dark-hover;
-                transform: scale(1.1);
+                transform: scale(1.05);
               }
             }
 
@@ -76,10 +76,10 @@
               &.active {
                 display: block;
                 width: 100%;
-                background: $blue-gradient;
+                background: $darkblue-layer;
                 border-radius: 10px;
                 padding: 8px 10px;
-                margin-bottom: 1rem;
+                margin: 1rem 0 0;
                 font-family: $link-font;
               }
             }
@@ -95,7 +95,7 @@
           justify-content: space-between;
           align-items: center;
           width: calc(100% - 5px);
-          background: $blue-gradient;
+          background: $darkblue;
           padding: 15px 20px;
           border-radius: 10px;
           font-family: $link-font;
