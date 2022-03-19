@@ -168,24 +168,28 @@ const Snow = () => {
             </div>
           </section>
           {loading ? (
-            <Spinner
-              color='blue.500'
-              emptyColor='gray.200'
-              size='xl'
-              thickness='5px'
-              speed='0.6s'
-              className='loading-spinner'
-            />
+            <section className='sweeper-data-output-wrapper'>
+              <div className='spinner-wrapper'>
+                <Spinner
+                  color='blue.500'
+                  emptyColor='gray.200'
+                  size='xl'
+                  thickness='5px'
+                  speed='0.6s'
+                  className='loading-spinner'
+                />
+              </div>
+            </section>
           ) : (
             <section className='sweeper-data-output-wrapper'>
               <div className={!snowInfo.length ? 'form-warning' : ''}>
-                  {!snowInfo.length ? 
-                    (
-                      <span><h1>No results yet!</h1><h2>Snow Plows operate December 1st - March 31st, or as needed.</h2></span>
-                    )
-                    : ''
-                  }
-                </div>
+                {!snowInfo.length ?
+                  (
+                    <span><h1>No results yet!</h1><h2>Snow Plows operate December 1st - March 31st, or as needed.</h2></span>
+                  )
+                  : ''
+                }
+              </div>
               {
                 snowInfo.map((info, index) => {
                   return (

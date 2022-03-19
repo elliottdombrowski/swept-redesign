@@ -90,6 +90,12 @@
       &.sweeper-data-output-wrapper {
         grid-area: result;
 
+        .spinner-wrapper {
+          display: flex;
+          justify-content: center;
+          margin-top: 5rem;
+        }
+
         .form-warning {
           background: $darkblue;
           padding: 20px;

@@ -235,14 +235,18 @@ const Sweeper = () => {
             </div>
           </section>
           {loading ? (
-            <Spinner
-              color='blue.500'
-              emptyColor='gray.200'
-              size='xl'
-              thickness='5px'
-              speed='0.6s'
-              className='loading-spinner'
-            />
+            <section className='sweeper-data-output-wrapper'>
+              <div className='spinner-wrapper'>
+                <Spinner
+                  color='blue.500'
+                  emptyColor='gray.200'
+                  size='xl'
+                  thickness='5px'
+                  speed='0.6s'
+                  className='loading-spinner'
+                />
+              </div>
+            </section>
           ) : (
             <section className='sweeper-data-output-wrapper'>
                 <div className={!wardInfo.length ? 'form-warning' : ''}>
