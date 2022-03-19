@@ -9,22 +9,10 @@
     label {
       position: relative;
       font-family: $logo-font;
-      font-style: italic;
       font-size: 24px;
       font-weight: 600;
       letter-spacing: initial;
       width: 90px;
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: $text;
-        transform: skew(-45deg);
-      }
     }
   }
 
@@ -34,6 +22,10 @@
 
     &:not(:nth-child(2)) {
       margin-top: 1rem;
+    }
+
+    &:nth-child(3) {
+      margin-top: .5rem;
     }
   }
 
