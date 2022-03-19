@@ -245,7 +245,7 @@ const Sweeper = () => {
             />
           ) : (
             <section className='sweeper-data-output-wrapper'>
-              <span className={!wardInfo.length ? 'form-warning' : ''}>{!wardInfo.length ? 'No results yet! Street Sweepers operate from April 1 - November 30.' : ''}</span>
+              <h1 className={!wardInfo.length ? 'form-warning' : ''}>{!wardInfo.length ? 'No results yet! Street Sweepers operate from April 1 - November 30.' : ''}</h1>
               {
                 wardInfo.map((info, index) => {
                   return (

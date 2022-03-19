@@ -27,7 +27,7 @@
     grid-template-areas:
      'form result'
      'map result';
-    column-gap: 2rem;
+    column-gap: 1.5rem;
 
     section {
       margin-top: 5rem;
@@ -90,6 +90,14 @@
       &.sweeper-data-output-wrapper {
         grid-area: result;
 
+        .form-warning {
+          background: $darkblue;
+          padding: 20px;
+          border-radius: 10px;
+          font-family: $link-font;
+          font-size: 18px;
+        }
+
         .sweeper-data-output {
           display: flex;
           justify-content: space-between;
@@ -138,7 +146,6 @@
       width: 100%;
 
       .map-container {
-        // width: 90%;
         height: 300px;
         border-radius: 10px;
         border-top: 2px solid white;
