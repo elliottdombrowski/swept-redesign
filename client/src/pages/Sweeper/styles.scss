@@ -22,11 +22,10 @@
 
   .grid-wrapper {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
      'form result'
      'map result';
-    grid-template-columns: repeat(2, 1fr);
-    // gap: 10px;
     column-gap: 2rem;
 
     section {
