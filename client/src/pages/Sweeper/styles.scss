@@ -22,13 +22,18 @@
 
   .grid-wrapper {
     display: grid;
-    grid-template-columns: repeat(2 1fr);
+    grid-template-areas:
+     'form result'
+     'map result';
+    grid-template-columns: repeat(2, 1fr);
 
     section {
       padding-top: 5rem;
-      width: 50%;
+      width: 100%;
 
       &.sweeper-form-wrapper {
+        grid-area: form;
+
         .zip-form-wrapper {
           form {
             display: flex;
@@ -77,6 +82,8 @@
       }
 
       &.sweeper-data-output-wrapper {
+        grid-area: result;
+
         .sweeper-data-output {
           display: flex;
           justify-content: space-between;
@@ -121,7 +128,8 @@
     }
 
     .outer-map-container {
-      width: 50%;
+      grid-area: map;
+      width: 100%;
 
       .map-container {
         width: 90%;
