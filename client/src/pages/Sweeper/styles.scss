@@ -12,12 +12,17 @@
 
   .sweeper-header-label {
     position: absolute;
+    background: $blue-gradient;
+    padding: 10px;
+    border-radius: 10px;
+    left: 0;
+    right: 0;
     font-family: $logo-font;
     font-size: 32px;
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: $black !important;
+    // color: $black !important;
   }
 
   .grid-wrapper {

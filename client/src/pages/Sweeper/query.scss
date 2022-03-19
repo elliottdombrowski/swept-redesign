@@ -35,3 +35,11 @@
     }
   }
 }
+
+@media all and (max-width: 735px) {
+  .sweeper-wrapper {
+    .sweeper-form-wrapper {
+      margin-top: 3.5rem;
+    }
+  }
+}

@@ -49,7 +49,7 @@ const Snow = () => {
       setErr('Please enter a valid City of Chicago Street Name!');
       return false;
     }
-    
+
     document.getElementById('error-msg').classList.remove('active');
     setSnow(snowNumber.current.value);
     setErr('');
@@ -144,70 +144,71 @@ const Snow = () => {
       <main className='sweeper-wrapper'>
         <label className='sweeper-header-label'>Find your Snow Parking Restrictions!</label>
 
-        <section className='sweeper-form-wrapper'>
-          <div className='zip-form-wrapper'>
-            <form
-              onSubmit={(event) => snowNumberSubmit(event)}
-              className='zipform-wrapper'
-            >
-              <input
-                ref={snowNumber}
-                name='wardNumber'
-                placeholder='Enter your Street Name!'
-                className='zipform-input'
-              />
-              <button
-                type='submit'
-                className='zipform-input zipform-btn'
+        <div className='grid-wrapper'>
+          <section className='sweeper-form-wrapper'>
+            <div className='zip-form-wrapper'>
+              <form
+                onSubmit={(event) => snowNumberSubmit(event)}
+                className='zipform-wrapper'
               >
-                FIND YOUR SCHEDULE!
-              </button>
-              <p className='error-msg' id='error-msg'>{err}</p>
-            </form>
-          </div>
-
+                <input
+                  ref={snowNumber}
+                  name='wardNumber'
+                  placeholder='Enter your Street Name!'
+                  className='zipform-input'
+                />
+                <button
+                  type='submit'
+                  className='zipform-input zipform-btn'
+                >
+                  FIND YOUR SCHEDULE!
+                </button>
+                <p className='error-msg' id='error-msg'>{err}</p>
+              </form>
+            </div>
+          </section>
+          {loading ? (
+            <Spinner
+              color='blue.500'
+              emptyColor='gray.200'
+              size='xl'
+              thickness='5px'
+              speed='0.6s'
+              className='loading-spinner'
+            />
+          ) : (
+            <section className='sweeper-data-output-wrapper'>
+              <span className={!snowInfo.length ? 'form-warning' : ''}>{!snowInfo.length ? 'No results yet!' : ''}</span>
+              {
+                snowInfo.map((info, index) => {
+                  return (
+                    <div className='snow-data-output' key={index}>
+                      <div className='snow-data-wrapper'>
+                        <h1 className='sweeper-date'>Parking Restricted on: {info.on_street}</h1>
+                        {/* INTENTIONAL TYPO- TO MATCH TYPO IN API  */}
+                        <h2 className='sweeper-ward'>From: {info.from_stree}</h2>
+                        <h2 className='sweeper-ward'>To: {info.to_street}</h2>
+                        {/* <h3>From: {info.from_stree}</h3>
+                  <h3>To: {info.to_street}</h3> */}
+                        <h2 className='sweeper-ward'>Restricted with {info.restrict_t.toLowerCase()}es of snow.</h2>
+                      </div>
+                      <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
+                        <i>
+                          {saveIcon}
+                        </i>
+                        SAVE
+                      </button>
+                    </div>
+                  )
+                })
+              }
+            </section>
+          )}
           {/* Mapbox */}
           <div className='outer-map-container'>
             <div ref={mapContainer} className="map-container" />
           </div>
-        </section>
-        {loading ? (
-          <Spinner
-            color='blue.500'
-            emptyColor='gray.200'
-            size='xl'
-            thickness='5px'
-            speed='0.6s'
-            className='loading-spinner'
-          />
-        ) : (
-          <section className='sweeper-data-output-wrapper'>
-            <span className={!snowInfo.length ? 'form-warning' : ''}>{!snowInfo.length ? 'No results yet!' : ''}</span>
-            {
-              snowInfo.map((info, index) => {
-                return (
-                  <div className='snow-data-output' key={index}>
-                    <div className='snow-data-wrapper'>
-                      <h1 className='sweeper-date'>Parking Restricted on: {info.on_street}</h1>
-                      {/* INTENTIONAL TYPO- TO MATCH TYPO IN API  */}
-                      <h2 className='sweeper-ward'>From: {info.from_stree}</h2>
-                      <h2 className='sweeper-ward'>To: {info.to_street}</h2>
-                      {/* <h3>From: {info.from_stree}</h3>
-                  <h3>To: {info.to_street}</h3> */}
-                      <h2 className='sweeper-ward'>Restricted with {info.restrict_t.toLowerCase()}es of snow.</h2>
-                    </div>
-                    <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
-                      <i>
-                        {saveIcon}
-                      </i>
-                      SAVE
-                    </button>
-                  </div>
-                )
-              })
-            }
-          </section>
-        )}
+        </div>
       </main >
     </AnimatePage>
   );
