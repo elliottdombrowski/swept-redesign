@@ -2,7 +2,7 @@
 
 @media all and (max-width: 768px) {
   .sweeper-wrapper {
-    grid-template-columns: repeat(1, 1fr);
+    flex-direction: column;
     min-height: calc(100vh - 101px);
     height: 100%;
     padding-bottom: 3rem;

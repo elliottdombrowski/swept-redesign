@@ -211,65 +211,67 @@ const Sweeper = () => {
       <main className='sweeper-wrapper'>
         <label className='sweeper-header-label'>Find your Street Sweeper Schedule!</label>
 
-        <section className='sweeper-form-wrapper'>
-          <div className='zip-form-wrapper'>
-            <form
-              onSubmit={(event) => wardNumberSubmit(event)}
-              className='zipform-wrapper'
-            >
-              <input
-                ref={wardNumber}
-                name='wardNumber'
-                placeholder='Enter your Ward Number or Zipcode!'
-                className='zipform-input'
-              />
-              <button
-                type='submit'
-                className='zipform-input zipform-btn'
+        <div className='grid-wrapper'>
+          <section className='sweeper-form-wrapper'>
+            <div className='zip-form-wrapper'>
+              <form
+                onSubmit={(event) => wardNumberSubmit(event)}
+                className='zipform-wrapper'
               >
-                FIND YOUR SCHEDULE!
-              </button>
-              <p className='error-msg' id='error-msg'>{err}</p>
-            </form>
-          </div>
+                <input
+                  ref={wardNumber}
+                  name='wardNumber'
+                  placeholder='Enter your Ward Number or Zipcode!'
+                  className='zipform-input'
+                />
+                <button
+                  type='submit'
+                  className='zipform-input zipform-btn'
+                >
+                  FIND YOUR SCHEDULE!
+                </button>
+                <p className='error-msg' id='error-msg'>{err}</p>
+              </form>
+            </div>
+          </section>
+          {loading ? (
+            <Spinner
+              color='blue.500'
+              emptyColor='gray.200'
+              size='xl'
+              thickness='5px'
+              speed='0.6s'
+              className='loading-spinner'
+            />
+          ) : (
+            <section className='sweeper-data-output-wrapper'>
+              <span className={!wardInfo.length ? 'form-warning' : ''}>{!wardInfo.length ? 'No results yet! Street Sweepers operate from April 1 - November 30.' : ''}</span>
+              {
+                wardInfo.map((info, index) => {
+                  return (
+                    <div className='sweeper-data-output' key={index}>
+                      <div className='sweeper-info-wrapper'>
+                        <p className='sweeper-ward'>Ward {info.ward}: </p>
+                        <span className='sweeper-search-date'>{info.month_name.toLowerCase()} {info.dates.split(',').join(', ')}</span>
+                      </div>
+                      <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
+                        <i>
+                          {saveIcon}
+                        </i>
+                        SAVE
+                      </button>
+                    </div>
+                  )
+                })
+              }
+            </section>
+          )}
 
           {/* Mapbox */}
           <div className='outer-map-container'>
             <div ref={mapContainer} className="map-container" />
           </div>
-        </section>
-        {loading ? (
-          <Spinner
-            color='blue.500'
-            emptyColor='gray.200'
-            size='xl'
-            thickness='5px'
-            speed='0.6s'
-            className='loading-spinner'
-          />
-        ) : (
-          <section className='sweeper-data-output-wrapper'>
-            <span className={!wardInfo.length ? 'form-warning' : ''}>{!wardInfo.length ? 'No results yet! Street Sweepers operate from April 1 - November 30.' : ''}</span>
-            {
-              wardInfo.map((info, index) => {
-                return (
-                  <div className='sweeper-data-output' key={index}>
-                    <div className='sweeper-info-wrapper'>
-                      <p className='sweeper-ward'>Ward {info.ward}: </p>
-                      <span className='sweeper-search-date'>{info.month_name.toLowerCase()} {info.dates.split(',').join(', ')}</span>
-                    </div>
-                    <button className='login-btn save-btn' onClick={() => saveBtn(info)}>
-                      <i>
-                        {saveIcon}
-                      </i>
-                      SAVE
-                    </button>
-                  </div>
-                )
-              })
-            }
-          </section>
-        )}
+        </div>
       </main >
     </AnimatePage>
   );
