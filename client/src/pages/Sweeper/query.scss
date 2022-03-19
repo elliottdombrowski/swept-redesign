@@ -3,8 +3,30 @@
 @media all and (max-width: 768px) {
   .sweeper-wrapper {
     flex-direction: column;
+    min-height: calc(100vh - 101px);
+    height: 100%;
+    padding-bottom: 3rem;
+
     section {
       width: 100%;
+      
+      &:nth-child(2) {
+        .zip-form-wrapper {
+          form {
+            width: 100%;
+          }
+        }
+
+        .outer-map-container {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(3) {
+        padding-top: 1rem;
+        margin-top: 300px;
+
+      }
     }
   }
 }
