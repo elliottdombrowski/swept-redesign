@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ME, QUERY_USER_SWEEPERS, QUERY_USER_SNOW } from '../../utils/queries';
 import SavedSweepers from '../../components/SavedSweepers/SavedSweepers';
 import SavedSnow from '../../components/SavedSnow/SavedSnow';
+import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faSun, faMoon, faLock } from '@fortawesome/free-solid-svg-icons';
@@ -22,8 +23,6 @@ const Profile = ({setTheme}) => {
 
   const { username: userParam } = useParams();
   const [moveSlider, setMoveSlider] = useState(false);
-
-  // console.log('init profile theme: ', theme);
 
   const { loading, data } = useQuery(QUERY_ME, {
     variables: { username: userParam },
@@ -79,7 +78,9 @@ const Profile = ({setTheme}) => {
               Change Password
             </h2>
 
-            <div className='switch'>
+            <ThemeToggle setTheme={setTheme} />
+
+            {/* <div className='switch'>
               <i>
                 {sun}
               </i>
@@ -100,7 +101,7 @@ const Profile = ({setTheme}) => {
                 {moon}
               </i>
 
-            </div>
+            </div> */}
           </div>
         </div>
 
