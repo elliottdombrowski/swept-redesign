@@ -139,13 +139,18 @@ const Snow = () => {
     });
   });
 
+  const mapWidth = {
+    full: { width: '205%'},
+    half: { width: '100%'}
+  };
+
   return (
     <AnimatePage>
       <main className='sweeper-wrapper'>
         <label className='sweeper-header-label'>Find your Snow Parking Restrictions!</label>
 
         <div className='grid-wrapper'>
-          <section className='sweeper-form-wrapper'>
+          <section className='sweeper-form-wrapper snow-form-wrapper'>
             <div className='zip-form-wrapper'>
               <form
                 onSubmit={(event) => snowNumberSubmit(event)}
@@ -216,7 +221,7 @@ const Snow = () => {
             </section>
           )}
           {/* Mapbox */}
-          <div className='outer-map-container'>
+          <div className='outer-map-container' style={!snowInfo.length ? mapWidth.full : mapWidth.half}>
             <div ref={mapContainer} className="map-container" />
           </div>
         </div>

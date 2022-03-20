@@ -208,7 +208,7 @@ const Sweeper = () => {
   const mapWidth = {
     full: { width: '205%'},
     half: { width: '100%'}
-  }
+  };
 
   return (
     <AnimatePage>

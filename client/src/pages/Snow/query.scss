@@ -1,0 +1,11 @@
+@import '../../variables';
+
+@media all and (max-width: 760px) {
+  .sweeper-wrapper {
+    .grid-wrapper {
+      .snow-form-wrapper {
+        margin-top: 8rem;
+      }
+    }
+  }
+}
