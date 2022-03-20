@@ -1,10 +1,60 @@
 @import '../../variables';
 
-@media all and (max-width: 760px) {
-  .sweeper-wrapper {
-    .grid-wrapper {
-      .snow-form-wrapper {
-        margin-top: 8rem;
+@media all and (max-width: 674px) {
+  .snow-wrapper {
+    .snow-header-label {
+      font-size: 26px;
+    }
+
+    section {
+      &.snow-form-wrapper {
+        margin-top: 4.5rem;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 631px) {
+  .snow-wrapper {
+    .snow-header-label {
+      font-size: 24px;
+    }
+  }
+}
+
+@media all and (max-width: 553px) {
+  .snow-wrapper {
+    .snow-header-label {
+      font-size: 22px;
+    }
+  }
+}
+
+@media all and (max-width: 513px) {
+  .snow-wrapper {
+    section {
+      &.snow-form-wrapper {
+        margin-top: 6.5rem;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .snow-wrapper {
+    section {
+      &.snow-form-wrapper {
+        margin-top: 4.5rem;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 459px) {
+  .snow-wrapper {
+    section {
+      &.snow-form-wrapper {
+        margin-top: 6.5rem;
       }
     }
   }

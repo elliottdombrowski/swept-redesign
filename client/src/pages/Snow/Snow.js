@@ -156,9 +156,9 @@ const Snow = ({themeStyles, theme}) => {
 
   return (
     <AnimatePage>
-      <main className='sweeper-wrapper'>
+      <main className='sweeper-wrapper snow-wrapper'>
         <label 
-          className='sweeper-header-label'
+          className='sweeper-header-label snow-header-label'
           style={!theme? themeStyles.containerLight : themeStyles.containerDark}
         >
           Find your Snow Parking Restrictions!
