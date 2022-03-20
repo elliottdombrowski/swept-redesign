@@ -1,5 +1,47 @@
 @import '../../variables';
 
+@media all and (max-width: 1035px) {
+  .profile-wrapper {
+    .profile-inner-wrapper {
+      .profile-left-wrapper {
+        .profile-user-info {
+          .profile-header {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 959px) {
+  .profile-wrapper {
+    .profile-inner-wrapper {
+      .profile-left-wrapper {
+        .profile-user-info {
+          .profile-header {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 884px) {
+  .profile-wrapper {
+    .profile-inner-wrapper {
+      .profile-left-wrapper {
+        .profile-user-info {
+          .profile-header {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media all and (max-width: 768px) {
   .profile-wrapper {
     width: 90%;
