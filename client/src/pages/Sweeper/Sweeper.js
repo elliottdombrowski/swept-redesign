@@ -178,13 +178,22 @@ const Sweeper = ({themeStyles, theme}) => {
   const [lat, setLat] = useState(41.88);
   const [zoom, setZoom] = useState(8);
 
+  let mapTheme;
+
+  useEffect(() => {
+    if (!theme) {
+      mapTheme = 'mapbox://styles/mapbox/streets-v11'
+    } else {
+      mapTheme = 'mapbox://styles/mapbox/dark-v10'
+    }
+  }, []);
+
   // initialize the map, code will be invoked right after app is inserted in DOM tree of html page
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      // style: 'mapbox://styles/elliottdombrowski/cl0zgz2n2000v14oaxk9z2se5',
+      style: `${mapTheme}`,
       center: [lng, lat],
       zoom: zoom
     });
