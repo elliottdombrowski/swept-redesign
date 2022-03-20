@@ -17,11 +17,13 @@ const sun = <FontAwesomeIcon icon={faSun} className='profile-light-mode' />
 const moon = <FontAwesomeIcon icon={faMoon} className='profile-dark-mode' />
 const password = <FontAwesomeIcon icon={faLock} className='profile-password' />
 
-const Profile = () => {
+const Profile = ({setTheme}) => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
 
   const { username: userParam } = useParams();
   const [moveSlider, setMoveSlider] = useState(false);
+
+  // console.log('init profile theme: ', theme);
 
   const { loading, data } = useQuery(QUERY_ME, {
     variables: { username: userParam },
@@ -73,7 +75,7 @@ const Profile = () => {
               <i>
                 {password}
               </i>
-              
+
               Change Password
             </h2>
 
@@ -89,6 +91,7 @@ const Profile = () => {
                 <input
                   type='checkbox'
                   id='checkbox'
+                  onClick={() => setTheme((prev) => !prev)}
                 />
                 <div className='slider round' />
               </label>

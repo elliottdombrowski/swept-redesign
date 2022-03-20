@@ -34,6 +34,9 @@ const client = new ApolloClient({
 });
 
 function App() {
+  //STATE FOR DARKMODE
+  const [theme, setTheme] = useState(false);
+  console.log('app theme: ', theme);
 
   return (
     <ApolloProvider client={client}>
@@ -41,14 +44,18 @@ function App() {
         <div className="App">
           <Router>
             <Navbar />
-              <Switch>
-                <Route exact path='/' component={Homepage} />
-                <Route exact path='/sweeper' component={Sweeper} />
-                <Route exact path='/snow' component={Snow} />
-                <Route exact path='/me' component={Profile} />
-                <Route exact path='/login' component={LoginSignup} />
-                <Route component={NotFound} />
-              </Switch>
+            <Switch>
+              <Route exact path='/' component={Homepage} />
+              <Route exact path='/sweeper' component={Sweeper} />
+              <Route exact path='/snow' component={Snow} />
+              
+              <Route exact path='/me'>
+                <Profile setTheme={setTheme} />
+              </Route>
+              
+              <Route exact path='/login' component={LoginSignup} />
+              <Route component={NotFound} />
+            </Switch>
             <Footer />
           </Router>
         </div>
