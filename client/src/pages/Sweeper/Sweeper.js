@@ -15,7 +15,8 @@ import './query.scss';
 // Import mapbox - must add exclamation point to exclude from transpilation and disable esline rule 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 // set the access token
-mapboxgl.accessToken = 'pk.eyJ1IjoianVzdGlua2VtcDEwIiwiYSI6ImNreWt2ejV4MjJ6eHYydnBtcmVnZmNzejYifQ.LwzcX603o5VIt1PDFd-9CA';
+// mapboxgl.accessToken = 'pk.eyJ1IjoianVzdGlua2VtcDEwIiwiYSI6ImNreWt2ejV4MjJ6eHYydnBtcmVnZmNzejYifQ.LwzcX603o5VIt1PDFd-9CA';
+mapboxgl.accessToken = process.env.MAPBOX_KEY;
 
 const Sweeper = ({themeStyles, theme}) => {
   const saveIcon = <FontAwesomeIcon icon={faBookmark} className='save-icon' />
@@ -183,6 +184,7 @@ const Sweeper = ({themeStyles, theme}) => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
+      // style: 'mapbox://styles/elliottdombrowski/cl0zgz2n2000v14oaxk9z2se5',
       center: [lng, lat],
       zoom: zoom
     });
@@ -202,7 +204,6 @@ const Sweeper = ({themeStyles, theme}) => {
     if (saveSweeperData) {
       getSweepers()
     }
-
   }, [saveSweeperData])
 
   const mapWidth = {
@@ -242,7 +243,13 @@ const Sweeper = ({themeStyles, theme}) => {
                 >
                   FIND YOUR SCHEDULE!
                 </button>
-                <p className='error-msg' id='error-msg'>{err}</p>
+                <p 
+                  className='error-msg' 
+                  id='error-msg'
+                  style={!theme ? themeStyles.searchFormErrorLight : themeStyles.searchFormErrorDark}
+                >
+                  {err}
+                </p>
               </form>
             </div>
           </section>

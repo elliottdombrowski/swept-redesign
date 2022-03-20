@@ -45,7 +45,13 @@ const themeStyles = {
   },
   containerDark: {
     background: '#00507885',
-  }
+  },
+  searchFormErrorLight: {
+    background: '#112e5385',
+  },
+  searchFormErrorDark: {
+    background: '#00293c',
+  },
 };
 // background: '#122136',
 

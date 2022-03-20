@@ -176,7 +176,13 @@ const Snow = ({themeStyles, theme}) => {
                 >
                   FIND YOUR SCHEDULE!
                 </button>
-                <p className='error-msg' id='error-msg'>{err}</p>
+                <p 
+                  className='error-msg' 
+                  id='error-msg'
+                  style={!theme ? themeStyles.searchFormErrorLight : themeStyles.searchFormErrorDark}
+                >
+                  {err}
+                </p>
               </form>
             </div>
           </section>
