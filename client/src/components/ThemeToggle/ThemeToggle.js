@@ -25,7 +25,7 @@ const ThemeToggle = ({setTheme}) => {
           id='checkbox'
           onClick={() => setTheme((prev) => !prev)}
         />
-        <div className='slider round' />
+        <div className='slider round' id='slider-round' />
       </label>
 
       <i>
