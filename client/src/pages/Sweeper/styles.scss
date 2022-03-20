@@ -10,7 +10,7 @@
   .sweeper-header-label {
     position: absolute;
     background: $darkblue;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 10px;
     left: 0;
     right: 0;
@@ -97,7 +97,11 @@
         }
 
         .form-warning {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           background: $darkblue;
+          height: 144px;
           padding: 20px;
           border-radius: 10px;
           font-family: $link-font;
@@ -160,7 +164,6 @@
 
     .outer-map-container {
       grid-area: map;
-      width: 100%;
 
       .map-container {
         height: 300px;

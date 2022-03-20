@@ -205,6 +205,10 @@ const Sweeper = () => {
 
   }, [saveSweeperData])
 
+  const mapWidth = {
+    full: { width: '205%'},
+    half: { width: '100%'}
+  }
 
   return (
     <AnimatePage>
@@ -279,7 +283,7 @@ const Sweeper = () => {
           )}
 
           {/* Mapbox */}
-          <div className='outer-map-container'>
+          <div className='outer-map-container' style={!wardInfo.length ? mapWidth.full : mapWidth.half}>
             <div ref={mapContainer} className="map-container" />
           </div>
         </div>

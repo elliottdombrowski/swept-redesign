@@ -31,15 +31,23 @@
 
       &.sweeper-data-output-wrapper {
         padding: 0 0 1rem;
+        margin-top: unset;
       }
+    }
+
+    .outer-map-container {
+      // USE !IMPORTANT HERE TO OVERRIDE DYNAMIC STYLING IN COMPONENT
+      width: 100% !important;
     }
   }
 }
 
-@media all and (max-width: 735px) {
+@media all and (max-width: 726px) {
   .sweeper-wrapper {
-    .sweeper-form-wrapper {
-      margin-top: 3.5rem;
+    .grid-wrapper {
+      .sweeper-form-wrapper {
+        margin-top: 8rem;
+      }
     }
   }
 }
