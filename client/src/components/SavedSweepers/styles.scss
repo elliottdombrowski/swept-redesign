@@ -4,7 +4,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
 
   .search-list-wrapper {
     height: 250px;
@@ -119,9 +118,6 @@
     }
 
     .snow-output-wrapper {
-      display: flex;
-      flex-direction: column;
-
       // FORMATTING FOR SNOW SAVE PAGE
       div {
         h1 {
