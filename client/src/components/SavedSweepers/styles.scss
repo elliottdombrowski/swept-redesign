@@ -1,6 +1,7 @@
 @import "../../variables";
 
 .recent-search-wrapper {
+  grid-area: searches;
   position: relative;
   display: flex;
   flex-direction: column;
