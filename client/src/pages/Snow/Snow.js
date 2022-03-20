@@ -19,7 +19,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 // set the access token
 mapboxgl.accessToken = 'pk.eyJ1IjoianVzdGlua2VtcDEwIiwiYSI6ImNreWt2ejV4MjJ6eHYydnBtcmVnZmNzejYifQ.LwzcX603o5VIt1PDFd-9CA';
 
-const Snow = () => {
+const Snow = ({themeStyles, theme}) => {
   const saveIcon = <FontAwesomeIcon icon={faBookmark} className='save-icon' />
 
   const snowNumber = useRef('');
@@ -147,10 +147,18 @@ const Snow = () => {
   return (
     <AnimatePage>
       <main className='sweeper-wrapper'>
-        <label className='sweeper-header-label'>Find your Snow Parking Restrictions!</label>
+        <label 
+          className='sweeper-header-label'
+          style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+        >
+          Find your Snow Parking Restrictions!
+        </label>
 
         <div className='grid-wrapper'>
-          <section className='sweeper-form-wrapper snow-form-wrapper'>
+          <section 
+            className='sweeper-form-wrapper snow-form-wrapper'
+            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+          >
             <div className='zip-form-wrapper'>
               <form
                 onSubmit={(event) => snowNumberSubmit(event)}
@@ -187,7 +195,10 @@ const Snow = () => {
             </section>
           ) : (
             <section className='sweeper-data-output-wrapper'>
-              <div className={!snowInfo.length ? 'form-warning' : ''}>
+              <div 
+                className={!snowInfo.length ? 'form-warning' : ''}
+                style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+              >
                 {!snowInfo.length ?
                   (
                     <span><h1>No results yet!</h1><h2>Snow Plows operate December 1st - March 31st, or as needed.</h2></span>
@@ -198,7 +209,11 @@ const Snow = () => {
               {
                 snowInfo.map((info, index) => {
                   return (
-                    <div className='snow-data-output' key={index}>
+                    <div 
+                      className='snow-data-output' 
+                      key={index}
+                      style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+                    >
                       <div className='snow-data-wrapper'>
                         <h1 className='sweeper-date'>Parking Restricted on: {info.on_street}</h1>
                         {/* INTENTIONAL TYPO- TO MATCH TYPO IN API  */}

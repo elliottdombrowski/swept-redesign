@@ -17,7 +17,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 // set the access token
 mapboxgl.accessToken = 'pk.eyJ1IjoianVzdGlua2VtcDEwIiwiYSI6ImNreWt2ejV4MjJ6eHYydnBtcmVnZmNzejYifQ.LwzcX603o5VIt1PDFd-9CA';
 
-const Sweeper = () => {
+const Sweeper = ({themeStyles, theme}) => {
   const saveIcon = <FontAwesomeIcon icon={faBookmark} className='save-icon' />
 
   const wardNumber = useRef('');
@@ -213,10 +213,18 @@ const Sweeper = () => {
   return (
     <AnimatePage>
       <main className='sweeper-wrapper'>
-        <label className='sweeper-header-label'>Find your Street Sweeper Schedule!</label>
+        <label 
+          className='sweeper-header-label'
+          style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+        >
+          Find your Street Sweeper Schedule!
+        </label>
 
         <div className='grid-wrapper'>
-          <section className='sweeper-form-wrapper'>
+          <section 
+            className='sweeper-form-wrapper'
+            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+          >
             <div className='zip-form-wrapper'>
               <form
                 onSubmit={(event) => wardNumberSubmit(event)}
@@ -253,10 +261,16 @@ const Sweeper = () => {
             </section>
           ) : (
             <section className='sweeper-data-output-wrapper'>
-                <div className={!wardInfo.length ? 'form-warning' : ''}>
+                <div 
+                  className={!wardInfo.length ? 'form-warning' : ''}
+                  style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+                >
                   {!wardInfo.length ? 
                     (
-                      <span><h1>No results yet!</h1><h2>Street Sweepers operate from April 1st - November 30th.</h2></span>
+                      <span>
+                        <h1>No results yet!</h1>
+                        <h2>Street Sweepers operate from April 1st - November 30th.</h2>
+                      </span>
                     )
                     : ''
                   }
@@ -264,7 +278,11 @@ const Sweeper = () => {
               {
                 wardInfo.map((info, index) => {
                   return (
-                    <div className='sweeper-data-output' key={index}>
+                    <div 
+                      className='sweeper-data-output' 
+                      key={index}
+                      style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+                    >
                       <div className='sweeper-info-wrapper'>
                         <p className='sweeper-ward'>Ward {info.ward}: </p>
                         <span className='sweeper-search-date'>{info.month_name.toLowerCase()} {info.dates.split(',').join(', ')}</span>

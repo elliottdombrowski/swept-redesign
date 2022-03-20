@@ -38,9 +38,16 @@ const themeStyles = {
     background: '#b5def2',
   },
   dark: {
-    background: '#122136',
+    background: '#0e1825',
   },
+  containerLight: {
+    background: '#005178',
+  },
+  containerDark: {
+    background: '#00507885',
+  }
 };
+// background: '#122136',
 
 function App() {
   //STATE FOR DARKMODE
@@ -57,8 +64,14 @@ function App() {
             <Navbar themeStyles={themeStyles} theme={theme} />
             <Switch>
               <Route exact path='/' component={Homepage} />
-              <Route exact path='/sweeper' component={Sweeper} />
-              <Route exact path='/snow' component={Snow} />
+
+              <Route exact path='/sweeper'>
+                <Sweeper themeStyles={themeStyles} theme={theme} />
+              </Route>
+
+              <Route exact path='/snow'>
+                <Snow themeStyles={themeStyles} theme={theme} />
+              </Route>
               
               <Route exact path='/me'>
                 <Profile setTheme={setTheme} />
