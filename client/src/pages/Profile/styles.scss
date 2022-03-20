@@ -7,19 +7,23 @@
   margin: 0 auto;
 
   .profile-inner-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-areas: 
+      'profileInfo profileSavedList'
+      'profileSave profileSavedList'
+      'profileOptions profileSavedList';
     padding: 1rem;
     border-radius: 10px;
     background: $darkblue;
 
-    .profile-left-wrapper {
-      display: flex;
-      flex-direction: column;
-      width: 45%;
+    // .profile-left-wrapper {
+    //   display: flex;
+    //   flex-direction: column;
+    //   width: 45%;
 
       .profile-user-info {
+        grid-area: profileInfo;
         display: flex;
         flex-direction: column;
 
@@ -27,7 +31,6 @@
           background: $darkerblue;
           padding: 1rem;
           border-radius: 10px;
-          // width: 90%;
           font-family: $logo-font;
           font-size: 24px;
           font-style: italic;
@@ -62,6 +65,7 @@
       }
 
       .profile-save-info {
+        grid-area: profileSave;
         background: $darkerblue;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -96,6 +100,7 @@
       }
 
       .profile-options {
+        grid-area: profileOptions;
         background: $darkerblue;
         padding: 1rem;
         border-radius: 10px;
@@ -185,11 +190,11 @@
             }
           }
         }
-      }
+      // }
     }
 
     .saved-wrapper {
-      width: 50%;
+      grid-area: profileSavedList;
 
       .slider-wrapper {
         position: relative;

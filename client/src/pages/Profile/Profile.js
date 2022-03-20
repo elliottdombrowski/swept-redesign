@@ -18,7 +18,7 @@ const sun = <FontAwesomeIcon icon={faSun} className='profile-light-mode' />
 const moon = <FontAwesomeIcon icon={faMoon} className='profile-dark-mode' />
 const password = <FontAwesomeIcon icon={faLock} className='profile-password' />
 
-const Profile = ({setTheme}) => {
+const Profile = ({ setTheme }) => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
 
   const { username: userParam } = useParams();
@@ -45,42 +45,39 @@ const Profile = ({setTheme}) => {
   return (
     <main className='profile-wrapper'>
       <section className='profile-inner-wrapper'>
-        <div className='profile-left-wrapper'>
-          <div className='profile-user-info'>
-            <h1 className='profile-header'>Welcome, <span className='profile-username'>{user.username}!</span></h1>
-            <p className='profile-email'>{user.email}</p>
-          </div>
+        <div className='profile-user-info'>
+          <h1 className='profile-header'>Welcome, <span className='profile-username'>{user.username}!</span></h1>
+          <p className='profile-email'>{user.email}</p>
+        </div>
 
-          <div className='profile-save-info profile-user-info'>
-            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches:
-              <span
-                onClick={() => setMoveSlider(false)}
-              >
-                {userSweeperSearches.length}
-              </span>
-            </p>
+        <div className='profile-save-info profile-user-info'>
+          <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches:
+            <span
+              onClick={() => setMoveSlider(false)}
+            >
+              {userSweeperSearches.length}
+            </span>
+          </p>
 
-            <p className='profile-saved-snow profile-save'>Saved Snow Searches:
-              <span
-                onClick={() => setMoveSlider(true)}
-              >
-                {userSnowSearches.length}
-              </span>
-            </p>
-          </div>
+          <p className='profile-saved-snow profile-save'>Saved Snow Searches:
+            <span
+              onClick={() => setMoveSlider(true)}
+            >
+              {userSnowSearches.length}
+            </span>
+          </p>
+        </div>
 
-          <div className='profile-options'>
-            <h2 className='profile-change-password'>
-              <i>
-                {password}
-              </i>
+        <div className='profile-options'>
+          <h2 className='profile-change-password'>
+            <i>
+              {password}
+            </i>
 
-              Change Password
-            </h2>
+            Change Password
+          </h2>
 
-            <ThemeToggle setTheme={setTheme} />
-
-          </div>
+          <ThemeToggle setTheme={setTheme} />
         </div>
 
         <section className='saved-wrapper'>
