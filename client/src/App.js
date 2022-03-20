@@ -33,17 +33,28 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const themeStyles = {
+  light: {
+    background: '#b5def2',
+  },
+  dark: {
+    background: '#122136',
+  },
+};
+
 function App() {
   //STATE FOR DARKMODE
   const [theme, setTheme] = useState(false);
-  console.log('app theme: ', theme);
+  // console.log('app theme: ', theme);
 
   return (
     <ApolloProvider client={client}>
       <ChakraProvider>
-        <div className="App">
+        <div className="App" style={
+          !theme? themeStyles.light : themeStyles.dark
+        }>
           <Router>
-            <Navbar />
+            <Navbar themeStyles={themeStyles} theme={theme} />
             <Switch>
               <Route exact path='/' component={Homepage} />
               <Route exact path='/sweeper' component={Sweeper} />
@@ -52,7 +63,7 @@ function App() {
               <Route exact path='/me'>
                 <Profile setTheme={setTheme} />
               </Route>
-              
+
               <Route exact path='/login' component={LoginSignup} />
               <Route component={NotFound} />
             </Switch>

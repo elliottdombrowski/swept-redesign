@@ -11,7 +11,7 @@ import './query.scss';
 const profile = <FontAwesomeIcon icon={faUserCircle} className='fa-md' />
 const settings = <FontAwesomeIcon icon={faCog} className='fa-md' />
 
-const Navbar = () => {
+const Navbar = ({themeStyles, theme}) => {
   const [moveSlider, setMoveSlider] = useState(false);
 
   const mobile = window.matchMedia("(max-width: 768px)");
@@ -124,7 +124,10 @@ const Navbar = () => {
         </div>
       </header>
       <div className='deco'>
-        <div className='deco-inner'></div>
+        <div 
+          className='deco-inner'
+          style={!theme? themeStyles.light : themeStyles.dark}
+        ></div>
       </div>
     </main>
   );
