@@ -50,7 +50,7 @@ const Profile = ({ setTheme }) => {
           <p className='profile-email'>{user.email}</p>
         </div>
 
-        <div className='profile-save-info profile-user-info'>
+        <div className='profile-save-info'>
           <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches:
             <span
               onClick={() => setMoveSlider(false)}

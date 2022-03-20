@@ -96,13 +96,53 @@
 
 @media all and (max-width: 768px) {
   .profile-wrapper {
-    width: 90%;
+    width: 80%;
+    height: 100%;
+    padding-bottom: 3rem;
+
+    .profile-inner-wrapper {
+      grid-template-areas: 
+        'profileInfo'
+        'profileSavedList'
+        'profileSave'
+        'profileOptions';
+
+      .profile-user-info {
+        position: relative;
+        padding-bottom: 1.5rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 3px;
+          background: $text;
+          border-radius: 20px;
+        }
+      }
+
+      .saved-wrapper {
+        margin-top: 2rem;
+
+        .saved-component-wrapper {
+          margin-bottom: 1rem;
+        }
+      }
+    }
   }
 }
 
 @media all and (max-width: 600px) {
   .profile-wrapper {
-    .profile-inner-wrapper {
-    }
+    padding-top: 1.5rem;
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .profile-wrapper {
+    width: 95%;
   }
 }
