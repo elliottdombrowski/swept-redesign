@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 10px;
     background: $darkblue;
 
@@ -24,6 +24,10 @@
         flex-direction: column;
 
         .profile-header {
+          background: $darkerblue;
+          padding: 1rem;
+          border-radius: 10px;
+          width: 90%;
           font-family: $logo-font;
           font-size: 24px;
           font-style: italic;
@@ -46,7 +50,11 @@
         }
 
         .profile-email {
-          padding-top: .5rem;
+          background: $darkerblue;
+          width: 90%;
+          margin: .8rem 0;
+          padding: 1rem;
+          border-radius: 10px;
           font-family: $link-font;
           font-weight: 600;
           font-size: 18px;
@@ -54,7 +62,10 @@
       }
 
       .profile-save-info {
-        padding-top: 2rem;
+        background: $darkerblue;
+        width: 90%;
+        padding: 1rem;
+        border-radius: 10px;
         font-family: $link-font;
         font-size: 18px;
 
@@ -68,7 +79,7 @@
           }
           span {
             position: absolute;
-            right: 4rem;
+            right: 0;
             background: $primary-darkorange;
             margin-left: 5px;
             padding: 2px 12px;
