@@ -65,6 +65,25 @@ const Profile = () => {
               </span>
             </p>
           </div>
+
+          <div className='profile-options'>
+            <h2 className='profile-change-password'>
+              Change Password
+            </h2>
+
+            <div className='switch'>
+              <label 
+                className='theme-switch' 
+                htmlFor='checkbox'
+              >
+                <input
+                  type='checkbox'
+                  id='checkbox'
+                />
+                <div className='slider round' />
+              </label>
+            </div>
+          </div>
         </div>
 
         <section className='saved-wrapper'>
