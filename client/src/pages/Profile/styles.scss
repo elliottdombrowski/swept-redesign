@@ -65,6 +65,7 @@
         background: $darkerblue;
         width: 90%;
         padding: 1rem;
+        margin-bottom: 1rem;
         border-radius: 10px;
         font-family: $link-font;
         font-size: 18px;
@@ -96,6 +97,15 @@
       }
 
       .profile-options {
+        background: $darkerblue;
+        width: 90%;
+        padding: 1rem;
+        border-radius: 10px;
+
+        h2 {
+          margin-bottom: 1rem;
+        }
+
         .switch {
           .theme-switch {
             display: inline-block;
@@ -130,7 +140,7 @@
             }
 
             input:checked + .slider {
-              background-color: $darkerblue;
+              background-color: $darkblue;
             }
 
             input:checked + .slider::before {
