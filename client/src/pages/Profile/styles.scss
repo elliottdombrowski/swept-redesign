@@ -9,188 +9,182 @@
   .profile-inner-wrapper {
     display: grid;
     column-gap: 1rem;
-    grid-template-areas: 
-      'profileInfo profileSavedList'
-      'profileSave profileSavedList'
-      'profileOptions profileSavedList';
+    grid-template-areas:
+      "profileInfo profileSavedList"
+      "profileSave profileSavedList"
+      "profileOptions profileSavedList";
     padding: 1rem;
     border-radius: 10px;
     background: $darkblue;
 
-    // .profile-left-wrapper {
-    //   display: flex;
-    //   flex-direction: column;
-    //   width: 45%;
+    .profile-user-info {
+      grid-area: profileInfo;
+      display: flex;
+      flex-direction: column;
 
-      .profile-user-info {
-        grid-area: profileInfo;
-        display: flex;
-        flex-direction: column;
+      .profile-header {
+        background: $darkerblue;
+        padding: 1rem;
+        border-radius: 10px;
+        font-family: $logo-font;
+        font-size: 24px;
+        font-style: italic;
 
-        .profile-header {
-          background: $darkerblue;
-          padding: 1rem;
-          border-radius: 10px;
-          font-family: $logo-font;
-          font-size: 24px;
-          font-style: italic;
+        span {
+          position: relative;
+          white-space: nowrap;
 
-          span {
-            position: relative;
-            white-space: nowrap;
-
-            &::after {
-              content: "";
-              position: absolute;
-              left: 0;
-              right: 0;
-              bottom: 5px;
-              height: 3px;
-              background: $text;
-              transform: skew(-45deg);
-              transition: $btn-hover;
-            }
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 5px;
+            height: 3px;
+            background: $text;
+            transform: skew(-45deg);
+            transition: $btn-hover;
           }
-        }
-
-        .profile-email {
-          background: $darkerblue;
-          margin: 0.8rem 0;
-          padding: 1rem;
-          border-radius: 10px;
-          font-family: $link-font;
-          font-weight: 600;
-          font-size: 18px;
         }
       }
 
-      .profile-save-info {
-        grid-area: profileSave;
+      .profile-email {
         background: $darkerblue;
+        margin: 0.8rem 0;
         padding: 1rem;
-        margin-bottom: 1rem;
         border-radius: 10px;
         font-family: $link-font;
+        font-weight: 600;
         font-size: 18px;
-
-        p {
-          position: relative;
-          display: flex;
-          align-items: center;
-
-          &:nth-child(2) {
-            margin-top: 14px;
-          }
-          span {
-            position: absolute;
-            right: 0;
-            background: $primary-darkorange;
-            margin-left: 5px;
-            padding: 2px 12px;
-            border-radius: 10px;
-            font-size: 20px;
-            transition: $btn-hover;
-            cursor: pointer;
-
-            &:hover {
-              transform: scale(1.1);
-            }
-          }
-        }
       }
+    }
 
-      .profile-options {
-        grid-area: profileOptions;
-        background: $darkerblue;
-        padding: 1rem;
-        border-radius: 10px;
+    .profile-save-info {
+      grid-area: profileSave;
+      background: $darkerblue;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      font-family: $link-font;
+      font-size: 18px;
 
-        h2 {
-          margin-bottom: 1rem;
-          font-family: $link-font;
-          font-size: 18px;
+      p {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &:nth-child(2) {
+          margin-top: 14px;
+        }
+        span {
+          position: absolute;
+          right: 0;
+          background: $primary-darkorange;
+          margin-left: 5px;
+          padding: 2px 12px;
+          border-radius: 10px;
+          font-size: 20px;
           transition: $btn-hover;
           cursor: pointer;
 
-          i {
-            color: $text;
-            margin-right: 8px;
-          }
-
           &:hover {
-            opacity: 0.8;
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .profile-options {
+      grid-area: profileOptions;
+      background: $darkerblue;
+      padding: 1rem;
+      border-radius: 10px;
+
+      h2 {
+        margin-bottom: 1rem;
+        font-family: $link-font;
+        font-size: 18px;
+        transition: $btn-hover;
+        cursor: pointer;
+
+        i {
+          color: $text;
+          margin-right: 8px;
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .profile-switch {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        i {
+          color: $text;
+
+          &:nth-child(1) {
+            margin-right: 8px;
+            font-size: 20px;
+          }
+
+          &:nth-child(3) {
+            margin-left: 8px;
+            font-size: 18px;
           }
         }
 
-        .profile-switch {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
+        .theme-switch {
+          display: inline-block;
+          height: 24px;
+          position: relative;
+          width: 50px;
 
-          i {
-            color: $text;
-
-            &:nth-child(1) {
-              margin-right: 8px;
-              font-size: 20px;
-            }
-
-            &:nth-child(3) {
-              margin-left: 8px;
-              font-size: 18px;
-            }
+          input {
+            display: none;
           }
 
-          .theme-switch {
-            display: inline-block;
-            height: 24px;
-            position: relative;
-            width: 50px;
+          .slider {
+            position: absolute;
+            background: #ccc;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+            transition: $btn-hover;
 
-            input {
-              display: none;
-            }
-
-            .slider {
+            &::before {
+              content: "";
               position: absolute;
-              background: #ccc;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              top: 0;
-              cursor: pointer;
+              bottom: 4px;
+              left: 4px;
+              height: 16px;
+              width: 16px;
+              background-color: $text;
               transition: $btn-hover;
-
-              &::before {
-                content: "";
-                position: absolute;
-                bottom: 4px;
-                left: 4px;
-                height: 16px;
-                width: 16px;
-                background-color: $text;
-                transition: $btn-hover;
-              }
             }
+          }
 
-            input:checked + .slider {
-              background-color: $darkblue;
-            }
+          input:checked + .slider {
+            background-color: $darkblue;
+          }
 
-            input:checked + .slider::before {
-              transform: translateX(26px);
-            }
+          input:checked + .slider::before {
+            transform: translateX(26px);
+          }
 
-            .slider.round {
-              border-radius: 34px;
+          .slider.round {
+            border-radius: 34px;
 
-              &::before {
-                border-radius: 50%;
-              }
+            &::before {
+              border-radius: 50%;
             }
           }
         }
-      // }
+      }
     }
 
     .saved-wrapper {
@@ -248,14 +242,13 @@
               left: 25px;
               z-index: 10;
             }
-  
+
             &:nth-child(3) {
               position: absolute;
               right: 23px;
               z-index: 10;
             }
           }
-
 
           input {
             width: 0;
@@ -265,9 +258,7 @@
       }
 
       .saved-component-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: 100%;
         margin-top: 2rem;
       }
     }
