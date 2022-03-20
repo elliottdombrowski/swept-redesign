@@ -29,8 +29,13 @@
           opacity: 1;
         }
 
+        .mobile-theme-wrapper {
+          display: flex;
+          justify-content: center;
+        }
+
         .mobile-login {
-          margin: 0;
+          margin: 1rem 0 0;
           min-width: 115px;
         }
 

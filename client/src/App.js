@@ -67,7 +67,12 @@ function App() {
           !theme? themeStyles.light : themeStyles.dark
         }>
           <Router>
-            <Navbar themeStyles={themeStyles} theme={theme} />
+            <Navbar 
+              themeStyles={themeStyles}
+              theme={theme}
+              setTheme={setTheme}
+            />
+
             <Switch>
               <Route exact path='/' component={Homepage} />
 

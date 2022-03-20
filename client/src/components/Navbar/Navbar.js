@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faCog } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import SignUpButton from '../SignUpButton/SignUpButton';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
+
 import Auth from '../../utils/auth';
 
 import './styles.scss';
@@ -11,7 +13,7 @@ import './query.scss';
 const profile = <FontAwesomeIcon icon={faUserCircle} className='fa-md' />
 const settings = <FontAwesomeIcon icon={faCog} className='fa-md' />
 
-const Navbar = ({themeStyles, theme}) => {
+const Navbar = ({ themeStyles, theme, setTheme }) => {
   const [moveSlider, setMoveSlider] = useState(false);
 
   const mobile = window.matchMedia("(max-width: 768px)");
@@ -100,14 +102,20 @@ const Navbar = ({themeStyles, theme}) => {
           </div>
 
           {Auth.loggedIn() ? (
-            <div className='login-btn mobile-login'>
-              <Link
-                to='/'
-                className='nav-links'
-                onClick={Auth.logout}
-              >
-                LOG OUT
-              </Link>
+            <div className='mobile-wrapper-lower'>
+              <div className='mobile-theme-wrapper'>
+                <ThemeToggle setTheme={setTheme} />
+              </div>
+
+              <div className='login-btn mobile-login'>
+                <Link
+                  to='/'
+                  className='nav-links'
+                  onClick={Auth.logout}
+                >
+                  LOG OUT
+                </Link>
+              </div>
             </div>
           ) : (
             <SignUpButton />
@@ -124,9 +132,9 @@ const Navbar = ({themeStyles, theme}) => {
         </div>
       </header>
       <div className='deco'>
-        <div 
+        <div
           className='deco-inner'
-          style={!theme? themeStyles.light : themeStyles.dark}
+          style={!theme ? themeStyles.light : themeStyles.dark}
         ></div>
       </div>
     </main>
