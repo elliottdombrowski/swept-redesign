@@ -2,4 +2,51 @@
 
 .notfound-wrapper {
   height: calc(100vh - 100px);
+
+  .notfound-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h1, h2 {
+      font-size: 48px;
+      width: 40%;
+      padding: 1rem 3rem;
+      margin: 1rem 0 1rem;
+      background: $darkblue;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 1rem;
+      font-size: 24px;
+    }
+
+    img {
+      width: 40%;
+      background: $darkblue;
+      padding: 1rem 3rem;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-family: $link-font;
+      font-size: 26px;
+      font-weight: 600;
+      transition: $btn-hover;
+      width: 40%;
+
+      svg {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        background: $primary-dark-hover;
+      }
+    }
+  }
 }
