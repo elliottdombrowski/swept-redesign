@@ -29,7 +29,6 @@ const Navbar = ({ themeStyles, theme, setTheme }) => {
   };
   //CLOSE NAV MENU IF USER CLICKS ANYWHERE OUTSIDE OF NAV CONTAINER
   window.onclick = (event) => {
-    console.log(event.target);
     if (event.target == document.getElementById('checkbox') || event.target == document.getElementById('slider-round')) {
       setTimeout(() => {
         document.getElementById('hamburger').classList.remove('active');
