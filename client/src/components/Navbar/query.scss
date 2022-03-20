@@ -1,5 +1,13 @@
 @import '../../variables';
 
+@media all and (max-width: 860px) {
+  .navbar-wrapper {
+    .navbar-header {
+      padding: 0 1.5rem;
+    }
+  }
+}
+
 @media all and (max-width: 768px) {
   .navbar-wrapper {
     .navbar-header {

@@ -11,7 +11,7 @@ const moon = <FontAwesomeIcon icon={faMoon} className='profile-dark-mode' />
 
 const ThemeToggle = ({setTheme}) => {
   return (
-    <div className='switch'>
+    <div className='switch profile-switch navbar-switch'>
       <i>
         {sun}
       </i>

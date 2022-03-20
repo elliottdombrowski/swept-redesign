@@ -47,7 +47,7 @@ const Profile = ({setTheme}) => {
       <section className='profile-inner-wrapper'>
         <div className='profile-left-wrapper'>
           <div className='profile-user-info'>
-            <h1 className='profile-header'>Welcome, <span>{user.username}!</span></h1>
+            <h1 className='profile-header'>Welcome, <span className='profile-username'>{user.username}!</span></h1>
             <p className='profile-email'>{user.email}</p>
           </div>
 
@@ -80,28 +80,6 @@ const Profile = ({setTheme}) => {
 
             <ThemeToggle setTheme={setTheme} />
 
-            {/* <div className='switch'>
-              <i>
-                {sun}
-              </i>
-
-              <label
-                className='theme-switch'
-                htmlFor='checkbox'
-              >
-                <input
-                  type='checkbox'
-                  id='checkbox'
-                  onClick={() => setTheme((prev) => !prev)}
-                />
-                <div className='slider round' />
-              </label>
-
-              <i>
-                {moon}
-              </i>
-
-            </div> */}
           </div>
         </div>
 

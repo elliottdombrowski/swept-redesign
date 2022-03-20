@@ -107,7 +107,6 @@ const Navbar = ({ themeStyles, theme, setTheme }) => {
           {Auth.loggedIn() ? (
             <div className='mobile-wrapper-lower'>
               <div className='mobile-theme-wrapper' id='theme-wrapper'>
-                <ThemeToggle setTheme={setTheme} />
               </div>
 
               <div className='login-btn mobile-login'>
