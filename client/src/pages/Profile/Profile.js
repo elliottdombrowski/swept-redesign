@@ -7,13 +7,15 @@ import SavedSweepers from '../../components/SavedSweepers/SavedSweepers';
 import SavedSnow from '../../components/SavedSnow/SavedSnow';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faSun, faMoon, faLock } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.scss';
 import './query.scss';
-import { isConstValueNode } from 'graphql';
 
 const saved = <FontAwesomeIcon icon={faBookmark} className='profile-bookmark fa-sm' />
+const sun = <FontAwesomeIcon icon={faSun} className='profile-light-mode' />
+const moon = <FontAwesomeIcon icon={faMoon} className='profile-dark-mode' />
+const password = <FontAwesomeIcon icon={faLock} className='profile-password' />
 
 const Profile = () => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
@@ -49,7 +51,7 @@ const Profile = () => {
           </div>
 
           <div className='profile-save-info profile-user-info'>
-            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches: 
+            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches:
               <span
                 onClick={() => setMoveSlider(false)}
               >
@@ -57,7 +59,7 @@ const Profile = () => {
               </span>
             </p>
 
-            <p className='profile-saved-snow profile-save'>Saved Snow Searches: 
+            <p className='profile-saved-snow profile-save'>Saved Snow Searches:
               <span
                 onClick={() => setMoveSlider(true)}
               >
@@ -68,12 +70,20 @@ const Profile = () => {
 
           <div className='profile-options'>
             <h2 className='profile-change-password'>
+              <i>
+                {password}
+              </i>
+              
               Change Password
             </h2>
 
             <div className='switch'>
-              <label 
-                className='theme-switch' 
+              <i>
+                {sun}
+              </i>
+
+              <label
+                className='theme-switch'
                 htmlFor='checkbox'
               >
                 <input
@@ -82,6 +92,11 @@ const Profile = () => {
                 />
                 <div className='slider round' />
               </label>
+
+              <i>
+                {moon}
+              </i>
+
             </div>
           </div>
         </div>

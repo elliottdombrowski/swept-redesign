@@ -104,9 +104,40 @@
 
         h2 {
           margin-bottom: 1rem;
+          font-family: $link-font;
+          font-size: 18px;
+          transition: $btn-hover;
+          cursor: pointer;
+
+          i {
+            color: $text;
+            margin-right: 8px;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
         }
 
         .switch {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          i {
+            color: $text;
+            
+            &:nth-child(1) {
+              margin-right: 8px;
+              font-size: 20px;
+            }
+            
+            &:nth-child(3) {
+              margin-left: 8px;
+              font-size: 18px;
+            }
+          }
+
           .theme-switch {
             display: inline-block;
             height: 24px;
