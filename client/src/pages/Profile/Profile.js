@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME, QUERY_USER_SWEEPERS, QUERY_USER_SNOW } from '../../utils/queries';
 
+import AnimatePage from '../../AnimatePage';
+
 import SavedSweepers from '../../components/SavedSweepers/SavedSweepers';
 import SavedSnow from '../../components/SavedSnow/SavedSnow';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
@@ -44,81 +46,83 @@ const Profile = ({ setTheme }) => {
   const userSnowSearches = displaySavedSnowData?.getUserSnow || [];
 
   return (
-    <main className='profile-wrapper'>
-      <section className='profile-inner-wrapper'>
-        <div className='profile-user-info'>
-          <h1 className='profile-header'>Welcome, <span className='profile-username'>{user.username}!</span></h1>
-          <p className='profile-email'>{user.email}</p>
-        </div>
-
-        <div className='profile-save-info'>
-          <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches:
-            <span
-              onClick={() => setMoveSlider(false)}
-            >
-              {userSweeperSearches.length}
-            </span>
-          </p>
-
-          <p className='profile-saved-snow profile-save'>Saved Snow Searches:
-            <span
-              onClick={() => setMoveSlider(true)}
-            >
-              {userSnowSearches.length}
-            </span>
-          </p>
-        </div>
-
-        <div className='profile-options'>
-          <Link 
-            to='/updateuser'
-            className='profile-change-password'
-          >
-            <i>
-              {password}
-            </i>
-
-            Change Password
-          </Link>
-
-          <ThemeToggle setTheme={setTheme} />
-        </div>
-
-        <section className='saved-wrapper'>
-          <div className='slider-wrapper'>
-            <label className='switch' id='link-switcher'>
-              <input type='checkbox' />
-              <h2
-                className='slider slider-one nav-item nav-links'
-                id='sweeper-link'
-                onClick={() => setMoveSlider(false)}
-              >
-                <i>
-                  {saved}
-                </i>
-                SWEEPER
-              </h2>
-
-              <h2
-                className='slider slider-two nav-item nav-links'
-                id='snow-link'
-                onClick={() => setMoveSlider(true)}
-              >
-                <i>
-                  {saved}
-                </i>
-                SNOW
-              </h2>
-              <div className={moveSlider ? 'switch-overlay-right' : 'switch-overlay-left'} id='switcher' />
-            </label>
+    <AnimatePage>
+      <main className='profile-wrapper'>
+        <section className='profile-inner-wrapper'>
+          <div className='profile-user-info'>
+            <h1 className='profile-header'>Welcome, <span className='profile-username'>{user.username}!</span></h1>
+            <p className='profile-email'>{user.email}</p>
           </div>
 
-          <section className='saved-component-wrapper'>
-            {moveSlider ? <SavedSnow /> : <SavedSweepers />}
+          <div className='profile-save-info'>
+            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches:
+              <span
+                onClick={() => setMoveSlider(false)}
+              >
+                {userSweeperSearches.length}
+              </span>
+            </p>
+
+            <p className='profile-saved-snow profile-save'>Saved Snow Searches:
+              <span
+                onClick={() => setMoveSlider(true)}
+              >
+                {userSnowSearches.length}
+              </span>
+            </p>
+          </div>
+
+          <div className='profile-options'>
+            <Link
+              to='/updateuser'
+              className='profile-change-password'
+            >
+              <i>
+                {password}
+              </i>
+
+              Change Password
+            </Link>
+
+            <ThemeToggle setTheme={setTheme} />
+          </div>
+
+          <section className='saved-wrapper'>
+            <div className='slider-wrapper'>
+              <label className='switch' id='link-switcher'>
+                <input type='checkbox' />
+                <h2
+                  className='slider slider-one nav-item nav-links'
+                  id='sweeper-link'
+                  onClick={() => setMoveSlider(false)}
+                >
+                  <i>
+                    {saved}
+                  </i>
+                  SWEEPER
+                </h2>
+
+                <h2
+                  className='slider slider-two nav-item nav-links'
+                  id='snow-link'
+                  onClick={() => setMoveSlider(true)}
+                >
+                  <i>
+                    {saved}
+                  </i>
+                  SNOW
+                </h2>
+                <div className={moveSlider ? 'switch-overlay-right' : 'switch-overlay-left'} id='switcher' />
+              </label>
+            </div>
+
+            <section className='saved-component-wrapper'>
+              {moveSlider ? <SavedSnow /> : <SavedSweepers />}
+            </section>
           </section>
         </section>
-      </section>
-    </main>
+      </main>
+    </AnimatePage>
   );
 };
 
