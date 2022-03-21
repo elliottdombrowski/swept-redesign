@@ -1,0 +1,16 @@
+@import '../../variables';
+
+@media all and (max-width: 768px) {
+  .change-password-wrapper {
+    height: 100%;
+    margin: 5rem 0;
+
+    .change-password-inner {
+      grid-template-areas:
+        'pwdLabel'
+        'one'
+        'two'
+        'three';
+    }
+  }
+}
