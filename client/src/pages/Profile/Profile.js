@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { useMutation } from '@apollo/client';
 import { QUERY_ME, QUERY_USER_SWEEPERS, QUERY_USER_SNOW } from '../../utils/queries';
-import { UPDATE_PASSWORD } from '../../utils/mutations';
-import { validateEmail } from '../../utils/helpers';
 
 import SavedSweepers from '../../components/SavedSweepers/SavedSweepers';
 import SavedSnow from '../../components/SavedSnow/SavedSnow';
@@ -24,8 +21,6 @@ const password = <FontAwesomeIcon icon={faLock} className='profile-password' />
 
 const Profile = ({ setTheme }) => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
-
-  const [updatePassword, { error: updateError, data: updateData }] = useMutation(UPDATE_PASSWORD);
 
   const { username: userParam } = useParams();
   const [moveSlider, setMoveSlider] = useState(false);
@@ -47,18 +42,6 @@ const Profile = ({ setTheme }) => {
   const user = data?.me || [];
   const userSweeperSearches = displaySavedSweeperData?.getUserSweepers || [];
   const userSnowSearches = displaySavedSnowData?.getUserSnow || [];
-
-  const testUpdate = async (event) => {
-    event.preventDefault();
-    try {
-      const { updateData } = await updatePassword({
-        variables: { email: 'elliottroyal@me.com', password: 'Hi12345!'}
-      })
-      console.log('success');
-    } catch {
-      console.log('error');
-    }
-  };
 
   return (
     <main className='profile-wrapper'>
@@ -88,9 +71,8 @@ const Profile = ({ setTheme }) => {
 
         <div className='profile-options'>
           <Link 
-            to='/resetpassword'
+            to='/updateuser'
             className='profile-change-password'
-            onClick={testUpdate}
           >
             <i>
               {password}

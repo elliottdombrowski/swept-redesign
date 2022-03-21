@@ -10,6 +10,7 @@ import Sweeper from '../src/pages/Sweeper/Sweeper';
 import Snow from '../src/pages/Snow/Snow';
 import Profile from './pages/Profile/Profile';
 import LoginSignup from './pages/LoginSignup/LoginSignup';
+import ChangePassword from './pages/ChangePassword/ChangePassword';
 import NotFound from './pages/NotFound/NotFound';
 
 import './app.scss';
@@ -77,18 +78,37 @@ function App() {
               <Route exact path='/' component={Homepage} />
 
               <Route exact path='/sweeper'>
-                <Sweeper themeStyles={themeStyles} theme={theme} />
+                <Sweeper 
+                  themeStyles={themeStyles} 
+                  theme={theme}
+                />
               </Route>
 
               <Route exact path='/snow'>
-                <Snow themeStyles={themeStyles} theme={theme} />
+                <Snow 
+                  themeStyles={themeStyles} 
+                  theme={theme}
+                />
               </Route>
               
               <Route exact path='/me'>
                 <Profile setTheme={setTheme} />
               </Route>
 
-              <Route exact path='/login' component={LoginSignup} />
+              <Route exact path='/login'>
+                <LoginSignup 
+                  themeStyles={themeStyles} 
+                  theme={theme}
+                />
+              </Route>
+
+              <Route exact path='/updateuser'>
+                <ChangePassword
+                  themeStyles={themeStyles}
+                  theme={theme}
+                />
+              </Route>
+
               <Route component={NotFound} />
             </Switch>
             <Footer />
