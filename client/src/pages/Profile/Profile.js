@@ -54,7 +54,9 @@ const Profile = ({ setTheme }) => {
       const { updateData } = await updatePassword({
         variables: { email: 'elliottroyal@me.com', password: 'Hi12345!'}
       })
+      console.log('success');
     } catch {
+      console.log('error');
     }
   };
 
