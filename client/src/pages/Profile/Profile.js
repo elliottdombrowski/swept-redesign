@@ -69,13 +69,16 @@ const Profile = ({ setTheme }) => {
         </div>
 
         <div className='profile-options'>
-          <h2 className='profile-change-password'>
+          <Link 
+            to='/resetpassword'
+            className='profile-change-password'
+          >
             <i>
               {password}
             </i>
 
             Change Password
-          </h2>
+          </Link>
 
           <ThemeToggle setTheme={setTheme} />
         </div>
