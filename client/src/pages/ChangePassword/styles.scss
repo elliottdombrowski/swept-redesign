@@ -1,0 +1,53 @@
+@import '../../variables';
+
+.change-password-wrapper {
+  height: calc(100vh - 200px);
+  margin-top: 5rem;
+  color: $text;
+
+  .change-password-inner {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+      'pwdLabel pwdLabel pwdLabel'
+      'one one two'
+      'three three three';
+    width: 80%;
+    margin: 0 auto;
+
+    label {
+      grid-area: pwdLabel;
+      // position: absolute;
+      // left: 0;
+      // right: 0;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-family: $logo-font;
+      font-size: 32px;
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    div {
+      border-radius: 10px;
+      padding: 10px 20px;
+
+      &:nth-child(2) {
+        grid-area: one;
+        height: 250px;
+      }
+      
+      &:nth-child(3) {
+        grid-area: two;
+        height: 250px;
+      }
+
+      &:nth-child(4) {
+        grid-area: three;
+        height: 60px;
+      }
+    }
+  }
+}
