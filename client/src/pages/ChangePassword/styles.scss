@@ -18,9 +18,6 @@
 
     label {
       grid-area: pwdLabel;
-      // position: absolute;
-      // left: 0;
-      // right: 0;
       padding: 10px 20px;
       border-radius: 10px;
       font-family: $logo-font;
@@ -46,7 +43,28 @@
 
       &:nth-child(4) {
         grid-area: three;
+        display: flex;
+        align-items: center;
         height: 60px;
+
+        a {
+          background: $primary-darkorange;
+          padding: 5px 20px;
+          border-radius: 10px;
+          font-family: $link-font;
+          font-weight: 600;
+          font-size: 22px;
+          transition: $btn-hover;
+
+          &:hover {
+            transform: scale(1.1);
+            background: $primary-dark-hover;
+          }
+
+          i {
+            margin-right: 8px;
+          }
+        }
       }
     }
   }

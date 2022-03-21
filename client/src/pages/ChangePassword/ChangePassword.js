@@ -1,8 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import AnimatePage from '../../AnimatePage';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.scss';
 import './query.scss';
+
+const backArrow = <FontAwesomeIcon icon={faArrowLeft} />
 
 const ChangePassword = ({themeStyles, theme}) => {
   return (
@@ -18,15 +25,23 @@ const ChangePassword = ({themeStyles, theme}) => {
           </label>
 
           <div style={!theme? themeStyles.containerLight : themeStyles.containerDark}>
-            one
+            
           </div>
 
           <div style={!theme? themeStyles.containerLight : themeStyles.containerDark}>
-            two
+            
           </div>
-          
+
           <div style={!theme? themeStyles.containerLight : themeStyles.containerDark}>
-            three
+            <Link
+             to='/me'
+             className='back-to-profile'
+            >
+              <i>
+                {backArrow}
+              </i>
+              CANCEL
+            </Link>
           </div>
         </section>
       </main>
