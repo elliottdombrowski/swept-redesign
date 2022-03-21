@@ -198,6 +198,13 @@ const resolvers = {
       return { token, user };
     },
 
+    updatePassword: async (parent, args, context, { email, password }) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      console.log('user: ', context.user);
+    },
+
     saveSweeper: async (parent, { ward, section, month_name, dates, zipcode, user }) => {
       var newSweeper = new Sweeper({
         ward, section, month_name, dates, zipcode, user
