@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../../utils/queries';
+
 import AnimatePage from '../../AnimatePage';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,7 +19,17 @@ const showPwd = <FontAwesomeIcon icon={faEye} className='fa-lg' />
 const hidePwd = <FontAwesomeIcon icon={faEyeSlash} className='fa-lg' />
 
 const ChangePassword = ({ themeStyles, theme }) => {
+  const { username: userParam } = useParams();
+  
+  //STATE TO HANDLE SHOW / HIDE PASSWORD INPUT
   const [handleShowPwd, setHandleShowPwd] = useState(false);
+
+  //HIT CONTEXT USER QUERY
+  const { loading, data } = useQuery(QUERY_ME, {
+    variables: { username: userParam },
+  });
+
+  const user = data?.me || [];
 
   const handleUpdatePassword = () => {
 
