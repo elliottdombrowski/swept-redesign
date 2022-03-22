@@ -53,7 +53,7 @@ const ChangePassword = ({ themeStyles, theme }) => {
               className='update-password-form'
             >
               <label className='form-label'>
-                UPDATE YOUR PASSWORD
+                UPDATE PASSWORD FOR: <span>{user.email}</span>
               </label>
 
               <span className='input-wrapper'>

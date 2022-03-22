@@ -42,12 +42,29 @@
           .form-label {
             padding: unset;
             width: fit-content;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.4rem;
             font-family: $logo-font;
             font-size: 24px;
             font-style: italic;
             font-weight: 600;
             letter-spacing: initial;
+            
+            span {
+              position: relative;
+              margin-left: 5px;
+              white-space: nowrap;
+
+              &::after {
+                position: absolute;
+                content: '';
+                bottom: 4px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: $text;
+                transform: skew(-45deg);
+              }
+            }
           }
 
           .input-wrapper {
