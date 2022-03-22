@@ -64,6 +64,7 @@ const ChangePassword = ({ themeStyles, theme }) => {
                 </i>
 
                 <input
+                  type={!handleShowPwd ? 'password' : 'text'}
                   placeholder='Enter your Password'
                   className='update-password-input'
                 />
@@ -77,6 +78,7 @@ const ChangePassword = ({ themeStyles, theme }) => {
                 </i>
 
                 <input
+                  type={!handleShowPwd ? 'password' : 'text'}
                   placeholder='Enter a New Password'
                   className='update-password-input'
                 />
