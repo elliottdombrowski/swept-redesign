@@ -60,7 +60,7 @@ const ChangePassword = ({ themeStyles, theme }) => {
                 <i
                   onClick={() => setHandleShowPwd((prev) => !prev)}
                 >
-                  {showPwd}
+                  {!handleShowPwd ? showPwd : hidePwd}
                 </i>
 
                 <input
@@ -73,7 +73,7 @@ const ChangePassword = ({ themeStyles, theme }) => {
                 <i
                   onClick={() => setHandleShowPwd((prev) => !prev)}
                 >
-                  {hidePwd}
+                  {!handleShowPwd ? showPwd : hidePwd}
                 </i>
 
                 <input
