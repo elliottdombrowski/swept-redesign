@@ -1,4 +1,4 @@
-@import '../../variables';
+@import "../../variables";
 
 .change-password-wrapper {
   height: calc(100vh - 200px);
@@ -9,11 +9,11 @@
     position: relative;
     display: grid;
     gap: 1rem;
-    grid-template-areas: 
-      'pwdLabel pwdLabel pwdLabel'
-      'one one two'
-      'three three three';
-    width: 80%;
+    grid-template-areas:
+      "pwdLabel pwdLabel pwdLabel"
+      "one one two"
+      "three three three";
+    width: 40%;
     margin: 0 auto;
 
     label {
@@ -34,8 +34,70 @@
       &:nth-child(2) {
         grid-area: one;
         height: 250px;
+
+        .update-password-form {
+          display: flex;
+          flex-direction: column;
+
+          .form-label {
+            padding: unset;
+            width: fit-content;
+            margin-bottom: 0.2rem;
+            font-family: $logo-font;
+            font-size: 24px;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: initial;
+          }
+
+          .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &:nth-child(2) {
+              margin-bottom: 1rem;
+            }
+
+            i {
+              position: absolute;
+              right: 1rem;
+              color: $darkerblue;
+              cursor: pointer;
+            }
+
+            .update-password-input {
+              width: 100%;
+              border-radius: 10px;
+              padding: 10px;
+              color: $black !important;
+              font-size: 18px;
+            }
+          }
+
+          .update-password-submit-btn {
+            background: $primary-darkorange;
+            width: fit-content;
+            padding: 5px 20px;
+            margin-top: 1rem;
+            border-radius: 10px;
+            font-family: $link-font;
+            font-size: 22px;
+            font-weight: 600;
+            transition: $btn-hover;
+
+            &:hover {
+              transform: scale(1.1);
+              background: $primary-dark-hover;
+            }
+
+            i {
+              margin-right: 8px;
+            }
+          }
+        }
       }
-      
+
       &:nth-child(3) {
         grid-area: two;
         height: 250px;
