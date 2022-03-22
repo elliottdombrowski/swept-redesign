@@ -11,14 +11,14 @@ import SavedSnow from '../../components/SavedSnow/SavedSnow';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faSun, faMoon, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faSun, faMoon, faLock, faSnowflake, faTruck } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.scss';
 import './query.scss';
 
 const saved = <FontAwesomeIcon icon={faBookmark} className='profile-bookmark fa-sm' />
-const sun = <FontAwesomeIcon icon={faSun} className='profile-light-mode' />
-const moon = <FontAwesomeIcon icon={faMoon} className='profile-dark-mode' />
+const snow = <FontAwesomeIcon icon={faSnowflake} className='profile-snow' />
+const sweeper = <FontAwesomeIcon icon={faTruck} className='profile-sweeper' />
 const password = <FontAwesomeIcon icon={faLock} className='profile-password' />
 
 const Profile = ({ setTheme }) => {
@@ -55,7 +55,12 @@ const Profile = ({ setTheme }) => {
           </div>
 
           <div className='profile-save-info'>
-            <p className='profile-saved-sweeper profile-save'>Saved Sweeper Searches:
+            <p className='profile-saved-sweeper profile-save'>
+              <i className='profile-saved-sweeper-icon'>
+                {sweeper}
+              </i>
+              
+              Saved Sweeper Searches:
               <span
                 onClick={() => setMoveSlider(false)}
               >
@@ -63,7 +68,12 @@ const Profile = ({ setTheme }) => {
               </span>
             </p>
 
-            <p className='profile-saved-snow profile-save'>Saved Snow Searches:
+            <p className='profile-saved-snow profile-save'>
+              <i className='profile-saved-snow-icon'>
+                {snow}
+              </i>
+
+              Saved Snow Searches:
               <span
                 onClick={() => setMoveSlider(true)}
               >
