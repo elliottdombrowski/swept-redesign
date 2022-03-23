@@ -11,7 +11,7 @@ import SavedSnow from '../../components/SavedSnow/SavedSnow';
 import ThemeToggle from '../../components/ThemeToggle/ThemeToggle';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faSun, faMoon, faLock, faSnowflake, faTruck } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faSun, faMoon, faLock, faSnowflake, faTruck, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import './styles.scss';
 import './query.scss';
@@ -20,6 +20,7 @@ const saved = <FontAwesomeIcon icon={faBookmark} className='profile-bookmark fa-
 const snow = <FontAwesomeIcon icon={faSnowflake} className='profile-snow' />
 const sweeper = <FontAwesomeIcon icon={faTruck} className='profile-sweeper' />
 const password = <FontAwesomeIcon icon={faLock} className='profile-password' />
+const email = <FontAwesomeIcon icon={faEnvelope} className='profile-mail' />
 
 const Profile = ({ setTheme }) => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
@@ -51,7 +52,13 @@ const Profile = ({ setTheme }) => {
         <section className='profile-inner-wrapper'>
           <div className='profile-user-info'>
             <h1 className='profile-header'>Welcome, <span className='profile-username'>{user.username}!</span></h1>
-            <p className='profile-email'>{user.email}</p>
+            <p className='profile-email'>
+              <i>
+                {email}
+              </i>
+
+              {user.email}
+            </p>
           </div>
 
           <div className='profile-save-info'>
