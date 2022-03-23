@@ -13,6 +13,8 @@ import LoginSignup from './pages/LoginSignup/LoginSignup';
 import ChangePassword from './pages/ChangePassword/ChangePassword';
 import NotFound from './pages/NotFound/NotFound';
 
+import Auth from '../src/utils/auth';
+
 import './app.scss';
 
 const httpLink = createHttpLink({
@@ -91,10 +93,6 @@ function App() {
                 />
               </Route>
               
-              <Route exact path='/me'>
-                <Profile setTheme={setTheme} />
-              </Route>
-
               <Route exact path='/login'>
                 <LoginSignup 
                   themeStyles={themeStyles} 
@@ -102,11 +100,12 @@ function App() {
                 />
               </Route>
 
+              <Route exact path='/me'>
+                {!Auth.loggedIn() ? <Homepage /> : <Profile setTheme={setTheme} />}
+              </Route>
+
               <Route exact path='/updateuser'>
-                <ChangePassword
-                  themeStyles={themeStyles}
-                  theme={theme}
-                />
+                {!Auth.loggedIn() ? <Homepage /> : <ChangePassword themeStyles={themeStyles} theme={theme} />}
               </Route>
 
               <Route component={NotFound} />
