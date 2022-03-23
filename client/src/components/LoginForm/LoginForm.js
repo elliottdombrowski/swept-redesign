@@ -6,8 +6,14 @@ import Auth from '../../utils/auth';
 
 import AnimatePage from '../../AnimatePage';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 import './styles.scss';
 import './query.scss';
+
+const showPwd = <FontAwesomeIcon className='fa-lg' icon={faEye} />
+const hidePwd = <FontAwesomeIcon className='fa-lg' icon={faEyeSlash} />
 
 const LoginForm = () => {
   const [loginData, setLoginData] = useState({ email: '', password: '' });
@@ -58,8 +64,6 @@ const LoginForm = () => {
 
         <p className='error-msg'>{err}</p>
         <input
-          variant='Outline'
-          size='xl'
           type='text'
           name='email'
           onChange={handleInputChange}
@@ -69,17 +73,21 @@ const LoginForm = () => {
           className='login-input'
         />
 
-        <input
-          variant='Outline'
-          size='xl'
-          type='text'
-          name='password'
-          onChange={handleInputChange}
-          value={loginData.password}
-          required
-          placeholder='Your Password'
-          className='login-input'
-        />
+        <span className='login-password-wrapper'>
+          <input
+            type='text'
+            name='password'
+            onChange={handleInputChange}
+            value={loginData.password}
+            required
+            placeholder='Your Password'
+            className='login-input'
+          />
+
+          <i>
+            {showPwd}
+          </i>
+        </span>
 
         <button
           disabled={!(loginData.email && loginData.password)}

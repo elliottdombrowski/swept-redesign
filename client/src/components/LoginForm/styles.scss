@@ -20,13 +20,24 @@
   input {
     border-radius: 10px;
     padding: 10px;
+    margin-bottom: 1rem;
+  }
 
-    &:not(:nth-child(2)) {
-      margin-top: 1rem;
+  .login-password-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+      margin: unset;
+      width: 100%;
     }
 
-    &:nth-child(3) {
-      margin-top: .5rem;
+    i {
+      position: absolute;
+      right: 1rem;
+      color: $darkerblue;
+      cursor: pointer;
     }
   }
 
