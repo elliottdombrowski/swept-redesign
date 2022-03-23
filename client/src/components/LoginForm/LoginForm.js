@@ -16,8 +16,13 @@ const showPwd = <FontAwesomeIcon className='fa-lg' icon={faEye} />
 const hidePwd = <FontAwesomeIcon className='fa-lg' icon={faEyeSlash} />
 
 const LoginForm = () => {
+  //FORM STATE FOR LOGIN MUTATION
   const [loginData, setLoginData] = useState({ email: '', password: '' });
+  //ERROR STATE FOR FORM VALIDATION ERRORS
   const [err, setErr] = useState('');
+  //HANDLE SHOW / HIDE PASSWORD STATE
+  const [handleShowPwd, setHandleShowPwd] = useState(false);
+
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
@@ -75,7 +80,8 @@ const LoginForm = () => {
 
         <span className='login-password-wrapper'>
           <input
-            type='text'
+            // type='text'
+            type={!handleShowPwd ? 'password' : 'text'}
             name='password'
             onChange={handleInputChange}
             value={loginData.password}
@@ -84,8 +90,10 @@ const LoginForm = () => {
             className='login-input'
           />
 
-          <i>
-            {showPwd}
+          <i
+            onClick={() => setHandleShowPwd((prev) => !prev)}
+          >
+            {!handleShowPwd ? showPwd : hidePwd}
           </i>
         </span>
 
