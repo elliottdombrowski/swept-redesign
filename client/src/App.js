@@ -15,10 +15,6 @@ import NotFound from './pages/NotFound/NotFound';
 
 import Auth from '../src/utils/auth';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_ME } from './utils/queries';
-
-
 import './app.scss';
 
 const httpLink = createHttpLink({
@@ -65,16 +61,15 @@ const themeStyles = {
 function App() {
   //STATE FOR DARKMODE
   const [theme, setTheme] = useState(false);
-  // console.log('app theme: ', theme);
 
   return (
     <ApolloProvider client={client}>
       <ChakraProvider>
         <div className="App" style={
-          !theme? themeStyles.light : themeStyles.dark
+          !theme ? themeStyles.light : themeStyles.dark
         }>
           <Router>
-            <Navbar 
+            <Navbar
               themeStyles={themeStyles}
               theme={theme}
               setTheme={setTheme}
@@ -84,22 +79,22 @@ function App() {
               <Route exact path='/' component={Homepage} />
 
               <Route exact path='/sweeper'>
-                <Sweeper 
-                  themeStyles={themeStyles} 
+                <Sweeper
+                  themeStyles={themeStyles}
                   theme={theme}
                 />
               </Route>
 
               <Route exact path='/snow'>
-                <Snow 
-                  themeStyles={themeStyles} 
+                <Snow
+                  themeStyles={themeStyles}
                   theme={theme}
                 />
               </Route>
-              
+
               <Route exact path='/login'>
-                <LoginSignup 
-                  themeStyles={themeStyles} 
+                <LoginSignup
+                  themeStyles={themeStyles}
                   theme={theme}
                 />
               </Route>
