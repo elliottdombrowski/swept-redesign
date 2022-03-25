@@ -20,6 +20,10 @@ const userSchema = new Schema({
         required: 'Password is Required',
         validate: [({ length }) => length >= 5, "Password should be longer."]
     },
+    darkmode: {
+      type: Boolean,
+      default: false,
+    }
 });
 
 // save + hashing for pass

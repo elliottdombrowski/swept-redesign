@@ -15,6 +15,10 @@ import NotFound from './pages/NotFound/NotFound';
 
 import Auth from '../src/utils/auth';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from './utils/queries';
+
+
 import './app.scss';
 
 const httpLink = createHttpLink({

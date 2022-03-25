@@ -43,6 +43,7 @@ const Profile = ({ setTheme }) => {
   });
 
   const user = data?.me || [];
+  console.log('user data- ', user);
   const userSweeperSearches = displaySavedSweeperData?.getUserSweepers || [];
   const userSnowSearches = displaySavedSnowData?.getUserSnow || [];
 
