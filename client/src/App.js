@@ -15,6 +15,9 @@ import NotFound from './pages/NotFound/NotFound';
 
 import Auth from '../src/utils/auth';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from './utils/queries';
+
 import './app.scss';
 
 const httpLink = createHttpLink({
@@ -61,6 +64,11 @@ const themeStyles = {
 function App() {
   //STATE FOR DARKMODE
   const [theme, setTheme] = useState(false);
+  
+  const { loading, data } = useQuery(QUERY_ME);
+
+  const appUser = data?.me;
+  console.log('app user- ', appUser);
 
   return (
     <ApolloProvider client={client}>
