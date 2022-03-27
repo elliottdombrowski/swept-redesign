@@ -32,6 +32,8 @@ const Profile = ({ setTheme }) => {
     variables: { username: userParam },
   });
 
+  // const { loading, data } = useQuery(QUERY_ME);
+
   const { loading: displaySavedSweeperLoading, data: displaySavedSweeperData } = useQuery(QUERY_USER_SWEEPERS, {
     variables: { user: userId },
     fetchPolicy: 'network-only'
@@ -43,7 +45,6 @@ const Profile = ({ setTheme }) => {
   });
 
   const user = data?.me || [];
-  console.log('user data- ', user);
   const userSweeperSearches = displaySavedSweeperData?.getUserSweepers || [];
   const userSnowSearches = displaySavedSnowData?.getUserSnow || [];
 
