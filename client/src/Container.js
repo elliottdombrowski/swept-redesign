@@ -40,7 +40,8 @@ const Container = () => {
   const [theme, setTheme] = useState(false);
 
   const { loading, data } = useQuery(QUERY_ME);
-  const appUser = data?.me;
+  const appUser = data?.me || [];
+  console.log(appUser.darkmode);
 
   return (
     <div className="App" style={
@@ -92,5 +93,5 @@ const Container = () => {
     </div>
   );
 }
- 
+
 export default Container;
