@@ -24,6 +24,17 @@ export const UPDATE_PASSWORD = gql`
   }
 `;
 
+export const DARKMODE = gql`
+  mutation darkmode($darkmode: Boolean!) {
+    darkmode(darkmode: $darkmode) {
+      token
+      user {
+        darkmode
+      }
+    }
+  }
+`;
+
 export const ADD_USER = gql`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {

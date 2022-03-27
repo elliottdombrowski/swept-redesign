@@ -205,6 +205,12 @@ const resolvers = {
       console.log('user: ', context.user);
     },
 
+    darkmode: async (parent, args, context, { darkmode }) => {
+      if (context.user) {
+        console.log('found user');
+      }
+    },
+
     saveSweeper: async (parent, { ward, section, month_name, dates, zipcode, user }) => {
       var newSweeper = new Sweeper({
         ward, section, month_name, dates, zipcode, user

@@ -97,6 +97,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     updatePassword(email: String!, password: String!): Auth
+    darkmode(darkmode: Boolean!): User
     saveSweeper(ward: String!, section: String!, month_name: String!, dates: String!, zipcode: String!, user: String!): SaveSweeper
     saveSnow(on_street: String!, from_stree: String!, to_street: String!, restrict_t: String!, user: String!): SaveSnow
     makeDonation(input: StripeInfo): Status
