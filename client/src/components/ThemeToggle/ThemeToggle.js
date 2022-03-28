@@ -9,7 +9,12 @@ import './query.scss';
 const sun = <FontAwesomeIcon icon={faSun} className='profile-light-mode' />
 const moon = <FontAwesomeIcon icon={faMoon} className='profile-dark-mode' />
 
-const ThemeToggle = ({setTheme}) => {
+const ThemeToggle = ({ setTheme, setDarkmode }) => {
+  const darkmodeWrapperFunc = async () => {
+    setTheme((prev) => !prev);
+    setDarkmode();
+  };
+
   return (
     <div className='switch profile-switch navbar-switch'>
       <i>
@@ -23,7 +28,8 @@ const ThemeToggle = ({setTheme}) => {
         <input
           type='checkbox'
           id='checkbox'
-          onClick={() => setTheme((prev) => !prev)}
+          // onClick={() => setTheme((prev) => !prev)}
+          onClick={darkmodeWrapperFunc}
         />
         <div className='slider round' id='slider-round' />
       </label>

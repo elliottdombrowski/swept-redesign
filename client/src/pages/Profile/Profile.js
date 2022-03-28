@@ -22,7 +22,7 @@ const sweeper = <FontAwesomeIcon icon={faTruck} className='profile-sweeper' />
 const password = <FontAwesomeIcon icon={faLock} className='profile-password' />
 const email = <FontAwesomeIcon icon={faEnvelope} className='profile-mail' />
 
-const Profile = ({ setTheme }) => {
+const Profile = ({ setTheme, setDarkmode }) => {
   const [userId, setUserId] = useState(localStorage.getItem('uuid'));
 
   const { username: userParam } = useParams();
@@ -103,7 +103,7 @@ const Profile = ({ setTheme }) => {
               Change Password
             </Link>
 
-            <ThemeToggle setTheme={setTheme} />
+            <ThemeToggle setTheme={setTheme} setDarkmode={setDarkmode} />
           </div>
 
           <section className='saved-wrapper'>
