@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from '../src/components/Navbar/Navbar';
 import Footer from '../src/components/Footer/Footer';
@@ -36,13 +36,14 @@ const themeStyles = {
   },
 };
 
+
 const Container = () => {
   const [theme, setTheme] = useState(false);
-
+  
   const { loading, data } = useQuery(QUERY_ME);
   const appUser = data?.me || [];
   console.log(appUser.darkmode);
-
+  
   return (
     <div className="App" style={
       !theme ? themeStyles.light : themeStyles.dark
