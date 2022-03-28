@@ -10,8 +10,9 @@ import LoginSignup from './pages/LoginSignup/LoginSignup';
 import ChangePassword from './pages/ChangePassword/ChangePassword';
 import NotFound from './pages/NotFound/NotFound';
 
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_ME } from './utils/queries';
+import { DARKMODE } from './utils/mutations';
 
 import Auth from './utils/auth';
 
@@ -38,11 +39,23 @@ const themeStyles = {
 
 
 const Container = () => {
+  
   const [theme, setTheme] = useState(false);
   
+  const [darkmode, { error: darkmodeError, data: darkmodeData }] = useMutation(DARKMODE);
   const { loading, data } = useQuery(QUERY_ME);
   const appUser = data?.me || [];
   console.log(appUser.darkmode);
+
+  const setDarkmode = async () => {
+    try {
+      const { darkmodeData } = await darkmode({
+        variables: { ...theme },
+      });
+    } catch (err) {
+      console.log('testing darkmode mutation ', err);
+    }
+  };
   
   return (
     <div className="App" style={
@@ -80,7 +93,7 @@ const Container = () => {
           </Route>
 
           <Route exact path='/me'>
-            {!Auth.loggedIn() ? <Homepage /> : <Profile setTheme={setTheme} />}
+            {!Auth.loggedIn() ? <Homepage /> : <Profile setTheme={setTheme} setDarkmode={setDarkmode} />}
           </Route>
 
           <Route exact path='/updateuser'>
