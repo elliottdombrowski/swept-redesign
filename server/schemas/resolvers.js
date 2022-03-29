@@ -207,7 +207,7 @@ const resolvers = {
 
     darkmode: async (parent, args, context, { darkmode }) => {
       if (context.user) {
-        console.log('found user');
+        return User.findOneAndUpdate({ darkmode: context.user.darkmode });
       }
     },
 
