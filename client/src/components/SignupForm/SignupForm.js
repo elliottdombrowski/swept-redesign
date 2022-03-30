@@ -53,6 +53,7 @@ const LoginForm = () => {
 
         <p className='error-msg'>{err}</p>
         <input
+          size='xl'
           type='text'
           name='username'
           onChange={handleInputChange}
@@ -63,6 +64,7 @@ const LoginForm = () => {
         />
 
         <input
+          size='xl'
           type='text'
           name='email'
           onChange={handleInputChange}
@@ -72,15 +74,18 @@ const LoginForm = () => {
           className='login-input'
         />
 
-        <input
-          type='text'
-          name='password'
-          onChange={handleInputChange}
-          value={signupData.password}
-          required
-          placeholder='Your Password'
-          className='login-input'
-        />
+        <div className='login-password-wrapper'>
+          <input
+            size='xl'
+            type='text'
+            name='password'
+            onChange={handleInputChange}
+            value={signupData.password}
+            required
+            placeholder='Your Password'
+            className='login-input'
+          />
+        </div>
 
         <button
           disabled={!(signupData.username && signupData.email && signupData.password)}
