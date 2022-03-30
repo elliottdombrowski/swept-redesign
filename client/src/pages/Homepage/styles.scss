@@ -9,9 +9,12 @@
 
   .homepage-body {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-      ''
-      ''
+      'main-header main-header'
+      'body-text body-text'
+      'body-subtext body-subtext'
+      'body-signup body-donation'
     ;
 
     .homepage-header-wrapper {
