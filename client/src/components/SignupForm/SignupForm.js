@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { Input } from '@chakra-ui/react';
 import { ADD_USER } from '../../utils/mutations';
 import { validateEmail } from '../../utils/helpers';
 import Auth from '../../utils/auth';
@@ -53,9 +52,7 @@ const LoginForm = () => {
         </div>
 
         <p className='error-msg'>{err}</p>
-        <Input
-          variant='Outline'
-          size='xl'
+        <input
           type='text'
           name='username'
           onChange={handleInputChange}
@@ -65,9 +62,7 @@ const LoginForm = () => {
           className='login-input'
         />
 
-        <Input
-          variant='Outline'
-          size='xl'
+        <input
           type='text'
           name='email'
           onChange={handleInputChange}
@@ -77,9 +72,7 @@ const LoginForm = () => {
           className='login-input'
         />
 
-        <Input
-          variant='Outline'
-          size='xl'
+        <input
           type='text'
           name='password'
           onChange={handleInputChange}

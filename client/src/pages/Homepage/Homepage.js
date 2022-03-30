@@ -8,6 +8,8 @@ import AnimatePage from '../../AnimatePage';
 import { useMutation } from '@apollo/client';
 import { MAKE_DONATION } from '../../utils/mutations';
 
+import './styles.scss';
+import './query.scss';
 
 const Homepage = () => {
   const [donation, setDonation] = useState({
@@ -53,7 +55,6 @@ const Homepage = () => {
       console.log(error);
     }
   };
-
 
   return (
     <AnimatePage>
