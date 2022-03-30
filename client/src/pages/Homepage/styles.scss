@@ -1,4 +1,42 @@
 @import '../../variables';
 
 .homepage-wrapper {
+  position: relative;
+
+  .homepage-img {
+    // position: absolute;
+  }
+
+  .homepage-body {
+    display: grid;
+    grid-template-areas: 
+      ''
+      ''
+    ;
+
+    .homepage-header-wrapper {
+      grid-area: main-header;
+      background: red;
+    }
+
+    .homepage-text {
+      grid-area: body-text;
+      background: blue;
+    }
+
+    .homepage-subtext {
+      grid-area: body-subtext;
+      background: yellow;
+    }
+
+    .homepage-signup {
+      grid-area: body-signup;
+      background: orange;
+    }
+
+    .homepage-donation-wrapper {
+      grid-area: body-donation;
+      background: green;
+    }
+  }
 }
