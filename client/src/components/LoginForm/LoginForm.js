@@ -80,7 +80,6 @@ const LoginForm = () => {
 
         <span className='login-password-wrapper'>
           <input
-            // type='text'
             type={!handleShowPwd ? 'password' : 'text'}
             name='password'
             onChange={handleInputChange}

@@ -6,12 +6,20 @@ import Auth from '../../utils/auth';
 
 import AnimatePage from '../../AnimatePage';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 import '../LoginForm/styles.scss';
 import '../LoginForm/query.scss';
+
+const showPwd = <FontAwesomeIcon className='fa-lg' icon={faEye} />
+const hidePwd = <FontAwesomeIcon className='fa-lg' icon={faEyeSlash} />
 
 const LoginForm = () => {
   const [signupData, setSignupData] = useState({ username: '', email: '', password: '' });
   const [err, setErr] = useState('');
+  //SHOW/HIDE PASSWORD STATE
+  const [handleShowPwd, setHandleShowPwd] = useState(false);
 
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -65,7 +73,7 @@ const LoginForm = () => {
 
         <input
           size='xl'
-          type='text'
+          type={!handleShowPwd ? 'password' : 'text'}
           name='email'
           onChange={handleInputChange}
           value={signupData.email}
@@ -85,6 +93,12 @@ const LoginForm = () => {
             placeholder='Your Password'
             className='login-input'
           />
+
+          <i
+            onClick={() => setHandleShowPwd((prev) => !prev)}
+          >
+            {!handleShowPwd ? showPwd : hidePwd}
+          </i>
         </div>
 
         <button
