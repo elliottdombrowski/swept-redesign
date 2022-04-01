@@ -68,7 +68,7 @@ const Homepage = () => {
         <section className='homepage-body'>
           <header className='homepage-header-wrapper'>
             <h1 className='homepage-header'>
-              Welcome to 
+              Welcome to
               <span className='swept-header'>
                 SWEPT!!!
               </span>
@@ -94,13 +94,13 @@ const Homepage = () => {
             shouldn't be there!
           </h4>
 
-          <h4 className='homepage-subtext'>
-            Avoid parking tickets now- 
-            <br /> 
-            Enter your zipcode, ward number, or street name!
-          </h4>
-
           <div className='homepage-signup'>
+            <h4 className='homepage-subtext'>
+              Avoid parking tickets now-
+              <br />
+              Enter your zipcode, ward number, or street name!
+            </h4>
+
             <Link
               to='/sweeper'
               className='login-btn nav-links get-started-btn'

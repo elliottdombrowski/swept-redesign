@@ -2,18 +2,21 @@
 
 .homepage-wrapper {
   position: relative;
+  width: 80%;
+  margin: 0 auto;
 
   .homepage-img {
-    // position: absolute;
+    position: absolute;
+    z-index: -2;
   }
 
   .homepage-body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     grid-template-areas: 
       'main-header main-header'
       'body-text body-text'
-      'body-subtext body-subtext'
+      'body-review body-review'
       'body-signup body-donation'
     ;
 
@@ -25,11 +28,6 @@
     .homepage-text {
       grid-area: body-text;
       background: blue;
-    }
-
-    .homepage-subtext {
-      grid-area: body-subtext;
-      background: yellow;
     }
 
     .homepage-signup {
