@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import SignUpButton from '../../components/SignUpButton/SignUpButton';
 import StripeCheckout from 'react-stripe-checkout';
 import { useToast } from '@chakra-ui/react';
+
+import UserReviews from '../../components/UserReviews/UserReviews';
 import AnimatePage from '../../AnimatePage';
 
 import { useMutation } from '@apollo/client';
@@ -11,7 +13,7 @@ import { MAKE_DONATION } from '../../utils/mutations';
 import './styles.scss';
 import './query.scss';
 
-const Homepage = () => {
+const Homepage = ({ theme, themeStyles }) => {
   const [donation, setDonation] = useState({
     name: 'donation to the SWEPT! developers!',
     price: 3.0,
@@ -65,6 +67,7 @@ const Homepage = () => {
             alt='Chicago Flag'
           ></img>
         </div>
+
         <section className='homepage-body'>
           <header className='homepage-header-wrapper'>
             <h1 className='homepage-header'>
@@ -93,6 +96,8 @@ const Homepage = () => {
             </a> to tell you <i href='accent-header'>where</i> your car shouldn't be, <i href='accent-header'>when</i> it
             shouldn't be there!
           </h4>
+
+          <UserReviews />
 
           <div className='homepage-signup'>
             <h4 className='homepage-subtext'>

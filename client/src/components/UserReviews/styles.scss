@@ -1,0 +1,9 @@
+@import '../../variables';
+
+.user-review-wrapper {
+  grid-area: body-review;
+  width: 60%;
+  padding: 10px 20px;
+  margin: 0 auto;
+  background: green;
+}

@@ -69,7 +69,12 @@ const Container = () => {
         />
 
         <Switch>
-          <Route exact path='/' component={Homepage} />
+          <Route exact path='/'>
+            <Homepage
+              themeStyles={themeStyles}
+              theme={theme}
+            />
+          </Route>
 
           <Route exact path='/sweeper'>
             <Sweeper
