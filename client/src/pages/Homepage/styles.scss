@@ -13,6 +13,7 @@
   .homepage-body {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
+    gap: 1rem;
     grid-template-areas: 
       'main-header main-header'
       'body-text body-text'
