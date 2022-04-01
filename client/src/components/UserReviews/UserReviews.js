@@ -29,10 +29,10 @@ const UserReviews = () => {
     <section className='user-review-wrapper'>
       {reviews.map((review) => {
         return (
-          <span className='user-review' key={review.id}>
+          <div className='user-review' key={review.id}>
             <p>{review.review}</p>
             <p>{review.name}, {review.city}</p>
-          </span>
+          </div>
         );
       })}
     </section>
