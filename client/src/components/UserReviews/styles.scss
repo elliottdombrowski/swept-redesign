@@ -14,9 +14,21 @@
       margin-top: .5rem;
     }
 
-    p:nth-child(2) {
-      margin-top: .5rem;
-      text-align: right;
+    p {
+      font-family: $link-font;
+
+      &:nth-child(1) {
+        font-size: 18px;
+        letter-spacing: .2px;
+      }
+
+      &:nth-child(2) {
+        margin-top: .5rem;
+        text-align: right;
+        font-size: 20px;
+        font-style: italic;
+      }
+
     }
   }
 }

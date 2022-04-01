@@ -8,19 +8,19 @@ const reviews = [
     id: 1,
     name: 'Bailey',
     city: 'Oak Park',
-    review: 'Swept has saved me over $300 in parking tickets. I love it!',
+    review: 'Using Swept has saved me over $300 in parking tickets. I love it!',
   },
   {
     id: 2,
     name: 'Bailey',
     city: 'Oak Park',
-    review: 'Swept has saved me over $300 in parking tickets. I love it!',
+    review: 'Using Swept has saved me over $300 in parking tickets. I love it!',
   },
   {
     id: 3,
     name: 'Bailey',
     city: 'Oak Park',
-    review: 'Swept has saved me over $300 in parking tickets. I love it!',
+    review: 'Using Swept has saved me over $300 in parking tickets. I love it!',
   },
 ];
 
