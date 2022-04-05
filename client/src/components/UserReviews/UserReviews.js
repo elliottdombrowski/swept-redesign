@@ -24,12 +24,16 @@ const reviews = [
   },
 ];
 
-const UserReviews = () => {
+const UserReviews = ({ theme, themeStyles }) => {
   return (
     <section className='user-review-wrapper'>
       {reviews.map((review) => {
         return (
-          <div className='user-review' key={review.id}>
+          <div 
+            className='user-review' 
+            key={review.id}
+            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+          >
             <p>{review.review}</p>
             <p>{review.name}, {review.city}</p>
           </div>

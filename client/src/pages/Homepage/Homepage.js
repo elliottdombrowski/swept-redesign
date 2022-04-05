@@ -100,7 +100,7 @@ const Homepage = ({ theme, themeStyles }) => {
             shouldn't be there!
           </h4>
 
-          <UserReviews />
+          <UserReviews theme={theme} themeStyles={themeStyles} />
 
           <div 
             className='homepage-signup'
