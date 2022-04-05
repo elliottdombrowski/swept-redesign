@@ -42,6 +42,21 @@
       
       .homepage-header {
         font-size: 4em;
+
+        span {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: '';
+            left: -2px;
+            right: 0;
+            bottom: 15px;
+            height: 4px;
+            background: $text;
+            transform: skew(-45deg);
+          }
+        }
       }
       
       .homepage-subheader {
