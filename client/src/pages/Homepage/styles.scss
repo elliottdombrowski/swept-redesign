@@ -67,6 +67,12 @@
 
     .homepage-text {
       grid-area: body-text;
+      font-size: 1.5rem;
+      letter-spacing: .2px;
+
+      div {
+        margin-bottom: 1.5rem;
+      }
     }
 
     .homepage-signup {

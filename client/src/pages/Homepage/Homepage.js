@@ -88,7 +88,7 @@ const Homepage = ({ theme, themeStyles }) => {
           >
             If you live in the third largest Metropolitan areas in the U.S, you're no stranger
             to parking tickets; and <i className='swept-header'>SWEPT</i> is here to help!
-            <br />
+            <div />
             We use real time <a
               href='https://data.cityofchicago.org/'
               target='_blank'
