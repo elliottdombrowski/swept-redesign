@@ -1,0 +1,15 @@
+@import "../../variables";
+
+@media all and (max-width: 768px) {
+  .homepage-wrapper {
+    .homepage-body {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "main-header"
+        "body-text"
+        "body-review"
+        "body-signup"
+        "body-donation";
+    }
+  }
+}
