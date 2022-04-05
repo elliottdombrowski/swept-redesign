@@ -1,0 +1,9 @@
+@import '../../variables';
+
+@media all and (max-width: 768px) {
+  .user-review-wrapper {
+    width: 80%;
+    margin-left: unset;
+    margin-right: unset;
+  }
+}
