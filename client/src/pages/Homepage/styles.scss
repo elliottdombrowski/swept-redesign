@@ -3,7 +3,7 @@
 .homepage-wrapper {
   position: relative;
   width: 80%;
-  margin: 0 auto;
+  margin: 3rem auto 0;
 
   .homepage-img {
     position: absolute;
@@ -20,10 +20,27 @@
       'body-review body-review'
       'body-signup body-donation'
     ;
+    font-family: $link-font;
 
     .homepage-header-wrapper {
       grid-area: main-header;
-      background: red;
+      padding: 2rem;
+      border-radius: 10px;
+
+      .swept-header {
+        font-family: $logo-font;
+        font-style: italic;
+        letter-spacing: .5px;
+      }
+      
+      .homepage-header {
+        font-size: 4em;
+      }
+      
+      .homepage-subheader {
+        margin-top: 2rem;
+        font-size: 2em;
+      }
     }
 
     .homepage-text {

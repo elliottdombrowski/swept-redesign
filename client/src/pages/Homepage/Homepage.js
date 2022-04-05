@@ -69,12 +69,12 @@ const Homepage = ({ theme, themeStyles }) => {
         </div>
 
         <section className='homepage-body'>
-          <header className='homepage-header-wrapper'>
+          <header 
+            className='homepage-header-wrapper'
+            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+          >
             <h1 className='homepage-header'>
-              Welcome to
-              <span className='swept-header'>
-                SWEPT!!!
-              </span>
+              Welcome to <span className='swept-header'>SWEPT!!!</span>
             </h1>
 
             <h2 className='homepage-subheader'>
