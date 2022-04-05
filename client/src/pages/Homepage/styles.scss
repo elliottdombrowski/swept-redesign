@@ -22,10 +22,17 @@
     ;
     font-family: $link-font;
 
+    .homepage-header-wrapper,
+    .homepage-text,
+    .homepage-signup,
+    .homepage-donation-wrapper {
+      padding: 2rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+
     .homepage-header-wrapper {
       grid-area: main-header;
-      padding: 2rem;
-      border-radius: 10px;
 
       .swept-header {
         font-family: $logo-font;
@@ -45,7 +52,6 @@
 
     .homepage-text {
       grid-area: body-text;
-      background: blue;
     }
 
     .homepage-signup {

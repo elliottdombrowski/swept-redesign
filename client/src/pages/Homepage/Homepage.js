@@ -82,7 +82,10 @@ const Homepage = ({ theme, themeStyles }) => {
             </h2>
           </header>
 
-          <h4 className='homepage-text'>
+          <h4 
+            className='homepage-text'
+            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+          >
             If you live in the third largest Metropolitan areas in the U.S, you're no stranger
             to parking tickets; and <i className='swept-header'>SWEPT</i> is here to help!
             <br />
@@ -99,7 +102,10 @@ const Homepage = ({ theme, themeStyles }) => {
 
           <UserReviews />
 
-          <div className='homepage-signup'>
+          <div 
+            className='homepage-signup'
+            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+          >
             <h4 className='homepage-subtext'>
               Avoid parking tickets now-
               <br />
@@ -114,8 +120,10 @@ const Homepage = ({ theme, themeStyles }) => {
             </Link>
           </div>
 
-
-          <section className='homepage-donation-wrapper'>
+          <section 
+            className='homepage-donation-wrapper'
+            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+          >
             <header className='donation-header'>
               <h4>Save money on parking tickets? Donate and buy the <i className='swept-header'>SWEPT</i> devs a coffee!</h4>
             </header>
