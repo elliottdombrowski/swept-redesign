@@ -76,13 +76,22 @@
     }
 
     .homepage-signup {
+      position: relative;
       grid-area: body-signup;
-      background: orange;
+      height: fit-content;
+      padding-bottom: 5rem;
+      font-size: 1.5rem;
+      letter-spacing: .2px;
+
+      .get-started-btn {
+        position: absolute;
+        right: 2rem;
+        bottom: 2rem;
+      }
     }
 
     .homepage-donation-wrapper {
       grid-area: body-donation;
-      background: green;
     }
   }
 }

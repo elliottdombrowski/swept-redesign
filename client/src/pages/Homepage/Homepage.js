@@ -125,7 +125,7 @@ const Homepage = ({ theme, themeStyles }) => {
             style={!theme? themeStyles.containerLight : themeStyles.containerDark}
           >
             <header className='donation-header'>
-              <h4>Save money on parking tickets? Donate and buy the <i className='swept-header'>SWEPT</i> devs a coffee!</h4>
+              <h4>Saved money on parking tickets? Donate and buy the <i className='swept-header'>SWEPT</i> devs a coffee!</h4>
             </header>
             <div className='login-btn donate-btn'>
               <StripeCheckout
