@@ -3,7 +3,7 @@
 .homepage-wrapper {
   position: relative;
   width: 80%;
-  margin: 3rem auto 0;
+  margin: 3rem auto;
 
   .homepage-img {
     position: absolute;
@@ -17,8 +17,8 @@
     grid-template-areas: 
       'main-header main-header'
       'body-text body-text'
-      'body-review body-review'
       'body-signup body-donation'
+      'body-review body-donation'
     ;
     font-family: $link-font;
 
