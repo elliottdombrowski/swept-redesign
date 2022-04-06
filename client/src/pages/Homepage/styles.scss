@@ -92,6 +92,13 @@
 
     .homepage-donation-wrapper {
       grid-area: body-donation;
+      font-size: 1.5rem;
+
+      .donate-btn {
+        margin: 1rem 0;
+        color: $text;
+        text-align: center;
+      }
     }
   }
 }
