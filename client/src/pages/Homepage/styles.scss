@@ -80,6 +80,7 @@
       grid-area: body-signup;
       height: fit-content;
       padding-bottom: 5rem;
+      margin-bottom: unset;
       font-size: 1.5rem;
       letter-spacing: .2px;
 
@@ -92,6 +93,7 @@
 
     .homepage-donation-wrapper {
       grid-area: body-donation;
+      height: fit-content;
       font-size: 1.5rem;
 
       .donate-btn {
