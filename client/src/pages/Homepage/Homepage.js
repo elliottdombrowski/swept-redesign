@@ -69,9 +69,9 @@ const Homepage = ({ theme, themeStyles }) => {
         </div>
 
         <section className='homepage-body'>
-          <header 
+          <header
             className='homepage-header-wrapper'
-            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+            style={!theme ? themeStyles.containerLight : themeStyles.containerDark}
           >
             <h1 className='homepage-header'>
               Welcome to <span className='swept-header'>SWEPT!!!</span>
@@ -82,9 +82,9 @@ const Homepage = ({ theme, themeStyles }) => {
             </h2>
           </header>
 
-          <h4 
+          <h4
             className='homepage-text'
-            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+            style={!theme ? themeStyles.containerLight : themeStyles.containerDark}
           >
             If you live in the third largest Metropolitan areas in the U.S, you're no stranger
             to parking tickets; and <i className='swept-header'>SWEPT</i> is here to help!
@@ -100,29 +100,31 @@ const Homepage = ({ theme, themeStyles }) => {
             shouldn't be there!
           </h4>
 
-          <UserReviews theme={theme} themeStyles={themeStyles} />
-
-          <div 
-            className='homepage-signup'
-            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
-          >
-            <h4 className='homepage-subtext'>
-              Avoid parking tickets now-
-              <br />
-              Enter your zipcode, ward number, or street name!
-            </h4>
-
-            <Link
-              to='/sweeper'
-              className='login-btn nav-links get-started-btn'
+          <div className='desktop-user-info'>
+            <div
+              className='homepage-signup'
+              style={!theme ? themeStyles.containerLight : themeStyles.containerDark}
             >
-              GET STARTED
-            </Link>
+              <h4 className='homepage-subtext'>
+                Avoid parking tickets now-
+                <br />
+                Enter your zipcode, ward number, or street name!
+              </h4>
+
+              <Link
+                to='/sweeper'
+                className='login-btn nav-links get-started-btn'
+              >
+                GET STARTED
+              </Link>
+            </div>
+
+            <UserReviews theme={theme} themeStyles={themeStyles} />
           </div>
 
-          <section 
+          <section
             className='homepage-donation-wrapper'
-            style={!theme? themeStyles.containerLight : themeStyles.containerDark}
+            style={!theme ? themeStyles.containerLight : themeStyles.containerDark}
           >
             <header className='donation-header'>
               <h4>Saved money on parking tickets? Donate and buy the <i className='swept-header'>SWEPT</i> devs a coffee!</h4>

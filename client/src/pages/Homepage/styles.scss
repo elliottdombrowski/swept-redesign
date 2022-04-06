@@ -1,4 +1,4 @@
-@import '../../variables';
+@import "../../variables";
 
 .homepage-wrapper {
   position: relative;
@@ -14,12 +14,11 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     gap: 1rem;
-    grid-template-areas: 
-      'main-header main-header'
-      'body-text body-text'
-      'body-signup body-donation'
-      'body-review body-donation'
-    ;
+    grid-template-areas:
+      "main-header main-header"
+      "body-text body-text"
+      "desktop-reviews body-donation"
+      "desktop-reviews body-donation";
     font-family: $link-font;
 
     .homepage-header-wrapper,
@@ -37,9 +36,9 @@
       .swept-header {
         font-family: $logo-font;
         font-style: italic;
-        letter-spacing: .5px;
+        letter-spacing: 0.5px;
       }
-      
+
       .homepage-header {
         font-size: 4em;
 
@@ -48,7 +47,7 @@
 
           &::after {
             position: absolute;
-            content: '';
+            content: "";
             left: -2px;
             right: 0;
             bottom: 15px;
@@ -58,7 +57,7 @@
           }
         }
       }
-      
+
       .homepage-subheader {
         margin-top: 2rem;
         font-size: 2em;
@@ -68,11 +67,15 @@
     .homepage-text {
       grid-area: body-text;
       font-size: 1.5rem;
-      letter-spacing: .2px;
+      letter-spacing: 0.2px;
 
       div {
         margin-bottom: 1.5rem;
       }
+    }
+
+    .desktop-user-reviews {
+      grid-area: desktop-reviews;
     }
 
     .homepage-signup {
@@ -80,9 +83,8 @@
       grid-area: body-signup;
       height: fit-content;
       padding-bottom: 5rem;
-      margin-bottom: unset;
       font-size: 1.5rem;
-      letter-spacing: .2px;
+      letter-spacing: 0.2px;
 
       .get-started-btn {
         position: absolute;
